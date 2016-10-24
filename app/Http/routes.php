@@ -36,3 +36,7 @@ Route::get('/posts/create', function() {
 Route::get('/users/login', function() {
 	return view('users.login');
 });
+
+Route::get('/users/create', function() {
+	return view('users/create');
+});
