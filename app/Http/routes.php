@@ -17,6 +17,8 @@ Route::get('/', function () {
 
 
 //************************************** Posts Views **********************************************
+
+// will change as soon as postController is finished
 Route::get('/posts/show', function() {
 	return view('posts.show');
 });
