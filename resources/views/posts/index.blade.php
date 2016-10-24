@@ -5,6 +5,9 @@
 <div class="container">
 	
 {{--  ******************** SKILLS SELECT TABLE *************************** --}}
+{{-- <div>	
+	@include('layouts.partials.skills')
+</div> --}}
 <div class="">
     <b>  Sort By :</b>
 <select id="ddlCars" multiple="multiple">
