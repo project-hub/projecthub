@@ -38,9 +38,13 @@ Route::get('/users/login', function() {
 });
 
 Route::get('/users/create', function() {
-	return view('users/create');
+	return view('users.create');
 });
 
 Route::get('/users/index', function() {
-	return view('users/index');
+	return view('users.index');
+});
+
+Route::get('/users/profile', function() {
+	return view('users.profile');
 });
