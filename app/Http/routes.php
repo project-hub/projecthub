@@ -14,3 +14,19 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/posts/show', function() {
+	return view('posts.show');
+});
+
+Route::get('/posts/index', function() {
+	return view('posts.index');
+});
+
+Route::get('/posts/edit', function() {
+	return view('posts.edit');
+});
+
+Route::get('/posts/create', function() {
+	return view('posts.create');
+});
