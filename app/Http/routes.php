@@ -32,7 +32,7 @@ Route::get('/posts/edit', function() {
 Route::get('/posts/create', function() {
 	return view('posts.create');
 });
-
+// Users Views
 Route::get('/users/login', function() {
 	return view('users.login');
 });

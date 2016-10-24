@@ -1,6 +1,6 @@
-@extends('layouts.master')
+{{-- @extends('layouts.master') --}}
 
-
+@extends('users.create')
 
 @section('content')
 <div class="">
@@ -14,10 +14,6 @@
     <option value="JAVA">JAVA</option>
   </select>
 </div>
-
-
-
-{{-- <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-multiselect/0.9.13/css/bootstrap-multiselect.css" type="text/javascript" charset="utf-8" async defer></script> --}}
 <script>
 	  $(document).ready(function() {
      $('#ddlCars').multiselect();
