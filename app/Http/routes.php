@@ -15,6 +15,8 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+
+//************************************** Posts Views **********************************************
 Route::get('/posts/show', function() {
 	return view('posts.show');
 });
