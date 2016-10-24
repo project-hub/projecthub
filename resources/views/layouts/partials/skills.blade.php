@@ -1,7 +1,7 @@
 
 <div class="">
     <b>  Skills :</b>
-  <select id="ddlCars" multiple="multiple">
+  <select id="ddlSkills" multiple="multiple">
     <option value="PHP">PHP</option>
     <option value="HTML">HTML</option>
     <option value="CSS">CSS</option>
@@ -11,21 +11,12 @@
   </select>
 </div>
 <script>
-	  $(document).ready(function() {
-     $('#ddlCars').multiselect();
-      $('#ddlCars1').multiselect({ 
-         numberDisplayed: 6,
-          
-     });
-       $('#ddlCars2').multiselect({ 
-         includeSelectAllOption: true,
-           enableFiltering:true         
-           
-     });
-        $('#ddlCars3').multiselect({  
-           nonSelectedText :'Select Cars'
-           
-     });
-});
+	     $(document).ready(function() {
+          $('#ddlCars').multiselect();
+          $('#ddlSkills').multiselect({ 
+            nonSelectedText :'Select Skills',
+            includeSelectAllOption: true,        
+          });
+        });
 
 </script>
