@@ -12,7 +12,7 @@
 				<p>Employer Name</p>
 				<p>Project Description</p>
 				<p>Location</p>
-				<p class="pull-right">Most Recent</p>
+				<p class="pull-right">Created_at</p>
 			</div>
 		</tr>
 	</div>

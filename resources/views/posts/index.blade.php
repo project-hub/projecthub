@@ -3,24 +3,45 @@
 @section('content')
 
 <div class="container">
-	<div class="checkbox">
-		<label>
-			<input type="checkbox" value="">
-	    		HTML
-	  	</label>
-	</div>
-	<div class="checkbox">
-		<label>
-			<input type="checkbox" value="">
-	    		CSS
-	  	</label>
-	</div>
-	<div class="checkbox">
-		<label>
-			<input type="checkbox" value="">
-	    		PHP
-	  	</label>
-	</div>
+	
+{{--  ******************** SKILLS SELECT TABLE *************************** --}}
+<div class="">
+    <b>  Sort By :</b>
+<select id="ddlCars" multiple="multiple">
+<option value="PHP">PHP</option>
+<option value="HTML">HTML</option>
+<option value="CSS">CSS</option>
+<option value="Laravel">Laravel</option>
+<option value="Angular">Angular</option>
+<option value="JAVA">JAVA</option>
+</select>
+</div>
+
+
+<script>
+	  $(document).ready(function() {
+     $('#ddlCars').multiselect();
+      $('#ddlCars1').multiselect({ 
+         numberDisplayed: 6,
+          
+     });
+       $('#ddlCars2').multiselect({ 
+         includeSelectAllOption: true,
+           enableFiltering:true         
+           
+     });
+        $('#ddlCars3').multiselect({  
+           nonSelectedText :'Select Cars'
+           
+     });
+});
+
+</script>
+{{--  ******************** END SKILLS SELECT TABLE *************************** --}}
+
+
+
+
 	<h1>Posts</h1>
 	<div class='container'>
 	<div class="row table well">
