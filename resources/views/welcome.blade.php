@@ -1,4 +1,12 @@
-<!DOCTYPE html>
+@extends('layouts.master')
+
+@section('content')
+    
+@stop
+
+
+
+{{-- <!DOCTYPE html>
 <html>
     <head>
         <title>Laravel</title>
@@ -42,4 +50,4 @@
             </div>
         </div>
     </body>
-</html>
+</html> --}}
