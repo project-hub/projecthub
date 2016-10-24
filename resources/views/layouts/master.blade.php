@@ -11,10 +11,10 @@
   	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
 <body>
-	@include('partials.navbar')
+	@include('layouts.partials.navbar')
 	<div class="container">
     	@yield('content')
     </div>
-    @include('partials.footer')
+    @include('layouts.partials.footer')
 </body>
 </html>
