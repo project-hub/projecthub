@@ -30,17 +30,10 @@
 			    	<label for="password_confirmation">Password Confirmation:</label>
 			    	<input type="password" class="form-control" name="password_confirmation">
 			  	</div>
-			  	<div class="form-group">
-    					<b>  Skills :</b>
-  						<select id="ddlSkills" multiple="multiple">
-    					<option value="PHP">PHP</option>
-    					<option value="HTML">HTML</option>
-    					<option value="CSS">CSS</option>
-    					<option value="Laravel">Laravel</option>
-    					<option value="Angular">Angular</option>
-    					<option value="JAVA">JAVA</option>
-  						</select>
+			  	<div>
+			  		@include('layouts.partials.skills')
 			  	</div>
+			  	<br>
 			  	<div class="form-group">
 			  		<label for="linked_in">Linked in:</label>
 			  		<input type="url" class="form-control" name="linked_in"> 
@@ -64,14 +57,4 @@
 			</form>
 		</div>
 	</div>
-	<script>
-	  $(document).ready(function() {
-     	$('#ddlSkills').multiselect();
-      	$('#ddlSkills').multiselect({ 
-         	numberDisplayed: 12,
-         	includeSelectAllOption: true, 
-     		});
-		});
-
-</script>
 @stop

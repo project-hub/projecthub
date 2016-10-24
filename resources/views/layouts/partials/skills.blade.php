@@ -1,8 +1,4 @@
-{{-- @extends('layouts.master') --}}
 
-@extends('users.create')
-
-@section('content')
 <div class="">
     <b>  Skills :</b>
   <select id="ddlCars" multiple="multiple">
@@ -33,4 +29,3 @@
 });
 
 </script>
-@stop
