@@ -40,3 +40,7 @@ Route::get('/users/login', function() {
 Route::get('/users/create', function() {
 	return view('users/create');
 });
+
+Route::get('/users/index', function() {
+	return view('users/index');
+});
