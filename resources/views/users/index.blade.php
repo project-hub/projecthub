@@ -6,7 +6,7 @@
    <div class="row">
         <div class="col-lg-12">
             <h1 class="page-header">Project Hub Users
-                <small>All Users</small>
+                <small>@include('layouts.partials.skills')</small>
             </h1>
         </div>
 	</div>
@@ -20,6 +20,9 @@
                 <h3>Username</h3>
                 <h4><a href="">link to users email</a></h4>
                 <h4>Skills: </h4>
+                {{-- @foreach() --}}
+                <span class="label label-default">skill1</span>
+                {{-- @endforeach --}}
                 <h4>Rating: </h4>
                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vitae praesentium harum, ducimus itaque quam magni sunt. Nesciunt nam fuga et, molestias, dolore eligendi sit hic tempora quibusdam molestiae. Exercitationem, quod.</p>
                 <a class="btn btn-primary" href="">View Profile <span class="glyphicon glyphicon-chevron-right"></span></a>
