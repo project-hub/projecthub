@@ -17,9 +17,11 @@
                 </div>
                 <div class="col-md-4 footercontent">
                     <ul class="list-inline quicklinks">
-                        <li><a href="#">Privacy Policy</a>
+                        <li><a href="#">Contact us</a>
                         </li>
                         <li><a href="#">Terms of Use</a>
+                        </li>
+                        <li><a href="#">Privacy Policy</a>
                         </li>
                     </ul>
                 </div>
