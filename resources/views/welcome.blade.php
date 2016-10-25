@@ -13,7 +13,7 @@
     <div class="row">
        <div class="col-sm-6 col-md-4">
         <div class="thumbnail">
-          <img src="http://placehold.it/250x250" alt="..."  class="img-rounded">
+          <img src="img/projecthublogo.png" alt="..."  class="img-rounded">
           <div class="caption">
             <h3>Thumbnail label</h3>
             <p>...Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
@@ -28,7 +28,7 @@
       </div>
       <div class="col-sm-6 col-md-4">
         <div class="thumbnail">
-          <img src="http://placehold.it/250x250" alt="..." class="img-rounded">
+          <img src="img/projecthublogo.png" alt="..." class="img-rounded">
           <div class="caption">
             <h3>Thumbnail label</h3>
             <p>...Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
@@ -43,7 +43,7 @@
       </div>
       <div class="col-sm-6 col-md-4">
         <div class="thumbnail">
-          <img src="http://placehold.it/250x250" alt="..." class="img-rounded">
+          <img src="img/projecthublogo.png" alt="..." class="img-rounded">
           <div class="caption">
             <h3>Thumbnail label</h3>
             <p>...Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
