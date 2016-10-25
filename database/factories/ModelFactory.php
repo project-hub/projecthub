@@ -11,10 +11,22 @@
 |
 */
 
-$factory->define(App\User::class, function (Faker\Generator $faker) {
+$factory->define(App\Models\User::class, function (Faker\Generator $faker) {
     return [
-        'name' => $faker->name,
+        'first_name' => $faker->firstName($gender = null|'male'|'female'),
+        'last_name' => $faker->lastName,
+        'company_name' => $faker->company,
+        'address' => $faker->streetAddress,
+        'city' => $faker->city,
+        'state' => $faker->state,
+        'zip_code' => $faker->postcode,
         'email' => $faker->safeEmail,
+        'employer' => $faker->boolean($chanceOfGettingTrue = 50),
+        'content' => $faker->paragraphs(3, true),
+        'linkedIn' => $faker->url,
+        'github' => $faker->url,
+        'website' => $faker->url,
+        'image' => $faker->imageUrl($width = 640, $height = 480),
         'password' => bcrypt(str_random(10)),
         'remember_token' => str_random(10),
     ];
