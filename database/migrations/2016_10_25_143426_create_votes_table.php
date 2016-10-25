@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreatePostsTable extends Migration
+class CreateVotesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -12,14 +12,19 @@ class CreatePostsTable extends Migration
      */
     public function up()
     {
-        Schema::create('posts', function (Blueprint $table) {
+        Schema::create('votes', function (Blueprint $table) {
             $table->increments('id');
 
+            // $table->integer('created_by');
             $table->integer('created_by')->unsigned();
             $table->foreign('created_by')->references('id')->on('users');
 
-            $table->string('content');
-            $table->boolean('on_site');
+            $table->integer('score');
+
+            // $table->integer('vote_for');
+            $table->integer('vote_for')->unsigned();
+            $table->foreign('vote_for')->references('id')->on('users');
+
             $table->timestamps();
         });
     }
@@ -31,6 +36,6 @@ class CreatePostsTable extends Migration
      */
     public function down()
     {
-        Schema::drop('posts');
+        Schema::drop('votes');
     }
 }
