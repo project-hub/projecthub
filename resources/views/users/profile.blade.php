@@ -24,7 +24,7 @@
             	<h4>LinkedIn:</h4>
             	<h4>Github:</h4>
             	<h4>Other: </h4>
-                {{-- ------------------- --}}
+                {{-- - --}}
                 <!-- Button trigger modal -->
                 <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
                   Edit Profile
