@@ -5,9 +5,10 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Model;
 use App\Models\BaseModel;
 
-class Post extends BaseModel
+class Post extends Model
 {
 	protected $table = 'posts';
+	protected $fillable = ['created_by', 'title', 'content', 'on_site'];
 	
 	public function users()
 	{

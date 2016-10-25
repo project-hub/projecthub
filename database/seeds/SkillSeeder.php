@@ -11,19 +11,13 @@ class SkillSeeder extends Seeder
      */
     public function run()
     {
-    	$skills = [
-    		['name' => 'php'],
-    		['name' => 'html'],
-    		['name' => 'css'],
-    		['name' => 'laravel'],
-    		['name' => 'angular'],
-    		['name' => 'java'],
-    	];
-	    foreach($skills as $skill)
-	    {
-	    	$skill1 = new App\Models\Skill();
-	    	$skill1->name = $skill['name'];
-	    	$skill1->save();
-	    }
+    	DB::table('skills')->insert(array(
+             array('name'=>'PHP'),
+             array('name'=>'HTML'),
+             array('name'=>'CSS'),
+             array('name'=>'Laravel'),
+             array('name'=>'Java'),
+             array('name'=>'Angular'),
+          ));
     }
 }

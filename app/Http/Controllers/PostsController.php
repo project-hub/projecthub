@@ -68,7 +68,6 @@ class PostsController extends Controller
        
         $rules = [
             'title'   => 'required|min:5',
-            'url'     => 'required',
             'content' => 'required',
         ];
 
@@ -84,8 +83,8 @@ class PostsController extends Controller
         $post = new Post;
         $post->created_by = $request->user()->id;
         $post->title = $request->get('title');
-        $post->url = $request->get('url');
         $post->content = $request->get('content');
+        $post->on_site = $request->get('on_site');
         $post->save();
 
         $request->session()->flash('SUCCESS_MESSAGE', 'Post was saved successfully');
@@ -131,9 +130,9 @@ class PostsController extends Controller
     public function update(Request $request, $id)
     {
         $post = Post::findOrFail($id);
-        $post->title = $request->title;        
-        $post->url = $request->url;        
+        $post->title = $request->title;               
         $post->content = $request->content;
+        $post->on_site = $request->on_site;
         $post->save();
 
         $request->session()->flash('SUCCESS_MESSAGE', 'Post was saved successfully');
