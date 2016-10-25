@@ -1,5 +1,5 @@
 @extends('layouts.master')
-
+@section('title', 'User Profile')
 @section('content')
 <div class="container-fluid">
    <div class="row">
@@ -15,7 +15,7 @@
             </div>
             <div class="col-md-4">
 
-                <h3>Name: {{ $user->first_name }} </h3>
+                <h3>Name: </h3>
                 <h4>Rating: </h4>
                 <h4><a href="">link to users email</a></h4>
 
@@ -101,42 +101,6 @@
                   </div>
                 </div>
               </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-                {{-- ------------------- --}}
->>>>>>> 09f209214aa32665daf12c6f1e6f38c573a5f467
                 <!-- Button trigger modal -->
                 <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
                   Edit Profile
