@@ -1,5 +1,5 @@
 @extends('layouts.master')
-
+@section('title', 'All Users')
 @section('content')
 
 <div class="container-fluid">
@@ -14,7 +14,7 @@
     <div class="row">
             <div class="col-md-4">
                 <a href="">
-                    <img class="img-responsive" src="http://fillmurray.com/200/200" alt="">
+                    <img class="img-responsive" src="{{ $user->image }}" alt="">
                 </a>
             </div>
             <div class="col-md-8">
@@ -30,7 +30,7 @@
                 {{-- @endforeach --}}
                 <h5>Rating: </h5>
                 <p>{{ $user->content }}</p>
-                <a class="btn btn-primary" href="">View Profile <span class="glyphicon glyphicon-chevron-right"></span></a>
+                <a class="btn btn-primary" href="{{ action('UsersController@show', $user->id) }}">View Profile <span class="glyphicon glyphicon-chevron-right"></span></a>
             </div>
         </div>
         <hr>
