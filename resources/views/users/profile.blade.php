@@ -26,6 +26,7 @@
             	<h4>LinkedIn:</h4>
             	<h4>Github:</h4>
             	<h4>Other: </h4>
+
               <!-- Email Button trigger modal -->
               <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal1">
                <i class="fa fa-envelope" aria-hidden="true"></i> 
@@ -135,6 +136,7 @@
 
 
                 {{-- ------------------- --}}
+>>>>>>> 09f209214aa32665daf12c6f1e6f38c573a5f467
                 <!-- Button trigger modal -->
                 <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
                   Edit Profile
