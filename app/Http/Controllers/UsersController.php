@@ -8,7 +8,7 @@ use App\Models\User;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
-class UserController extends Controller 
+class UsersController extends Controller 
 {
 	/**
      * Display a listing of users.
@@ -30,7 +30,7 @@ class UserController extends Controller
      */
     public function show($id)
     {
-        $data['users'] = User::find($id);
+        $data['user'] = User::find($id);
         return view('users.profile')->with($data);
     }
 

@@ -14,7 +14,7 @@
                 </a>
             </div>
             <div class="col-md-4">
-                <h3>Name: </h3>
+                <h3>Name: {{ $user->first_name }} </h3>
                 <h4>Rating: </h4>
                 <h4><a href="">link to users email</a></h4>
                 <h4>Address:</h4>
