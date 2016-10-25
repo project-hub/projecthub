@@ -14,3 +14,4 @@ class UserSeeder extends Seeder
         factory(App\Models\User::class, 10)->create();
     }
 }
+
