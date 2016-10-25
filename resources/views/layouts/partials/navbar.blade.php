@@ -17,8 +17,8 @@
 	    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 	      <ul class="nav navbar-nav">
 	        <li class="active"><a href="#">Posts<span class="sr-only">(current)</span></a></li>
+	        <li><a href="{{ action('UsersController@index') }}">Users</a></li>
 	        <li><a href="#"> Profile</a></li>
-	        
 	      </ul>
 	      <form class="navbar-form navbar-right">
 	        <div class="form-group">
