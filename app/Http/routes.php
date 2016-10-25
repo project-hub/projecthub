@@ -34,7 +34,7 @@ Route::get('/posts/edit', function() {
 Route::get('/posts/create', function() {
 	return view('posts.create');
 });
-// Users Views
+// Users Views to test views
 Route::get('/users/login', function() {
 	return view('users.login');
 });
@@ -50,3 +50,6 @@ Route::get('/users/index', function() {
 Route::get('/users/profile', function() {
 	return view('users.profile');
 });
+// Route to UsersController for users.
+
+Route::resource('users', 'UsersController', ['except' => ['create', 'store']]);
