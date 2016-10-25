@@ -14,6 +14,7 @@
 				<p>Location</p>
 				<p class="pull-right">Created_at</p>
 			</div>
+			<p class="pull-left">Skill Skill Skill Skill</p>
 		</tr>
 	</div>
 	</div>
