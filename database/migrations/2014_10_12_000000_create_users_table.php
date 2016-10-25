@@ -22,7 +22,7 @@ class CreateUsersTable extends Migration
             $table->string('state');
             $table->integer('zip_code');
             $table->string('email')->unique();
-            $table->boolean('employer')->default(0);
+            $table->boolean('employer');
             $table->text('content');
             $table->string('linkedIn')->nullable();
             $table->string('github')->nullable();
