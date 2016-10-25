@@ -47,9 +47,7 @@ Route::get('/users/index', function() {
 	return view('users.index');
 });
 
-Route::get('/users/profile', function() {
-	return view('users.profile');
-});
 // Route to UsersController for users.
 
 Route::resource('users', 'UsersController', ['except' => ['create', 'store']]);
+Route::get('/users/profile', 'UsersController@show');
