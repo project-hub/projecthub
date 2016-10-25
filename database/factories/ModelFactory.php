@@ -31,3 +31,12 @@ $factory->define(App\Models\User::class, function (Faker\Generator $faker) {
         'remember_token' => str_random(10),
     ];
 });
+
+$factory->define(App\Models\Post::class, function (Faker\Generator $faker) {
+    return [
+    	'created_by' => App\Models\User::all()->random()->id,
+    	'title' => $faker->words(6, true),
+    	'content' => $faker->paragraphs(3, true),
+    	'on_site' => $faker->boolean($chanceOfGettingTrue = 50),
+    ];
+});
