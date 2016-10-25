@@ -22,7 +22,7 @@
 	      </ul>
 	      <form class="navbar-form navbar-right">
 	        <div class="form-group">
-	          <input type="text" class="form-control" placeholder="Search">
+	          <input type="text" class="form-control" name="search" placeholder="Search">
 	        </div>
 	        <button type="submit" class="btn btn-default">Submit</button>
 	      </form>
