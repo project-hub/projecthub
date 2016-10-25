@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers;
 
-Use App\Models\Vote;
 use Illuminate\Http\Request;
 use App\Models\Post;
 use App\Http\Requests;
