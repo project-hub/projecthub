@@ -18,34 +18,32 @@ Route::get('/', function () {
 
 //************************************** Posts Views **********************************************
 
+Route::resource('posts', 'PostsController');
+
 // will change as soon as postController is finished
-Route::get('/posts/show', function() {
-	return view('posts.show');
-});
+Route::get('/posts/show', 'PostsController@show');
+Route::get('/posts/index', 'PostsController@index');
 
-Route::get('/posts/index', function() {
-	return view('posts.index');
-});
 
-Route::get('/posts/edit', function() {
-	return view('posts.edit');
-});
+// Route::get('/posts/edit', function() {
+// 	return view('posts.edit');
+// });
 
-Route::get('/posts/create', function() {
-	return view('posts.create');
-});
-// Users Views to test views
-Route::get('/users/login', function() {
-	return view('users.login');
-});
+// Route::get('/posts/create', function() {
+// 	return view('posts.create');
+// });
+// // Users Views to test views
+// Route::get('/users/login', function() {
+// 	return view('users.login');
+// });
 
-Route::get('/users/create', function() {
-	return view('users.create');
-});
+// Route::get('/users/create', function() {
+// 	return view('users.create');
+// });
 
-Route::get('/users/index', function() {
-	return view('users.index');
-});
+// Route::get('/users/index', function() {
+// 	return view('users.index');
+// });
 
 // Route to UsersController for users.
 

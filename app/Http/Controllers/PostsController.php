@@ -102,8 +102,7 @@ class PostsController extends Controller
     public function show($id)
     {
         // $this->voteScore($id);
-        $post = Post::findOrFail($id);
-        $data = ['post' => $post];
+        $data['post'] = Post::find($id);
         return view('posts.show')->with($data);
     }
 
