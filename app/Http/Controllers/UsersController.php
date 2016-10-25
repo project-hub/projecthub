@@ -8,7 +8,7 @@ use App\Models\User;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
-class UserController extends Controller 
+class UsersController extends Controller 
 {
 	/**
      * Display a listing of users.
@@ -18,7 +18,6 @@ class UserController extends Controller
     public function index(Request $request)
     {
         $data['users'] = ($request->has('search')) ?  User::searchUsers($request->search)->paginate(10) : User::with('posts')->paginate(10);
-        dd($data);
         return view('users.index')->with($data);
     }
 
