@@ -48,12 +48,11 @@
                     <div class="modal-body">
                       {{-- -----body-- --}}
 
-
                     <div class="container">
                       <div class="row">
                           <div class="col-md-6 ">
                             <div class="well well-sm">
-                              <form class="form-horizontal" action="http://formspree.io/htrevino29@gmail.com" method="post">
+                              <form class="form-horizontal" action="http://formspree.io/{{$users->email}}" method="post">
                               <fieldset>
                                 <legend class="text-center">Email</legend>
                         
