@@ -26,6 +26,7 @@
 			</div>
 			<p class="pull-left">Skill Skill Skill Skill</p>
 		</tr>
+		
 	</div>
 	</div>
 </div>
