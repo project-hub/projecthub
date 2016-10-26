@@ -35,9 +35,9 @@ Route::resource('posts', 'PostsController');
 // 	return view('users.login');
 // });
 
-// Route::get('/users/create', function() {
-// 	return view('users.create');
-// });
+Route::get('/users/create', function() {
+	return view('users.create');
+});
 
 // Route::get('/users/index', function() {
 // 	return view('users.index');
