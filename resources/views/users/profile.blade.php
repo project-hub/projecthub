@@ -16,7 +16,9 @@
             <div class="col-md-4">
 
                 <h4>{{ $users->first_name . " " . $users->last_name }}</h4>
+                @if( $users->employer == 1)
                 <h4>{{ $users->company_name }}</h4>
+                @endif
                 <p>{{ $users->address }}</p>
                 <p>{{ $users->city . ", " . $users->state . "  " . $users->zip_code }}</p>
                 <h5>Member Since: {{ $users->created_at->diffForHumans() }}</h5>
@@ -25,8 +27,10 @@
             <div class="col-md-4">
               <br>
             	<h5>Linked In: <a href="{{ $users->linkedIn }}">{{ $users->linkedIn }}</a></h5>
+              @if($users->employer == 0)
             	<h5>Github: <a href="{{ $users->github }}">{{ $users->github }}</a></h5>
-            	<h5>Other Links: <a href="{{ $users->website }}">{{ $users->website }}</a></h5>
+              @endif
+            	<h5>Website: <a href="{{ $users->website }}">{{ $users->website }}</a></h5>
 
               <!-- Email Button trigger modal -->
               <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal1">
