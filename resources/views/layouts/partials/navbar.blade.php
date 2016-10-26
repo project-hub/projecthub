@@ -54,23 +54,33 @@
 								<li>
 									<div class="row">
 										<div class="col-md-2">
-											<h4>Login</h4>
-											<form class="form" role="form" method="post" action="login" accept-charset="UTF-8" id="login-nav">
+											<h5>Login</h5>
+											<form class="form" role="form" method="POST" action="{{ action('Auth\AuthController@postLogin')}}" accept-charset="UTF-8" id="login-nav">
+											{{ csrf_field() }}
+												@if($errors->has('email'))
+                									<div class="alert alert-danger">
+                    									{{ $errors->first('email') }}
+                									</div>
+       	 										@endif
 												<div class="form-group">
-													<label class="sr-only" for="exampleInputEmail2">Email address</label>
-													<input type="email" class="form-control" id="exampleInputEmail2" placeholder="Email address" required>
+													<label class="sr-only" name="email">Email address</label>
+													<input type="email" class="form-control" name="email" placeholder="Email Address" required>
 												</div>
+												@if($errors->has('password'))
+                									<div class="alert alert-danger">
+                    									{{ $errors->first('password') }}
+                									</div>
+       	 										@endif
 												<div class="form-group">
-													<label class="sr-only" for="exampleInputPassword2">Password</label>
-													<input type="password" class="form-control" id="exampleInputPassword2" placeholder="Password" required>
-													<div class="help-block text-right"><a href="">Forget the password ?</a></div>
+													<label class="sr-only" name="password">Password</label>
+													<input type="password" class="form-control" name="password" placeholder="Password" required>
 												</div>
 												<div class="form-group">
 													<button type="submit" class="btn btn-primary btn-block">Sign in</button>
 												</div>										
 											</form>
 											<div class="bottom">
-												<h4>New user?</h4>
+												<h5>New user?</h5>
 												<a href="{{ action('Auth\AuthController@getRegister') }}"><button type="submit" class="btn btn-primary btn-block">Register</button></a>
 											</div>
 										</div>

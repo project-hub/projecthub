@@ -40,27 +40,39 @@ class UsersController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    // public function update(Request $request, $id)
-    // {
-    //     $rules = [
-    //     'first_name' => 'required|min:3',
-    //     'last_name' => 'required'
-    //     'email' => 'required',
-    //     'password' => 'required',
-    //     'confirm_password' => 'required|same:password',
-    //     ];
-    //     // validates input for user edit form
-    //     $this->validate($request, $rules);
+    public function update(Request $request, $id)
+    {
+        $rules = [
+        'first_name' => 'required|min:3',
+        'last_name' => 'required',
+        'email' => 'required',
+        'password' => 'required',
+        'confirm_password' => 'required|same:password',
+        ];
+        // validates input for user edit form
+        $this->validate($request, $rules);
 
-    //     $user = User::find($id);
-    //     $user->name = $request->name;
-    //     $user->email = $request->email;
-    //     $user->password = Hash::make($request->password);
-    //     $user->save();
+        $user = User::find($id);
+        $user->first_name = $request->first_name;
+        $user->last_name = $request->last_name;
+        $user->company_name = $request->company_name;
+        $user->address = $request->address;
+        $user->city = $request->city;
+        $user->state = $request->state;
+        $user->zip_code = $request->zip_code;
+        $user->email = $request->email;
+        $user->employer = $request->employer;
+        $user->content = $request->content;
+        $user->linkedin = $request->linkedin;
+        $user->github = $request->github;
+        $user->website = $request->website;
+        $user->image = $request->image;
+        $user->password = Hash::make($request->password);
+        $user->save();
 
-    //     $request->session()->flash('SUCCESS_MESSAGE', 'User updated successfully');
-    //     return redirect()->action('UsersController@show', $user->id);
-    // }
+        $request->session()->flash('SUCCESS_MESSAGE', 'User updated successfully');
+        return redirect()->action('UsersController@show', $user->id);
+    }
 
 
 }
