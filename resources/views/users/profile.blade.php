@@ -103,73 +103,12 @@
               </div>
                 <!-- Button trigger modal -->
                 {{-- @if (Auth::id() == $users->id) --}}
-                <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
+                <button type="button" class="btn btn-primary btn-lg">
                   Edit Profile
                 </button>
                 {{-- @endif --}}
                 <!-- Modal -->
-                <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-                  <div class="modal-dialog" role="document">
-                    <div class="modal-content">
-                      <div class="modal-header">
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                        <h4 class="modal-title" id="myModalLabel">Edit Profile</h4>
-                      </div>
-                      <div class="modal-body">
-                        <form>
-                          <div class="form-group">
-                            <label>Name</label>
-                            <input type="Name" class="form-control" id="name" placeholder="Name">
-                          </div>
-                          <div class="form-group">
-                            <label>Address</label>
-                            <input type="Address" class="form-control" id="Address" placeholder="Address">
-                          </div>                             
-                          <div class="form-group">
-                            <label for="exampleInputEmail1">Email address</label>
-                            <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Email">
-                          </div>
-                          <div class="form-group">
-                            <label>Phone</label>  
-                            <input type="phone" class="form-control" id="Phone" placeholder="Phone number">                                
-                          </div>
-                          <div class="form-group">
-                            <label for="exampleInputPassword1">Password</label>
-                            <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
-                          </div>
-
-                          <div class="form-group">
-                            <label>linkedin</label>
-                            <input class="form-control" id="" placeholder="url">
-                          </div>
-                          <div class="form-group">
-                            <label>Github</label>
-                            <input  class="form-control" id="" placeholder="url">
-                          </div>
-                          <div class="form-group">
-                            <label>other url</label>
-                            <input class="form-control" id="" placeholder="url">
-                          </div>
-                          <div class="form-group">
-                            <label>Content</label>
-                            <textarea class="form-control" rows="3"></textarea> 
-                          </div>
-                          <div class="form-group">
-                            <label for="exampleInputFile">File upload</label>
-                            <input type="file" id="exampleInputFile">
-                            <p class="help-block">upload Resume.</p>
-                          </div>
-                         
-                            <button type="button" class="btn btn-primary">Save changes</button>
-                        </form>
-                        
-                      </div>
-                      <div class="modal-footer">
-                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                      </div>
-                    </div>
-                  </div>
-                </div>
+         
             </div>
         </div>
         <hr>

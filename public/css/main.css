@@ -2,11 +2,13 @@ body {
 	margin-top: 80px;
 	background-color: #F8F8F8
 
+
 }
 .footer {
 
 	background-color: #F8F8F8 ;
 	height: 50px;
+
 }
 .footercontent {
 	padding-top: 15px;
@@ -29,6 +31,7 @@ hr {
 	border-radius: 0px;
 	background-color:#02827E;
 	font-family: 'Lato', sans-serif;
+	
 }
 .thumbnail {
 	padding-top: 25px;
@@ -38,7 +41,9 @@ hr {
 }
 
 /*--------------------------------*/
-
+.container {
+	margin-bottom: 20px;
+}
 
 
 
