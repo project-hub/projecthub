@@ -36,7 +36,8 @@
         <hr>
     @endforeach
     </div>
-    <div class="text-center">{{ $users->render() }}{{-- {!! $posts->appends(['search' => Request::get('search')])->render() !!} --}}</div>
+    <div class="text-center">{!! $users->render() !!} </div>
+
 </div>
 
 
