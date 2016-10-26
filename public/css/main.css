@@ -24,14 +24,12 @@ hr {
     margin-bottom: 25px;
 }
 
-
-
 /*------------welcome page--------*/
 .welcomePic {
 	border-radius: 0px;
 	background-color:#02827E;
 	font-family: 'Lato', sans-serif;
-	
+
 }
 .thumbnail {
 	padding-top: 25px;
@@ -46,6 +44,52 @@ hr {
 }
 
 
+/*----------navbar-------------*/
+
+.navbar-default {
+    background-color: #F8F8F8;         /*bar color*/
+    border-color: #F8F8F8;
+    border-radius: 0;
+}
+
+/*.navbar-default .navbar-brand,
+.navbar-default .navbar-brand:hover,     **changes font color/background where our logo is.**
+.navbar-default .navbar-brand:focus {
+    background-color: orange;*/
+}
+
+.navbar-default .navbar-nav > li > a {
+    color: grey;                       /* text color*/
+}
+
+.navbar-default .navbar-nav > li > a:hover,
+.navbar-default .navbar-nav > li > a:focus {
+    background-color: #D1D1D1;         /*hover background*/
+}
+
+.navbar-default .navbar-nav > .active > a,
+.navbar-default .navbar-nav > .active > a:hover,
+.navbar-default .navbar-nav > .active > a:focus {
+    color: light grey;  /* hover text color*/
+    /*background-color: black;*/
+}
+
+.navbar-default .navbar-text {
+    color: black;
+}
+
+.navbar-default .navbar-toggle {
+    border-color: #F8F8F8;  /*hamburger border*/
+}
+
+.navbar-default .navbar-toggle:hover,
+.navbar-default .navbar-toggle:focus {
+    background-color: #D1D1D1; /*hamburger hover*/
+}
+
+.navbar-default .navbar-toggle .icon-bar {
+    background-color: grey;
+}
 
 
 

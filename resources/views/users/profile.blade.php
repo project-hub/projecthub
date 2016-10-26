@@ -107,7 +107,9 @@
                 {{-- @endif --}}
                 
                 <!-- Modal -->
+
                 <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+
                   <div class="modal-dialog" role="document">
                     <div class="modal-content">
                       <div class="modal-header">
@@ -115,6 +117,7 @@
                         <h4 class="modal-title" id="myModalLabel">Edit Profile</h4>
                       </div>
                       <div class="modal-body">
+
                         <form enctype="multipart/form-data" method="POST" action="{{ action('UsersController@update', $users->id) }}">
                         {!! csrf_field() !!}
                         {!! method_field('PUT') !!}
@@ -141,10 +144,12 @@
                           <div class="form-group">
                             <label for="exampleInputPassword1">Password</label>
                             <input type="password" class="form-control" id="exampleInputPassword1" name="password" placeholder="Password">
+
                           </div>
 
                           <div class="form-group">
                             <label>linkedin</label>
+
                             <input class="form-control" id="" name="linkedin" placeholder="url">
                           </div>
                           <div class="form-group">
@@ -166,6 +171,7 @@
                           </div>
                          
                             <button type="submit" class="btn btn-primary">Save changes</button>
+
                         </form>
                         
                       </div>
@@ -174,7 +180,10 @@
                       </div>
                     </div>
                   </div>
-                </div>
+
+                </div> 
+
+
             </div>
         </div>
         <hr>
