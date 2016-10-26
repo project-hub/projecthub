@@ -14,8 +14,6 @@
 Route::get('/', function () {
     return view('welcome');
 });
-
-
 //************************************** Posts Views **********************************************
 
 Route::resource('posts', 'PostsController');
@@ -46,6 +44,8 @@ Route::get('/posts/index', 'PostsController@index');
 // });
 
 // Route to UsersController for users.
-
 Route::resource('users', 'UsersController', ['except' => ['create', 'store']]);
-Route::get('/users/profile', 'UsersController@show');
+// Route::get('/users/profile', 'UsersController@show');
+
+// Route to PostsController for posts.
+Route::resource('posts', 'PostsController');

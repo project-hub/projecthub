@@ -10,22 +10,27 @@
  	<div class="row">
             <div class="col-md-4">
                 <a href="">
-                    <img class="img-responsive" src="http://www.fillmurray.com/200/200" alt="">
+                    <img class="img-responsive" src="{{ $users->image }}" alt="">
                 </a>
             </div>
             <div class="col-md-4">
 
-                <h3>Name: </h3>
-                <h4>Rating: </h4>
-                <h4><a href="">link to users email</a></h4>
-
-                <h4>Address:</h4>
-                <h4>Phone: </h4>
+                <h4>{{ $users->first_name . " " . $users->last_name }}</h4>
+                @if( $users->employer == 1)
+                <h4>{{ $users->company_name }}</h4>
+                @endif
+                <p>{{ $users->address }}</p>
+                <p>{{ $users->city . ", " . $users->state . "  " . $users->zip_code }}</p>
+                <h5>Member Since: {{ $users->created_at->diffForHumans() }}</h5>
+                <h5>Rating: </h5>
             </div>
             <div class="col-md-4">
-            	<h4>LinkedIn:</h4>
-            	<h4>Github:</h4>
-            	<h4>Other: </h4>
+              <br>
+            	<h5>Linked In: <a href="{{ $users->linkedIn }}">{{ $users->linkedIn }}</a></h5>
+              @if($users->employer == 0)
+            	<h5>Github: <a href="{{ $users->github }}">{{ $users->github }}</a></h5>
+              @endif
+            	<h5>Website: <a href="{{ $users->website }}">{{ $users->website }}</a></h5>
 
               <!-- Email Button trigger modal -->
               <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal1">
@@ -88,11 +93,7 @@
                           </div>
                       </div>
                     </div>
-
-
-                      
                       {{-- ---end modal body------ --}}
-                    
                     </div>
                     <div class="modal-footer">
                       <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
@@ -102,10 +103,11 @@
                 </div>
               </div>
                 <!-- Button trigger modal -->
+                {{-- @if (Auth::id() == $users->id) --}}
                 <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
                   Edit Profile
                 </button>
-
+                {{-- @endif --}}
                 <!-- Modal -->
                 <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
                   <div class="modal-dialog" role="document">
@@ -151,17 +153,8 @@
                           </div>
                           <div class="form-group">
                             <label>Content</label>
-                            <textarea class="form-control" rows="3"></textarea>
-                            
+                            <textarea class="form-control" rows="3"></textarea> 
                           </div>
-
-
-
-
-
-
-
-
                           <div class="form-group">
                             <label for="exampleInputFile">File upload</label>
                             <input type="file" id="exampleInputFile">
@@ -178,26 +171,15 @@
                     </div>
                   </div>
                 </div>
-
-
-                {{-- ------------------- --}}
-            	
             </div>
         </div>
         <hr>
     </div>
     <div class="col-lg-10">
     	<h3>Skills: </h3>
-    	<p>skills will go here</p>
-    	<h3>Content: </h3>	
-    	<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odit aliquam, placeat, laborum ratione eveniet eos ipsam ipsum quidem adipisci, possimus asperiores. Eius natus aut iusto, ipsa sint explicabo eum ipsam. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo vitae aut et rerum facilis vel odit quas facere autem unde ratione, possimus praesentium velit delectus aliquid placeat natus. Fugiat, ratione!</p>
-    	<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptates ullam itaque nisi, cupiditate blanditiis tenetur minima facilis ipsam facere aspernatur incidunt tempora minus quos adipisci eaque totam beatae, illum! Quam. Lorem ipsum dolor sit amet, consectetur adipisicing elit. In enim praesentium et ex quasi molestiae magnam reiciendis mollitia deserunt eum officiis consequatur accusantium, doloribus iste reprehenderit dolorum! Autem earum, aliquam.</p>
+      <span class="label label-default">skill badge</span>
+    	<h3>Summary: </h3>	
+    	<p>{{ $users->content }}</p>
     </div>
-
-
-
-
-
-
 </div>
 @stop
