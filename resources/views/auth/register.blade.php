@@ -18,6 +18,11 @@
 			    	<label for="email">Email:</label>
 			    	<input type="text" class="form-control" name="email" value="{{ old('email') }}">
 			  	</div>
+			  	@if($errors->has('password'))
+                <div class="alert alert-danger">
+                    {{ $errors->first('password') }}
+                </div>
+       	 		@endif
 				<div class="form-group">
 			    	<label for="password">Password:</label>
 			    	<input type="password" class="form-control" name="password">
@@ -26,7 +31,13 @@
 			    	<label for="password_confirmation">Password Confirmation:</label>
 			    	<input type="password" class="form-control" name="password_confirmation">
 			  	</div>
+			  	@if($errors->has('password_confirmation'))
+                <div class="alert alert-danger">
+                    {{ $errors->first('password_confirmation') }}
+                </div>
+        		@endif
 			  	<button type="submit" class="btn btn-primary">Register</button>
+			  	<br>
 			</form>
 		</div>
 	</div>
