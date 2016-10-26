@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use \Storage;
 use Illuminate\Http\Request;
 
 use App\Models\User;
@@ -32,6 +33,16 @@ class UsersController extends Controller
         $data['users'] = User::find($id);
         return view('users.profile')->with($data);
     }
+
+
+     protected function updateResume($name, $file)
+     {
+        Storage::put(
+            $name,
+            $file
+        );
+     }
+    
 
     /**
      * Update the specified resource in storage.
@@ -69,6 +80,12 @@ class UsersController extends Controller
         $user->image = $request->image;
         $user->password = Hash::make($request->password);
         $user->save();
+
+        // $user = User::find($id);   
+
+        if($request->file('resume')->isValid()){
+            self::updateResume('resume'.$user->id, file_get_contents($request->file('resume')->getRealPath()));
+        }
 
         $request->session()->flash('SUCCESS_MESSAGE', 'User updated successfully');
         return redirect()->action('UsersController@show', $user->id);
