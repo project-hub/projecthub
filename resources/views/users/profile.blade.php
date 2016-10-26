@@ -103,7 +103,7 @@
               </div>
                 <!-- Button trigger modal -->
                 {{-- @if (Auth::id() == $users->id) --}}
-                <button type="button" class="btn btn-primary btn-lg">
+                <button type="button" class="btn btn-primary btn-lg"><a href="">Edit Profile</a>
                   Edit Profile
                 </button>
                 {{-- @endif --}}

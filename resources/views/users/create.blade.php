@@ -1,22 +1,23 @@
 @extends('layouts.master')
-
+@section('title', 'Create/Update Profile')
 @section('content')
 			<h1>Create Profile:</h1>
 	<div class="row">
 		<div class="col-md-6">
-			<form method="POST" action="{{--{{ action('Auth\AuthController@postRegister') }} --}}">
-				{{-- {{ csrf_field() }} --}}
-				{{-- <div class="form-group">
+			<form class="form" method="POST" action="{{ action('PostsController@update', $post->id) }}">
+				{!! csrf_field() !!}
+				{!! method_field('PUT') !!}
+				<div class="form-group">
 			    	<label for="name">First Name:</label>
 			    	<input type="text" class="form-control" name="first_name">
 			  	</div>
 			  	<div class="form-group">
 			    	<label for="name">Last Name:</label>
 			    	<input type="text" class="form-control" name="last_name">
-			  	</div> --}}
+			  	</div>
 			  	<div class="checkbox">
     				<label>
-      				<input type="checkbox" name="employer"> Are you an employer?
+      				<input type="checkbox" name="employer" value="1"> I am an employer
     				</label>
   				</div>
 			  	<div class="form-group">
@@ -97,7 +98,7 @@
 			  	</div>
 			  	<div class="form-group">
 			  		<label for="linked_in">Linked in:</label>
-			  		<input type="url" class="form-control" name="linked_in"> 
+			  		<input type="url" class="form-control" name="linkedin"> 
 			  	</div>
 			  	<div class="form-group">
 					<label for="github">Github:</label>
@@ -105,11 +106,11 @@
 			  	</div>
 			  	<div class="form-group">
 					<label for="github">Other Links</label>
-					<input type="url" class="form-control" name="other_links">
+					<input type="url" class="form-control" name="website">
 			  	</div>
 		</div>
 		<div class="col-md-6">
-				{{-- <div class="form-group">
+				<div class="form-group">
 			    	<label for="email">Email:</label>
 			    	<input type="email" class="form-control" name="email">
 			  	</div>
@@ -120,14 +121,14 @@
 				<div class="form-group">
 			    	<label for="password_confirmation">Password Confirmation:</label>
 			    	<input type="password" class="form-control" name="password_confirmation">
-			  	</div> --}}
+			  	</div>
 			  	<div>
 			  		@include('layouts.partials.skills')
 			  	</div>
 			  	<br>
 			  	<div>
 			  		<label for="summary">Summary:</label>
-			  		<textarea name="content"class="form-control" rows="3"></textarea>
+			  		<textarea name="content" class="form-control" rows="3"></textarea>
 			  	</div>
 			  	<div class="form-group">
     				<label for="exampleInputFile">File input</label>
