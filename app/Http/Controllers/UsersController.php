@@ -29,7 +29,7 @@ class UsersController extends Controller
      */
     public function show($id)
     {
-        $data['user'] = User::find($id);
+        $data['users'] = User::find($id);
         return view('users.profile')->with($data);
     }
 
