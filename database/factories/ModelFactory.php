@@ -18,7 +18,7 @@ $factory->define(App\Models\User::class, function (Faker\Generator $faker) {
         'company_name' => $faker->company,
         'address' => $faker->streetAddress,
         'city' => $faker->city,
-        'state' => $faker->state,
+        'state' => $faker->stateAbbr,
         'zip_code' => $faker->postcode,
         'email' => $faker->safeEmail,
         'employer' => $faker->boolean($chanceOfGettingTrue = 50),

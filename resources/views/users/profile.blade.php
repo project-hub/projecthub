@@ -116,51 +116,57 @@
                         <h4 class="modal-title" id="myModalLabel">Edit Profile</h4>
                       </div>
                       <div class="modal-body">
-                        <form>
+                        <form enctype="multipart/form-data" method="POST" action="{{ action('UsersController@update', $users->id) }}">
+                        {!! csrf_field() !!}
+                        {!! method_field('PUT') !!}
                           <div class="form-group">
-                            <label>Name</label>
-                            <input type="Name" class="form-control" id="name" placeholder="Name">
+                            <label>First Name</label>
+                            <input type="Name" class="form-control" id="first_name" name="first_name" placeholder="Name">
+                          </div>
+                          <div class="form-group">
+                            <label>Last Name</label>
+                            <input type="Name" class="form-control" id="last_name" name="last_name" placeholder="Name">
                           </div>
                           <div class="form-group">
                             <label>Address</label>
-                            <input type="Address" class="form-control" id="Address" placeholder="Address">
+                            <input type="Address" class="form-control" id="Address" name="address" placeholder="Address">
                           </div>                             
                           <div class="form-group">
                             <label for="exampleInputEmail1">Email address</label>
-                            <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Email">
+                            <input type="email" class="form-control" id="exampleInputEmail1" name="email" placeholder="Email">
                           </div>
                           <div class="form-group">
                             <label>Phone</label>  
-                            <input type="phone" class="form-control" id="Phone" placeholder="Phone number">                                
+                            <input type="phone" class="form-control" id="Phone" name="phone" placeholder="Phone number">                                
                           </div>
                           <div class="form-group">
                             <label for="exampleInputPassword1">Password</label>
-                            <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                            <input type="password" class="form-control" id="exampleInputPassword1" name="password" placeholder="Password">
                           </div>
 
                           <div class="form-group">
                             <label>linkedin</label>
-                            <input class="form-control" id="" placeholder="url">
+                            <input class="form-control" id="" name="linkedin" placeholder="url">
                           </div>
                           <div class="form-group">
                             <label>Github</label>
-                            <input  class="form-control" id="" placeholder="url">
+                            <input  class="form-control" id="" name="github" placeholder="url">
                           </div>
                           <div class="form-group">
                             <label>other url</label>
-                            <input class="form-control" id="" placeholder="url">
+                            <input class="form-control" id="" name ="website" placeholder="url">
                           </div>
                           <div class="form-group">
                             <label>Content</label>
-                            <textarea class="form-control" rows="3"></textarea> 
+                            <textarea class="form-control" rows="3" name="content"></textarea> 
                           </div>
                           <div class="form-group">
                             <label for="exampleInputFile">File upload</label>
-                            <input type="file" id="exampleInputFile">
+                            <input type="file" id="exampleInputFile" name="resume">
                             <p class="help-block">upload Resume.</p>
                           </div>
                          
-                            <button type="button" class="btn btn-primary">Save changes</button>
+                            <button type="submit" class="btn btn-primary">Save changes</button>
                         </form>
                         
                       </div>
