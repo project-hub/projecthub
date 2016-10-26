@@ -48,6 +48,7 @@
 				<ul class="nav navbar-nav navbar-right">
 					<li class="dropdown">
 						<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Login/Register <span class="caret"></span></a>
+						<li><a href="{{ action('Auth\AuthController@getLogout') }}">Logout</a></li>
 						<ul class="dropdown-menu logindrop">
 							<div class="container">
 								<li>
@@ -70,7 +71,7 @@
 											</form>
 											<div class="bottom">
 												<h4>New user?</h4>
-												<a href="#"><button type="submit" class="btn btn-primary btn-block">Register</button></a>
+												<a href="{{ action('Auth\AuthController@getRegister') }}"><button type="submit" class="btn btn-primary btn-block">Register</button></a>
 											</div>
 										</div>
 									</div>

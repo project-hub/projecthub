@@ -1,19 +1,19 @@
 @extends('layouts.master')
 
 @section('content')
-			<h1>Sign Up:</h1>
+			<h1>Create Profile:</h1>
 	<div class="row">
 		<div class="col-md-6">
 			<form method="POST" action="{{--{{ action('Auth\AuthController@postRegister') }} --}}">
 				{{-- {{ csrf_field() }} --}}
-				<div class="form-group">
+				{{-- <div class="form-group">
 			    	<label for="name">First Name:</label>
 			    	<input type="text" class="form-control" name="first_name">
 			  	</div>
 			  	<div class="form-group">
 			    	<label for="name">Last Name:</label>
 			    	<input type="text" class="form-control" name="last_name">
-			  	</div>
+			  	</div> --}}
 			  	<div class="checkbox">
     				<label>
       				<input type="checkbox" name="employer"> Are you an employer?
@@ -109,7 +109,7 @@
 			  	</div>
 		</div>
 		<div class="col-md-6">
-				<div class="form-group">
+				{{-- <div class="form-group">
 			    	<label for="email">Email:</label>
 			    	<input type="email" class="form-control" name="email">
 			  	</div>
@@ -120,7 +120,7 @@
 				<div class="form-group">
 			    	<label for="password_confirmation">Password Confirmation:</label>
 			    	<input type="password" class="form-control" name="password_confirmation">
-			  	</div>
+			  	</div> --}}
 			  	<div>
 			  		@include('layouts.partials.skills')
 			  	</div>
@@ -136,7 +136,7 @@
   				</div>
 			  	<br>
 			  	<div>
-			  		<button type="submit" class="btn btn-primary">Register</button>	
+			  		<button type="submit" class="btn btn-primary">Save</button>	
 			  		<button type="submit" class="btn">Cancel</button>	
 			  	</div>
 			  	<br>

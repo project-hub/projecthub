@@ -11,17 +11,33 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route to UsersController for users.
+Route::resource('users', 'UsersController', ['except' => ['create', 'store']]);
+// Route::get('/users/profile', 'UsersController@show');
+
+// Route to PostsController for posts.
+Route::resource('posts', 'PostsController');
+
+// Route to AuthController.
+// Authentication routes...
+Route::get('auth/login', 'Auth\AuthController@getLogin');
+Route::post('auth/login', 'Auth\AuthController@postLogin');
+Route::get('auth/logout', 'Auth\AuthController@getLogout');
+
+// Registration routes...
+Route::get('auth/register', 'Auth\AuthController@getRegister');
+Route::post('auth/register', 'Auth\AuthController@postRegister');
 //************************************** Posts Views **********************************************
 
-Route::resource('posts', 'PostsController');
+// Route::resource('posts', 'PostsController');
 
 // will change as soon as postController is finished
 // Route::get('/posts/show', 'PostsController@show');
 // Route::get('/posts/index', 'PostsController@index');
 
+Route::get('/', function () {
+    return view('welcome');
+});
 
 // Route::get('/posts/edit', function() {
 // 	return view('posts.edit');
@@ -35,17 +51,11 @@ Route::resource('posts', 'PostsController');
 // 	return view('users.login');
 // });
 
-// Route::get('/users/create', function() {
-// 	return view('users.create');
-// });
+Route::get('/users/create', function() {
+	return view('users.create');
+});
 
 // Route::get('/users/index', function() {
 // 	return view('users.index');
 // });
 
-// Route to UsersController for users.
-Route::resource('users', 'UsersController', ['except' => ['create', 'store']]);
-// Route::get('/users/profile', 'UsersController@show');
-
-// Route to PostsController for posts.
-Route::resource('posts', 'PostsController');
