@@ -7,8 +7,12 @@
 			<form method="POST" action="{{ action('Auth\AuthController@postRegister') }}">
 				{{ csrf_field() }}
 				<div class="form-group">
-			    	<label for="name">Name:</label>
-			    	<input type="text" class="form-control" name="name" value="{{ old('name') }}">
+			    	<label for="name">First Name:</label>
+			    	<input type="text" class="form-control" name="first_name" value="{{ old('name') }}">
+			  	</div>
+			  	<div class="form-group">
+			    	<label for="name">Last Name:</label>
+			    	<input type="text" class="form-control" name="last_name" value="{{ old('name') }}">
 			  	</div>
 				<div class="form-group">
 			    	<label for="email">Email:</label>

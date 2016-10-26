@@ -70,7 +70,7 @@
 											</form>
 											<div class="bottom">
 												<h4>New user?</h4>
-												<a href="#"><button type="submit" class="btn btn-primary btn-block">Register</button></a>
+												<a href="{{ action('Auth\AuthController@getRegister') }}"><button type="submit" class="btn btn-primary btn-block">Register</button></a>
 											</div>
 										</div>
 									</div>
