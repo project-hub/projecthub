@@ -103,10 +103,11 @@
               </div>
                 <!-- Button trigger modal -->
                 {{-- @if (Auth::id() == $users->id) --}}
-                <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
+                <button type="button" class="btn btn-primary btn-lg">
                   Edit Profile
                 </button>
                 {{-- @endif --}}
+                
                 <!-- Modal -->
                 <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
                   <div class="modal-dialog" role="document">
