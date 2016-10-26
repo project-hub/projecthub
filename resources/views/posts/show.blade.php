@@ -10,9 +10,19 @@
 			<div class="col-sm-12 text-center">
 			<img class="pull-left" src="http://fillmurray.com/150/100" />
 				<p>Employer Name</p>
+				<p>Title</p>
+				<p>{{ $post->title }}</p>
 				<p>Project Description</p>
-				<p>Location</p>
-				<p class="pull-right">Created_at</p>
+				<p>{{ $post->content }}</p>
+
+				@if($post->on_site == 1)
+					<p>On Site</p>
+				@elseif($post->on_site == 0)
+					<p>Off site</p>
+				@endif
+
+
+				<p class="pull-right">{{ $post->created_at->diffForHumans() }}</p>
 			</div>
 			<p class="pull-left">Skill Skill Skill Skill</p>
 		</tr>

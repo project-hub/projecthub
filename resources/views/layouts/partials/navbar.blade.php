@@ -17,7 +17,7 @@
 			<!-- Collect the nav links, forms, and other content for toggling -->
 			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 				<ul class="nav navbar-nav">
-					<li class="active"><a href="#">Posts<span class="sr-only">(current)</span></a></li>
+					<li class="active"><a href="{{ action('PostsController@index') }}">Posts<span class="sr-only">(current)</span></a></li>
 					<li><a href="{{ action('UsersController@index') }}"> Users</a></li>
 					<li><a href="#"> Profile</a></li>
 					

@@ -21,8 +21,8 @@ Route::get('/', function () {
 Route::resource('posts', 'PostsController');
 
 // will change as soon as postController is finished
-Route::get('/posts/show', 'PostsController@show');
-Route::get('/posts/index', 'PostsController@index');
+// Route::get('/posts/show', 'PostsController@show');
+// Route::get('/posts/index', 'PostsController@index');
 
 
 // Route::get('/posts/edit', function() {
