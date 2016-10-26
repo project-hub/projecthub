@@ -14,8 +14,6 @@
 Route::get('/', function () {
     return view('welcome');
 });
-
-
 //************************************** Posts Views **********************************************
 
 // will change as soon as postController is finished
@@ -48,6 +46,8 @@ Route::get('/users/index', function() {
 });
 
 // Route to UsersController for users.
-
 Route::resource('users', 'UsersController', ['except' => ['create', 'store']]);
-Route::get('/users/profile', 'UsersController@show');
+// Route::get('/users/profile', 'UsersController@show');
+
+// Route to PostsController for posts.
+Route::resource('posts', 'PostsController');
