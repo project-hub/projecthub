@@ -16,8 +16,9 @@ class PostsController extends Controller
     {
         $this->middleware('auth', ['except' => ['index', 'show']]);
     }
+    
     /**
-     * Display a listing of the resource.
+     * Display a listing of the posts.
      *
      * @return \Illuminate\Http\Response
      */
@@ -160,4 +161,5 @@ class PostsController extends Controller
         $data['results'] = Post::search($term)->paginate(5);
         return view('posts.results')->with($data);
     }
+
 }
