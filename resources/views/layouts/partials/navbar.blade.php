@@ -8,7 +8,7 @@
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 				</button>
-				<a class="navbar-brand" href="#"><img style="max-height:100px; margin-top: -40px;"
+				<a class="navbar-brand" href="/"><img style="max-height:100px; margin-top: -40px;"
 					src="/img/projecthublogo.png"></a>
 				</a>
 			</div>
@@ -17,10 +17,11 @@
 			<!-- Collect the nav links, forms, and other content for toggling -->
 			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 				<ul class="nav navbar-nav">
-					<li class="active"><a href="#">Posts<span class="sr-only">(current)</span></a></li>
-					<li><a href="{{ action('UsersController@index') }}"> Users</a></li>
+					<li><a href="{{ action('PostsController@index') }}">Posts</a></li>
+					<li><a href="{{ action('UsersController@index') }}">Users</a></li>
+					{{-- @if(Auth::check()) --}}
 					<li><a href="#"> Profile</a></li>
-					
+					{{-- @endif --}}
 				</ul>
 				<form class="navbar-form navbar-right">
 					<div class="form-group">
