@@ -17,7 +17,7 @@ class UsersController extends Controller
      */
     public function index(Request $request)
     {
-        $data['users'] = ($request->has('search')) ?  User::searchUsers($request->search)->paginate(10) : User::with('posts')->paginate(10);
+        $data['users'] = ($request->has('search')) ?  User::searchUsers($request->search)->paginate(10) : User::with('posts')->paginate(3);
         return view('users.index')->with($data);
     }
 
