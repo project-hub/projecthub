@@ -1,5 +1,5 @@
 <footer>
-    <div class="footer navbar-fixed-bottom">
+    <div class="footer">
         <div class="container">
             <div class="row">
                 <div class="col-md-4 footercontent">
@@ -19,12 +19,10 @@
                     <ul class="list-inline quicklinks">
                         <li>
                          {{-- ------------- --}}
-     
-
       <!-- Email Button trigger modal -->
-              <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal1">
-               <i class="fa fa-envelope" aria-hidden="true"></i> 
-              </button>
+              <a data-toggle="modal" data-target="#myModal1">
+               Contact Us
+              <a/>
               <!-- Modal -->
               <div class="modal fade" id="myModal1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
                 <div class="modal-dialog" role="document">
@@ -56,7 +54,7 @@
                         
                                 <!-- Email input-->
                                 <div class="form-group">
-                                  <label class="col-md-3 control-label" for="email">Your E-mail</label>
+                                  <label class="col-md-3 control-label" for="email">Contact E-mail</label>
                                   <div class="col-md-9">
                                     <input id="email" name="email" type="text" placeholder="Your email" class="form-control">
                                   </div>
@@ -64,7 +62,7 @@
                         
                                 <!-- Message body -->
                                 <div class="form-group">
-                                  <label class="col-md-3 control-label" for="message">Your message</label>
+                                  <label class="col-md-3 control-label" for="message"> Message</label>
                                   <div class="col-md-9">
                                     <textarea class="form-control" id="message" name="message" placeholder="Please enter your message here..." rows="5"></textarea>
                                   </div>
@@ -91,6 +89,35 @@
                   </div>
                 </div>
               </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
