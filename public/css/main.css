@@ -1,17 +1,35 @@
 body {
-	margin-top: 60px;
+	margin-top: 80px;
+	background-color: #F8F8F8
+
 }
 .footer {
 
-	background-color: #EEEEEE ;
+	background-color: #F8F8F8 ;
 	height: 50px;
 }
 .footercontent {
 	padding-top: 15px;
 }
 
+hr {
+    border: none;
+    height: 2px;
+    /* Set the hr color */
+    color: lightgrey; /* old IE */
+    background-color: lightgrey; /* Modern Browsers */
+    margin-top: 25px;
+    margin-bottom: 25px;
+}
+
+
 
 /*------------welcome page--------*/
+.welcomePic {
+	border-radius: 0px;
+	background-color:#02827E;
+	font-family: 'Lato', sans-serif;
+}
 .thumbnail {
 	padding-top: 25px;
 }
@@ -25,6 +43,41 @@ body {
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*-------------------/* gets rid of rounded corners on bootstrap --------------------------*/
+/*\*/	.btn {border-radius: 0;}                                                        /*\*/
+/*\*/                                                                                   /*\*/
+/*\*/	* {                                                                             /*\*/
+/*\*/	  border-radius: 0 !important;                                                  /*\*/
+/*\*/	  -moz-border-radius: 0 !important;                                             /*\*/
+/*\*/	  }                                                                             /*\*/
+/*-----------------------------------------------------------------------------------------*/
 
 
 
