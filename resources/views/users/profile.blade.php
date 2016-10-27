@@ -281,8 +281,6 @@
     </div>
     <div class="modal-body">
         {{-- -----modal body------- --}}
-        
-<<<<<<< HEAD
 
                            <div class="form-group">
                             <label>Title</label>
@@ -293,7 +291,7 @@
                             <label>Description</label>
                             <textarea class="form-control" rows="3" name="project description"></textarea> 
                           </div>
-=======
+
         <form method="POST" action="{{ action('PostsController@store') }}">
             {!! csrf_field() !!}
             {{-- {!! method_field('PUT') !!} --}}
@@ -316,7 +314,6 @@
 
 
 
->>>>>>> 14528153f508ce182d3c6bbf15cc1361574f704d
         {{-- -----modal body------- --}}
     </div>
     <div class="modal-footer">
@@ -325,7 +322,6 @@
 </div>
 </div>
 </div>
-<<<<<<< HEAD
                 {{-- -------------------------------------------- --}}
             </div>
         </div>
@@ -337,7 +333,6 @@
     	<h3>Summary: </h3>	
     	<p>{{ $users->content }}</p>
     </div>
-=======
 
 
 
@@ -358,6 +353,5 @@
    <h3>Summary: </h3>	
    <p>{{ $users->content }}</p>
 </div>
->>>>>>> 14528153f508ce182d3c6bbf15cc1361574f704d
 </div>
 @stop
