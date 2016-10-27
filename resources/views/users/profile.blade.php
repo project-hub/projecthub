@@ -230,10 +230,6 @@
                                 <input type="email" class="form-control" id="exampleInputEmail1" name="email" value="{{ empty(old('email')) ? $users->email : old('email') }}" placeholder="Email">
                               </div>
                               <div class="form-group">
-                                <label for="exampleInputPassword1">Password</label>
-                                <input type="password" class="form-control" id="exampleInputPassword1" name="password" placeholder="Password">
-                              </div>
-                              <div class="form-group">
                                 <label>Linked In</label>
                                 <input class="form-control" type="url" name="linkedin" value="{{ empty(old('linkedin')) ? $users->linkedin : old('linkedin') }}" placeholder="LinkedIn">
                               </div>

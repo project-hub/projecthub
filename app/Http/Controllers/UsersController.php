@@ -54,11 +54,7 @@ class UsersController extends Controller
     public function update(Request $request, $id)
     {
         $rules = [
-        'first_name' => 'required|min:3',
-        'last_name' => 'required',
         'email' => 'required',
-        'password' => 'required',
-        'confirm_password' => 'required|same:password',
         ];
         // validates input for user edit form
         $this->validate($request, $rules);
@@ -77,8 +73,6 @@ class UsersController extends Controller
         $user->linkedin = $request->linkedin;
         $user->github = $request->github;
         $user->website = $request->website;
-        $user->image = $request->image;
-        $user->password = Hash::make($request->password);
         $user->save();
 
         // $user = User::find($id);   
