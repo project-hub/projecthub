@@ -3,6 +3,7 @@ body {
 	background-color: #F8F8F8
 
 
+
 }
 .footer {
 
@@ -25,17 +26,37 @@ hr {
 }
 
 /*------------welcome page--------*/
-.welcomePic {
-	border-radius: 0px;
-	background-color:#02827E;
-	font-family: 'Lato', sans-serif;
 
 }
 .thumbnail {
 	padding-top: 25px;
+    max-height: 350px;
+    max-width: 600px;
 }
 .logindrop {
 	width: 200px;
+}
+.header {
+    color: #373F51;
+    font-size: 130px;
+    margin-left: -10px;
+    font-family: 'Lato', sans-serif;
+}
+.welcomeSubHeader {
+    font-family: 'Lato', sans-serif;
+    font-size: 25px;
+}
+.welcomeText {
+    color: #5B6772;
+    font-family: 'Lato', sans-serif;
+    font-weight: 800;
+    font-size: 17px;
+}
+.developersProjects {
+    font-family: 'Lato', sans-serif;
+    font-size: 25px;
+   
+
 }
 
 /*--------------------------------*/
