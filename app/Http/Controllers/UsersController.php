@@ -20,6 +20,7 @@ class UsersController extends Controller
     {
         $data['users'] = ($request->has('search')) ?  User::searchUsers($request->search)->paginate(10) : User::with('posts')->paginate(10);
         $data['skills'] = Skill::all();
+        // dd($data['skills']);
         return view('users.index')->with($data);
     }
 
