@@ -6,7 +6,7 @@
 	
 {{--  ******************** SKILLS SELECT TABLE *************************** --}}
 <div>	
-	@include('layouts.partials.skills')
+	@include('layouts.partials.skills', ['skills'=>$skills])
 </div>
 {{--  ******************** END SKILLS SELECT TABLE *************************** --}}
 

@@ -18,7 +18,6 @@ Route::resource('users', 'UsersController', ['except' => ['create', 'store']]);
 Route::resource('posts', 'PostsController');
 // Route to SkillsController for skills.
 Route::resource('skills', 'SkillsController');
-
 // Route to AuthController.
 // Authentication routes...
 Route::get('auth/login', 'Auth\AuthController@getLogin');
