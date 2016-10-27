@@ -15,7 +15,7 @@
 			    	<label for="name">Last Name:</label>
 			    	<input type="text" class="form-control" name="last_name">
 			  	</div>
-			  	<div class="checkbox">
+			  	<div class="checkbox form-group">
     				<label>
       				<input type="checkbox" name="employer" value="1"> I am an employer
     				</label>
