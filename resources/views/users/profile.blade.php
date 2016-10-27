@@ -9,12 +9,15 @@
 </div>
 <div class="row">
     <div class="col-md-4">
-        <a href="">
-            <img class="img-responsive" src="{{ $users->image }}" alt="">
-        </a>
+        <img class="img-responsive" src="{{ $users->image }}" alt="">
+    <form method="POST" action="">
+        <label for="exampleInputFile">Update Profile Image</label>
+        <input type="file" id="exampleInputFile" name="image">
+        <br>
+        <button type="submit" class="btn btn-primary btn-xs">Save</button>
+    </form>                       
     </div>
     <div class="col-md-4">
-
         <h4>{{ $users->first_name . " " . $users->last_name }}</h4>
         @if( $users->employer == 1)
         <h4>{{ $users->company_name }}</h4>
@@ -31,7 +34,15 @@
       <h5>Github: <a href="{{ $users->github }}">{{ $users->github }}</a></h5>
       @endif
       <h5>Website: <a href="{{ $users->website }}">{{ $users->website }}</a></h5>
-
+      @if($users->employer == 0)
+      <form method="POST" action="">
+        <label for="exampleInputFile">Upload Resume</label>
+        <input type="file" id="exampleInputFile" name="resume">
+        <br>
+        <button type="submit" class="btn btn-primary btn-xs">Save</button>
+      </form> 
+      <br>
+      @endif
       <!-- Email Button trigger modal -->
       <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal1">
          <i class="fa fa-envelope" aria-hidden="true"></i> 
@@ -235,18 +246,6 @@
                               <div class="form-group">
                                 <label>Content</label>
                                 <textarea class="form-control" rows="3" type="text" name="content">{{ empty(old('content')) ? $users->content : old('content') }}</textarea> 
-                              </div>
-                              <div class="form-group row">
-                                <div class="col-sm-4">
-                                  <label for="exampleInputFile">Resume Upload</label>
-                                  <input type="file" id="exampleInputFile" name="resume">
-                                  <p class="help-block">Upload Resume.</p>
-                                </div>
-                                <div class="col-sm-4">
-                                  <label for="exampleInputFile">Profile Image Upload</label>
-                                  <input type="file" id="exampleInputFile" name="resume">
-                                  <p class="help-block">Upload Image.</p>
-                                </div>
                               </div>
                               <button type="submit" class="btn btn-primary">Save changes</button>
                             </form>
