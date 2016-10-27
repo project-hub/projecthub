@@ -12,8 +12,6 @@
 					src="/img/projecthublogo.png"></a>
 				</a>
 			</div>
-
-
 			<!-- Collect the nav links, forms, and other content for toggling -->
 			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 				<ul class="nav navbar-nav">
@@ -21,12 +19,10 @@
                     <li><a href="{{ action('UsersController@show', Auth::id()) }}"><span class="glyphicon glyphicon-user" aria-hidden="true"></span> Welcome, {{ Auth::user()->first_name }}!</a></li>
 					<li><a href="{{ action('Auth\AuthController@getLogout') }}">Logout</a></li>
                     @endif
-					<li><a href="{{ action('PostsController@index') }}">Posts</a></li>
-					<li><a href="{{ action('UsersController@index') }}">Users</a></li>
-					{{-- @if(Auth::check()) --}}
-
-					<li><a href="#"> Profile</a></li>
+          			{{-- @if (Auth::user()->employer == 0) --}}
+					<li><a href="{{ action('PostsController@index') }}">Job Posts</a></li>
 					{{-- @endif --}}
+					<li><a href="{{ action('UsersController@index') }}">Users</a></li>
 				</ul>
 				<form class="navbar-form navbar-right">
 					<div class="form-group">
