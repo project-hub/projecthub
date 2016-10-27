@@ -182,6 +182,59 @@
                   </div>
 
                 </div> 
+                {{-- ------------------create post modal------------------- --}}
+
+<!-- Button trigger modal -->
+<button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModalCreate">
+  Create Post
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="myModalCreate" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Create Post</h4>
+      </div>
+      <div class="modal-body">
+        {{-- -----modal body------- --}}
+        
+
+                           <div class="form-group">
+                            <label>Title</label>
+                            <input  class="form-control" id="" name="github" placeholder="Title">
+                          </div>
+                        
+                          <div class="form-group">
+                            <label>Description</label>
+                            <textarea class="form-control" rows="3" name="project description"></textarea> 
+                          </div>
+
+
+
+
+
+
+
+
+        {{-- -----modal body------- --}}
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Post</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+                {{-- -------------------------------------------- --}}
 
 
             </div>
