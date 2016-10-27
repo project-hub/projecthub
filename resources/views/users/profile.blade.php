@@ -234,7 +234,7 @@
                                 <input type="password" class="form-control" id="exampleInputPassword1" name="password" placeholder="Password">
                               </div>
                               <div class="form-group">
-                                <label>Linkedin</label>
+                                <label>Linked In</label>
                                 <input class="form-control" type="url" name="linkedin" value="{{ empty(old('linkedin')) ? $users->linkedin : old('linkedin') }}" placeholder="LinkedIn">
                               </div>
                               <div class="form-group">
