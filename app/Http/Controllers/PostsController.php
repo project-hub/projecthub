@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Post;
+use App\Models\Skill;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Log;
@@ -24,27 +25,9 @@ class PostsController extends Controller
      */
     public function index()
     {
-        // Log::info('This is some useful information.');
-        // Log::debug('Here is some information that will help me find an error');
-        // Log::warning('Something could be going wrong.');
-        // Log::error('Something is really going wrong.');
-        // dd($posts->user->email);
-        // $data['posts'] = Post::find(9);
-    
-        // $data['posts'] = Post::with('user')->orderBy('created_at', 'desc')->paginate(5);
         $data['posts'] = Post::with('users')->orderBy('created_at', 'desc')->paginate(5);
-        // DB::table('posts')->orderBy('created_at', 'desc')->get();
-
+       
         return view('posts.index')->with($data);
-        
-
-        // all posts that have 'lorem' in title
-        // SELECT * FROM POSTS
-            // WHERE title LIKE '%lorem%'
-        // $posts = Post::where('column name', 'comparison', 'value');
-        // $posts = Post::where('title', 'LIKE', '%lorem%')
-        //                 ->orwhere('content', 'LIKE', '%lorem%')->get();
-        // dd($posts);
 
     }
 

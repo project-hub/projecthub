@@ -11,7 +11,6 @@
 {{--  ******************** END SKILLS SELECT TABLE *************************** --}}
 
 
-
 	<h1>Posts</h1>
 	<div class='container'>
 
