@@ -35,7 +35,9 @@
       @endif
       <h5>Website: <a href="{{ $users->website }}">{{ $users->website }}</a></h5>
       @if($users->employer == 0)
-      <form method="POST" action="">
+      <form enctype="multipart/form-data" method="POST" action="{{ action('UsersController@update', $users->id) }}">
+        {!! csrf_field() !!}
+        {!! method_field('PUT') !!}
         <label for="exampleInputFile">Upload Resume</label>
         <input type="file" id="exampleInputFile" name="resume">
         <br>
