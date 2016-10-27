@@ -17,7 +17,7 @@
 
 	@foreach($posts as $post)
 
-		<div class="row table well">
+		<div class="row">
 			<tr>
 				<div class="col-sm-12 text-center">
 				<img class="pull-left" src="http://fillmurray.com/150/100" />
