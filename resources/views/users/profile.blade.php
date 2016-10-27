@@ -234,7 +234,7 @@
                               </div>
                               <div class="form-group">
                                 <label>Content</label>
-                                <textarea class="form-control" rows="3" type="text" name="content" value="{{ empty(old('content')) ? $users->content : old('content') }}"></textarea> 
+                                <textarea class="form-control" rows="3" type="text" name="content">{{ empty(old('content')) ? $users->content : old('content') }}</textarea> 
                               </div>
                               <div class="form-group row">
                                 <div class="col-sm-4">
