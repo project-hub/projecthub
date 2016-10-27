@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use \Storage;
 use Illuminate\Http\Request;
-
 use App\Models\Skill;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
@@ -20,6 +19,6 @@ class PostsController extends Controller
     public function show($id)
     {
         $data['skills'] = Skill::find($id);
+
         return view('posts.index')->with($data);
-        dd($skills);
     }
