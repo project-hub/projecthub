@@ -26,7 +26,7 @@ class PostsController extends Controller
     public function index()
     {
         $data['posts'] = Post::with('users')->orderBy('created_at', 'desc')->paginate(5);
-       
+        $data['skills'] = Skill::all();
         return view('posts.index')->with($data);
 
     }
@@ -144,5 +144,16 @@ class PostsController extends Controller
         $data['results'] = Post::search($term)->paginate(5);
         return view('posts.results')->with($data);
     }
+
+// ******************* POST SKILLS ************************************
+
+    public function post_index()
+    {      
+        $data['skills'] = Skill::orderBy('name');
+
+        return view('layouts.partials.skills')->with($data);
+    }
+
+
 
 }
