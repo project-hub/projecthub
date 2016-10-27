@@ -13,10 +13,11 @@
 
 // Route to UsersController for users.
 Route::resource('users', 'UsersController', ['except' => ['create', 'store']]);
-// Route::get('/users/profile', 'UsersController@show');
 
 // Route to PostsController for posts.
 Route::resource('posts', 'PostsController');
+// Route to SkillsController for skills.
+Route::resource('skills', 'SkillsController');
 
 // Route to AuthController.
 // Authentication routes...
@@ -27,36 +28,8 @@ Route::get('auth/logout', 'Auth\AuthController@getLogout');
 // Registration routes...
 Route::get('auth/register', 'Auth\AuthController@getRegister');
 Route::post('auth/register', 'Auth\AuthController@postRegister');
-//************************************** Posts Views **********************************************
 
-// Route::resource('posts', 'PostsController');
-
-// will change as soon as postController is finished
-// Route::get('/posts/show', 'PostsController@show');
-// Route::get('/posts/index', 'PostsController@index');
-
+//************************************** Home Page **********************************************
 Route::get('/', function () {
     return view('welcome');
 });
-
-// Route::get('/posts/edit', function() {
-// 	return view('posts.edit');
-// });
-
-// Route::get('/posts/create', function() {
-// 	return view('posts.create');
-// });
-// // Users Views to test views
-// Route::get('/users/login', function() {
-// 	return view('users.login');
-// });
-
-// Route::get('/users/create', function() {
-// 	return view('users.create');
-// });
-
-
-// Route::get('/users/index', function() {
-// 	return view('users.index');
-// });
-
