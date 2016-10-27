@@ -30,6 +30,9 @@
 				</div>
 			</tr>
 		</div>
+
+		
+
 	
 	@endforeach
 	{!! $posts->render() !!}
