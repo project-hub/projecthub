@@ -147,12 +147,12 @@ class PostsController extends Controller
 
 // ******************* POST SKILLS ************************************
 
-    public function post_index()
-    {      
-        $data['skills'] = Skill::orderBy('name');
+    // public function post_index()
+    // {      
+    //     $data['skills'] = Skill::orderBy('name');
 
-        return view('layouts.partials.skills')->with($data);
-    }
+    //     return view('layouts.partials.skills')->with($data);
+    // }
 
 
 

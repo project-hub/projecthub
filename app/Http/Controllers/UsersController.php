@@ -4,8 +4,8 @@ namespace App\Http\Controllers;
 
 use \Storage;
 use Illuminate\Http\Request;
-
 use App\Models\User;
+use App\Models\Skill;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
@@ -19,6 +19,7 @@ class UsersController extends Controller
     public function index(Request $request)
     {
         $data['users'] = ($request->has('search')) ?  User::searchUsers($request->search)->paginate(10) : User::with('posts')->paginate(10);
+        $data['skills'] = Skill::all();
         return view('users.index')->with($data);
     }
 
@@ -31,6 +32,8 @@ class UsersController extends Controller
     public function show($id)
     {
         $data['users'] = User::find($id);
+        $data['skills'] = Skill::all();
+
         return view('users.profile')->with($data);
     }
 
@@ -84,6 +87,15 @@ class UsersController extends Controller
         $request->session()->flash('SUCCESS_MESSAGE', 'User updated successfully');
         return redirect()->action('UsersController@show', $user->id);
     }
+
+    // ******************* USER SKILLS ************************************
+
+    // public function post_index()
+    // {      
+    //     $data['skills'] = Skill::orderBy('name');
+
+    //     return view('layouts.partials.skills')->with($data);
+    // }
 
 
 }
