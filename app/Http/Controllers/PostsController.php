@@ -32,7 +32,7 @@ class PostsController extends Controller
         // $data['posts'] = Post::find(9);
     
         // $data['posts'] = Post::with('user')->orderBy('created_at', 'desc')->paginate(5);
-        $data['posts'] = Post::orderBy('created_at', 'desc')->paginate(5);
+        $data['posts'] = Post::with('users')->orderBy('created_at', 'desc')->paginate(5);
         // DB::table('posts')->orderBy('created_at', 'desc')->get();
 
         return view('posts.index')->with($data);
@@ -86,12 +86,12 @@ class PostsController extends Controller
         $post->created_by = $request->user()->id;
         $post->title = $request->get('title');
         $post->content = $request->get('content');
-        $post->on_site = $request->get('on_site');
+        // $post->on_site = $request->get('on_site');
         $post->save();
 
-        $request->session()->flash('SUCCESS_MESSAGE', 'Post was saved successfully');
+        // $request->session()->flash('SUCCESS_MESSAGE', 'Post was saved successfully');
 
-        Log::info('Post was created.' . $post);
+        // Log::info('Post was created.' . $post);
         return redirect()->action('PostsController@index');
     }
 
@@ -133,7 +133,7 @@ class PostsController extends Controller
         $post = Post::findOrFail($id);
         $post->title = $request->title;               
         $post->content = $request->content;
-        $post->on_site = $request->on_site;
+        // $post->on_site = $request->on_site;
         $post->save();
 
         $request->session()->flash('SUCCESS_MESSAGE', 'Post was saved successfully');
