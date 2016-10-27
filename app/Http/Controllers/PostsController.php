@@ -32,7 +32,7 @@ class PostsController extends Controller
         // $data['posts'] = Post::find(9);
     
         // $data['posts'] = Post::with('user')->orderBy('created_at', 'desc')->paginate(5);
-        $data['posts'] = Post::orderBy('created_at', 'desc')->paginate(5);
+        $data['posts'] = Post::with('users')->orderBy('created_at', 'desc')->paginate(5);
         // DB::table('posts')->orderBy('created_at', 'desc')->get();
 
         return view('posts.index')->with($data);
