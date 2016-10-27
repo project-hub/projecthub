@@ -148,7 +148,7 @@
                                 </label>
                               </div>
                               <div class="form-group">
-                                @include('layouts.partials.skills')
+                                @include('layouts.partials.skills', ['skills'=>$skills])
                               </div>
                               <div class="form-group">
                                 <label for="name">Company Name:</label>
