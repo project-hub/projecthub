@@ -1,6 +1,5 @@
 
 <div class="">
-    <b>  Skills :</b>
   <select id="ddlSkills" multiple="multiple">
     <option value="PHP">PHP</option>
     <option value="HTML">HTML</option>

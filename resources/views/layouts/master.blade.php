@@ -20,6 +20,16 @@
 <body>
 	@include('layouts.partials.navbar')
 	<div class="container">
+        @if(session()->has('SUCCESS_MESSAGE'))
+            <div class="alert alert-success">
+                <p>{{ session('SUCCESS_MESSAGE') }}</p>
+            </div>
+        @endif
+        @if(session()->has('ERROR_MESSAGE'))
+            <div class="alert alert-danger">
+                <p>{{ session('ERROR_MESSAGE') }}</p>
+            </div>
+        @endif
     	@yield('content')
     </div>
     @include('layouts.partials.footer')
