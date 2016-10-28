@@ -10,7 +10,7 @@ class User_Skill extends Model
 
     public function users()
     {
-    	return $this->belongsTo('App\Models\users', 'id');
+    	return $this->belongsToMany('App\Models\users', 'id');
     }
 
     public function skills()

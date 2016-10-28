@@ -36,7 +36,7 @@ class SkillsController extends Controller
     public function show(Request $request)
     {
         $data['skills'] = $request->all('skillz');
-        dd($data);
+        // dd($data);
     }
     // ************************************************************************************************
 
@@ -55,7 +55,7 @@ class SkillsController extends Controller
         // $post_skill->post_id = $request->post()->id;
         $post_skill->post_id = 1;
 
-            dd($request->get('skillz'));
+            // dd($request->get('skillz'));
     
 
         // $post_skill->skill_id = $request->get('skillz');
