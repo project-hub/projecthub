@@ -8,22 +8,31 @@
 				{{ csrf_field() }}
 				<div class="form-group">
 			    	<label for="name">First Name:</label>
-			    	<input type="text" class="form-control" name="first_name" value="{{ old('name') }}">
+			    	<input type="text" class="form-control" name="first_name">
 			  	</div>
 			  	<div class="form-group">
 			    	<label for="name">Last Name:</label>
-			    	<input type="text" class="form-control" name="last_name" value="{{ old('name') }}">
+			    	<input type="text" class="form-control" name="last_name">
 			  	</div>
+			  	@if($errors->has('email'))
+                <div class="alert alert-danger">
+                    {{ $errors->first('email') }}
+                </div>
+       	 		@endif
 				<div class="form-group">
 			    	<label for="email">Email:</label>
-			    	<input type="text" class="form-control" name="email" value="{{ old('email') }}">
+			    	<input type="text" class="form-control" name="email">
 			  	</div>
 			  	<div class="checkbox form-group">
                      <label>
-                     	<input type="hidden" name="employer" value="0">
-                        <input type="checkbox" name="employer" value="1"> I am an employer
+                     	{{-- <input type="hidden" name="employer" value="0"> --}}
+                        <input type="hidden" name="employer" value="1"> I am an employer
                      </label>
                 </div>
+                <div class="form-group">
+			    	<label for="name">If an Employer Enter Company Name:</label>
+			    	<input type="text" class="form-control" name="company_name">
+			  	</div>
 			  	@if($errors->has('password'))
                 <div class="alert alert-danger">
                     {{ $errors->first('password') }}
@@ -33,15 +42,15 @@
 			    	<label for="password">Password:</label>
 			    	<input type="password" class="form-control" name="password">
 			  	</div>
-				<div class="form-group">
-			    	<label for="password_confirmation">Password Confirmation:</label>
-			    	<input type="password" class="form-control" name="password_confirmation">
-			  	</div>
 			  	@if($errors->has('password_confirmation'))
                 <div class="alert alert-danger">
                     {{ $errors->first('password_confirmation') }}
                 </div>
         		@endif
+				<div class="form-group">
+			    	<label for="password_confirmation">Password Confirmation:</label>
+			    	<input type="password" class="form-control" name="password_confirmation">
+			  	</div>
 			  	<button type="submit" class="btn btn-primary">Register</button>
 			  	<br>
 			</form>

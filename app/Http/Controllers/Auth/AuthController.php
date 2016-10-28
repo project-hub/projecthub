@@ -26,7 +26,7 @@ class AuthController extends Controller
 
     use AuthenticatesAndRegistersUsers, ThrottlesLogins;
 
-    protected $redirectPath = '/posts';
+    protected $redirectPath = '/';
     protected $redirectAfterLogout = '/auth/login';
 
     /**
@@ -61,16 +61,19 @@ class AuthController extends Controller
      */
     protected function create(array $data)
     {
-        // dd($data);
+            // dd($data);
         return User::create([
-
             'first_name' => $data['first_name'],
             'last_name' => $data['last_name'],
-            // 'employer' => $data['employer'],
-            'employer' => value($data['employer']),
+            'employer' => $data['employer'],
+            // 'employer' => value($data['employer']),
+            'company_name' => $data['company_name'],
             'email' => $data['email'],
             'password' => bcrypt($data['password']),
         ]);
+
+        $request->session()->flash('SUCCESS_MESSAGE', 'User created successfully! Please complete your profile');
+        // return redirect()->action('users.profile', $user->id);
     }
 
      /**
@@ -91,6 +94,28 @@ class AuthController extends Controller
     public function handleProviderCallback()
     {
         $user = Socialite::driver('linkedin')->user();
+
+        // $user->token;
+    }
+
+    /**
+     * Redirect the user to the GitHub authentication page.
+     *
+     * @return Response
+     */
+    public function redirectToProviderGithub()
+    {
+        return Socialite::driver('github')->redirect();
+    }
+
+    /**
+     * Obtain the user information from GitHub.
+     *
+     * @return Response
+     */
+    public function handleProviderCallbackGithub()
+    {
+        $user = Socialite::driver('github')->user();
 
         // $user->token;
     }
