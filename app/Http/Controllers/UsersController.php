@@ -91,12 +91,7 @@ class UsersController extends Controller
 
     // ******************* USER SKILLS ************************************
 
-    // public function post_index()
-    // {      
-    //     $data['skills'] = Skill::orderBy('name');
-
-    //     return view('layouts.partials.skills')->with($data);
-    // }
+    
     public function changePassword(Request $request, $id) 
     {
         $rules = [

@@ -39,11 +39,11 @@ class User extends Model implements AuthenticatableContract,
 
     public function posts()
     {
-        return $this->hasMany('App\Models\Post', 'created_by');
+        return $this->belongsToMany('App\Models\Post', 'created_by');
     }
 
-    public function user_skills()
+    public function skills()
     {
-        return $this->hasMany('App\Models\Skill', 'id');
+        return $this->belongsToMany('App\Models\Skill', 'user_skills');
     }
 }
