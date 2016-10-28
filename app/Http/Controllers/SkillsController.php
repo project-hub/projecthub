@@ -18,11 +18,12 @@ class SkillsController extends Controller
         return view('layouts.partials.skills')->with($data);
         // return view('posts.index')->with($data);
     }
+// *********************** THIS IS HOW TO RETREIVE INFO FROM SELECT FORMS ****************************
+    public function show(Request $request)
+    {
+        $data['skills'] = $request->all('skillz');
+        dd($data);
+    }
+    // ************************************************************************************************
 
-    // public function show($id)
-    // {
-    //     $data['skills'] = Skill::find($id);
-
-    //     return view('posts.index')->with($data);
-    // }
 }
