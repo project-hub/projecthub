@@ -61,6 +61,36 @@ hr {
 .thumbs {
     padding: 10px;
 }
+
+/*-------- Users/Projects pages ------------*/
+.title {
+    color: #373F51;
+    font-size: 30px;
+    font-family: 'Lato', sans-serif;
+}
+.name {
+    color: red;
+  /*  font-family: 'Lato', sans-serif;
+    font-weight: 800;
+    font-size: 17px;*/
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /*--------------------------------*/
 .container {
 	margin-bottom: 20px;

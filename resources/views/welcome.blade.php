@@ -56,7 +56,7 @@
 
    <div class="col-md-6">
    <div class="thumbnail">
-       <a href="{{ action('PostsController@index') }}"><img class="thumbs img-responsive" src="img/webProjects.jpg" alt="Welcome">
+      <a href="{{ action('UsersController@index') }}"><img class="thumbs img-responsive" src="img/webProjects.jpg" alt="Welcome">
       <div class="caption">
         <h3 class='developersProjects'>Developers</h3></a>
         <p class="welcomeText">Find the perfect Dev for your project. </p>
@@ -66,7 +66,7 @@
     
     <div class="col-md-6">
       <div class="thumbnail">
-         <a href="{{ action('UsersController@index') }}"><img class=" thumbs img-responsive" src="img/projectsImage.jpg" alt="Welcome">
+         <a href="{{ action('PostsController@index') }}"><img class=" thumbs img-responsive" src="img/projectsImage.jpg" alt="Welcome">
         <div class="caption">
          <h3>Projects</h3></a>
          <p class="welcomeText">Check out all the great projects that fit your skill set. </p>         
