@@ -61,19 +61,18 @@ class AuthController extends Controller
      */
     protected function create(array $data)
     {
-            // dd($data);
+            
         return User::create([
             'first_name' => $data['first_name'],
             'last_name' => $data['last_name'],
             'employer' => $data['employer'],
-            // 'employer' => value($data['employer']),
             'company_name' => $data['company_name'],
             'email' => $data['email'],
             'password' => bcrypt($data['password']),
         ]);
 
         $request->session()->flash('SUCCESS_MESSAGE', 'User created successfully! Please complete your profile');
-        // return redirect()->action('users.profile', $user->id);
+        return redirect()->action('users.profile', $user->id);
     }
 
      /**
