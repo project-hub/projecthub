@@ -42,7 +42,7 @@
     </div>
     <div class="col-md-4">
       <br>
-      <h5>Linked In: <a href="{{ $users->linkedIn }}">{{ $users->linkedIn }}</a></h5>
+      <h5>Linked In: <a href="{{ $users->linkedin_id }}">{{ $users->linkedin_id }}</a></h5>
       @if($users->employer == 0)
       <h5>Github: <a href="{{ $users->github }}">{{ $users->github }}</a></h5>
       @endif
@@ -242,7 +242,7 @@
 </div>
 <div class="form-group">
     <label>Linked In</label>
-    <input class="form-control" type="url" name="linkedin" value="{{ empty(old('linkedin')) ? $users->linkedin : old('linkedin') }}" placeholder="LinkedIn">
+    <input class="form-control" type="url" name="linkedin_id" value="{{ empty(old('linkedin_id')) ? $users->linkedin_id : old('linkedin_id') }}" placeholder="Linked In">
 </div>
 <div class="form-group">
     <label>Github</label>

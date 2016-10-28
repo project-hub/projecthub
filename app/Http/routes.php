@@ -14,7 +14,7 @@
 // Route to UsersController for users.
 Route::resource('users', 'UsersController', ['except' => ['create', 'store']]);
 // Route::resource('users/changepassword','UsersController');
-
+// Route::get('users/{id}', 'UsersController');
 // Route to PostsController for posts.
 Route::resource('posts', 'PostsController');
 // Route to SkillsController for skills.
@@ -41,6 +41,10 @@ Route::post('password/reset', 'Auth\PasswordController@postReset');
 // Linkedin OAuth routes...
 Route::get('auth/linkedin', 'Auth\AuthController@redirectToProvider');
 Route::get('auth/linkedin/callback', 'Auth\AuthController@handleProviderCallback');
+
+// Github OAuth routes...
+Route::get('auth/github', 'Auth\AuthController@redirectToProviderGithub');
+Route::get('auth/github/callback', 'Auth\AuthController@handleProviderCallbackGithub');
 
 //************************************** Home Page **********************************************
 Route::get('/', function () {
