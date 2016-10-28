@@ -20,6 +20,8 @@ class CreatePostSkillsTable extends Migration
 
             $table->integer('skill_id')->unsigned();
             $table->foreign('skill_id')->references('id')->on('skills');
+
+            $table->timestamps();
         });
     }
 
