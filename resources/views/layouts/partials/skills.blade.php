@@ -1,7 +1,7 @@
 <div class="">
     <select name="skillz[]" id="ddlSkills" multiple="multiple">
         @foreach($skills as $skill)
-            <option value="{{ $skill->name }}">{{ $skill->name }}</option>
+            <option value="{{ $skill->id }}">{{ $skill->name }}</option>
         @endforeach
     </select>
 </div>
