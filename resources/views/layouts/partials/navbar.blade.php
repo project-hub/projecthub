@@ -36,7 +36,7 @@
 					<li><a href="{{ action('UsersController@index') }}">Developers</a></li>
 					@endif
 				</ul>
-				<form class="navbar-form navbar-right">
+				<form class="navbar-form navbar-right" method="GET" action="{{ action('UsersController@index')}}">
 					<div class="form-group">
 						<input type="text" class="form-control" name="search" placeholder="Search">
 					</div>
@@ -88,9 +88,8 @@
 												<div class="form-group">
 													<button type="submit" class="btn btn-primary btn-block">Sign in</button>
 												</div>
-												<a href="{{ ('/auth/linkedin') }}" class="btn btn-primary">
-                                    				<strong>Login With Linkedin</strong>
-                                				</a>										
+												<a href="{{ ('/auth/linkedin') }}" class="btn btn-primary">Login With Linkedin</a>
+												<a href="{{ ('/auth/github') }}" class="btn btn-primary">Login With GitHub</a>	
 											</form>
 											<div class="bottom">
 												<h5>New user?</h5>

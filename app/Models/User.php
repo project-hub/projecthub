@@ -46,4 +46,9 @@ class User extends Model implements AuthenticatableContract,
     {
         return $this->belongsToMany('App\Models\Skill', 'user_skills');
     }
+
+    public static function searchUsers($searchTerm) 
+    {
+        return self::where('first_name', 'LIKE' , '%' . $searchTerm . '%');
+    }
 }

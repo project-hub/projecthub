@@ -41,4 +41,10 @@ return [
         'redirect' => 'https://google.com',
     ],
 
+    'github' => [
+        'client_id' => '24d40d055c64ed651ea5',
+        'client_secret' => '5b88aa486845cd857d85270cfc4702ca57684ad2',
+        'redirect' => 'https://google.com',
+    ]
+
 ];
