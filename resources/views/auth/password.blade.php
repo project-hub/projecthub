@@ -1,4 +1,4 @@
-
+@section('content')
 <form method="POST" action="/password/email">
     {!! csrf_field() !!}
     @if (count($errors) > 0)
