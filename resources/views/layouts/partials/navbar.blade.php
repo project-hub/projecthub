@@ -15,14 +15,26 @@
 			<!-- Collect the nav links, forms, and other content for toggling -->
 			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 				<ul class="nav navbar-nav">
+					@if (Auth::check() == false)
+					<li><a href="{{ action('PostsController@index') }}">Posts</a></li>
+					<li><a href="{{ action('UsersController@index') }}">Users</a></li>
+					@endif
 					@if (Auth::check())
                     <li><a href="{{ action('UsersController@show', Auth::id()) }}"><span class="glyphicon glyphicon-user" aria-hidden="true"></span> Welcome, {{ Auth::user()->first_name }}!</a></li>
 					<li><a href="{{ action('Auth\AuthController@getLogout') }}">Logout</a></li>
                     @endif
-          			{{-- @if (Auth::user()->employer == 0) --}}
-					<li><a href="{{ action('PostsController@index') }}">Job Posts</a></li>
-					{{-- @endif --}}
-					<li><a href="{{ action('UsersController@index') }}">Users</a></li>
+          			@if (Auth::check() == true && Auth::user()->employer == 0)
+					<li><a href="{{ action('PostsController@index') }}">Job Postings</a></li>
+					@endif
+					@if (Auth::check() == true && Auth::user()->employer == 1)
+					<li><a href="{{ action('PostsController@index') }}">Employer Posts</a></li>
+					@endif
+					@if (Auth::check() == true && Auth::user()->employer == 0)
+					<li><a href="{{ action('UsersController@index') }}">Employers</a></li>
+					@endif
+					@if (Auth::check() == true && Auth::user()->employer == 1)
+					<li><a href="{{ action('UsersController@index') }}">Developers</a></li>
+					@endif
 				</ul>
 				<form class="navbar-form navbar-right">
 					<div class="form-group">
