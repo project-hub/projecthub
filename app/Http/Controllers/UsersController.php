@@ -33,8 +33,8 @@ class UsersController extends Controller
     public function show($id)
     {
         $data['users'] = User::find($id);
+        // dd(User::find($id)->skills);
         $data['skills'] = Skill::all();
-
         return view('users.profile')->with($data);
     }
 
@@ -74,16 +74,44 @@ class UsersController extends Controller
         $user->email = $request->email;
         $user->employer = $request->employer;
         $user->content = $request->content;
+<<<<<<< HEAD
         $user->linkedin_id = $request->linkedin_id;
+=======
+        $user->linkedin_id = $request->linkedin;
+>>>>>>> ae2a319517659a771be6eea1409c6da0208cf429
         $user->github = $request->github;
         $user->website = $request->website;
         $user->save();
 
-        // $user = User::find($id);   
+        // foreach ($request->get('skillz') as $key=>$value) {
+            // $user->skills()->sync($request->get('skillz'[$id]));
+        // dd($value);
+        // }
 
+    // $user->skills()->sync([$request->get('skillz')]);
+
+    
+    // $skill = App\Models\Skill::find(4);
+    // $skills2 = App\Models\Skill::find(5);
+
+        $request->session()->flash('SUCCESS_MESSAGE', 'User updated successfully');
+        return redirect()->action('UsersController@show', $user->id);
+    }
+
+// ******************* UPLOAD RESUME ************************************
+    public function upload(Request $request, $id)
+    {
+
+<<<<<<< HEAD
         // if($request->file('resume')->isValid()){
         //     self::updateResume('resume'.$user->id, file_get_contents($request->file('resume')->getRealPath()));
         // }
+=======
+        $user = User::find($id);
+        if($request->file('resume')->isValid()){
+            self::updateResume('resume'.$user->id, file_get_contents($request->file('resume')->getRealPath()));
+        }
+>>>>>>> ae2a319517659a771be6eea1409c6da0208cf429
 
         $request->session()->flash('SUCCESS_MESSAGE', 'User updated successfully');
         return redirect()->action('UsersController@show', $user->id);
@@ -91,12 +119,17 @@ class UsersController extends Controller
 
     // ******************* USER SKILLS ************************************
 
-    // public function post_index()
-    // {      
-    //     $data['skills'] = Skill::orderBy('name');
+    public function userSkills(Request $request, $id)
+    {
+        $user = User::find($id);
+        $user->skills()->sync($request->get('skillz'));
+        $request->session()->flash('SUCCESS_MESSAGE', 'Skills added');
+        return redirect()->action('UsersController@show', $user->id);
 
-    //     return view('layouts.partials.skills')->with($data);
-    // }
+    }
+
+
+
     public function changePassword(Request $request, $id) 
     {
         $rules = [

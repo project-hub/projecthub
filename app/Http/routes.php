@@ -14,7 +14,9 @@
 // Route to UsersController for users.
 Route::resource('users', 'UsersController', ['except' => ['create', 'store']]);
 // Route::resource('users/changepassword','UsersController');
-// Route::get('users/{id}', 'UsersController');
+
+Route::post('users/{id}', 'UsersController@upload');
+
 // Route to PostsController for posts.
 Route::resource('posts', 'PostsController');
 // Route to SkillsController for skills.
@@ -50,6 +52,19 @@ Route::get('auth/github/callback', 'Auth\AuthController@handleProviderCallbackGi
 Route::get('/', function () {
     return view('welcome');
 });
+
+
+Route::post('users/{id}', 'UsersController@userSkills');
+
+Route::get('/test', function () {
+	$post = App\Models\Post::find(3);
+	$skill = App\Models\Skill::find(4);
+	$skills2 = App\Models\Skill::find(5);
+	$post->skills()->sync([4, 5]);
+});
+
+
+
 
 // Route::get('/users', function() {
 // 	return view('passwordchange');

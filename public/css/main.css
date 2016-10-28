@@ -39,7 +39,7 @@ hr {
 	width: 200px;
 }
 .header {
-    color: #373F51;
+    color: #2A5C68;
     font-size: 130px;
     margin-left: -10px;
     font-family: 'Lato', sans-serif;
@@ -47,11 +47,12 @@ hr {
 .welcomeSubHeader {
     font-family: 'Lato', sans-serif;
     font-size: 25px;
+
 }
 .welcomeText {
     color: #5B6772;
     font-family: 'Lato', sans-serif;
-    font-weight: 800;
+    font-weight: 400;
     font-size: 17px;
 }
 .developersProjects {
@@ -64,29 +65,34 @@ hr {
 
 /*-------- Users/Projects pages ------------*/
 .title {
-    color: #373F51;
-    font-size: 30px;
+    color: #2A5C68;
+    font-size: 40px;
     font-family: 'Lato', sans-serif;
 }
 .name {
-    color: red;
-  /*  font-family: 'Lato', sans-serif;
-    font-weight: 800;
-    font-size: 17px;*/
+    color: #2A5C68;
+    font-family: 'Lato', sans-serif;
+    /*font-weight: 800;*/
+    font-size: 17px;
 }
+.location {
+    color: #373F51;
+    font-size: 17px;
+    font-weight: 800;
+    font-family: 'Lato', sans-serif;
+}
+.postTitle {
+    margin-top: 0px;
+    font-size: 30px;
+}
+.posted {
+    font-family: 'Lato', sans-serif;
+    font-size: 13px;
+    font-weight: 800;
+}
+.infoDiv {
 
-
-
-
-
-
-
-
-
-
-
-
-
+}
 
 
 
@@ -153,6 +159,18 @@ hr {
 
 
 
+#wrapper, html, body {
+    min-height:100%!important;
+
+}
+#wrapper {
+    margin-bottom:100px;
+}
+
+#push{
+    height:115px;
+    clear: both;
+}
 
 
 

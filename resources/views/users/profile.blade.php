@@ -7,18 +7,16 @@
         <h1 class="page-header">User Profile</h1>
     </div>
 </div>
-{{-- test --}}
-{{-- <form enctype="multipart/form-data" method="POST" action="{{ action('SkillsController@store') }}">
+
+<form method="POST" action="{{ action('UsersController@userSkills', $users->id) }}">
     {!! csrf_field() !!}
     <div class="form-group">
-        <label>Desired Skills: </label>
-        <div class="form-group">
             @include('layouts.partials.skills', ['skills'=>$skills])
         </div>
-    </div>
-    <button type="submit" class="btn btn-primary">SUBMIT</button>
-</form> --}}
-{{-- END TEST --}}
+        <button type="submit">SUBMIT</button>
+
+</form>
+
 
 <div class="row">
     <div class="col-md-4">
@@ -39,6 +37,7 @@
         <p>{{ $users->city . ", " . $users->state . "  " . $users->zip_code }}</p>
         <h5>Member Since: {{ $users->created_at->diffForHumans() }}</h5>
         <h5>Rating: </h5>
+        <h5>Skills: </h5>
     </div>
     <div class="col-md-4">
       <br>
@@ -48,14 +47,16 @@
       @endif
       <h5>Website: <a href="{{ $users->website }}">{{ $users->website }}</a></h5>
       @if($users->employer == 0)
-      <form enctype="multipart/form-data" method="POST" action="{{ action('UsersController@update', $users->id) }}">
+
+      <form enctype="multipart/form-data" method="POST" action="{{ action('UsersController@upload', $users->id) }}">
         {!! csrf_field() !!}
-        {!! method_field('PUT') !!}
+        {{-- {!! method_field('PUT') !!} --}}
         <label for="exampleInputFile">Upload Resume</label>
         <input type="file" id="exampleInputFile" name="resume">
         <br>
         <button type="submit" class="btn btn-primary btn-xs">Save</button>
     </form> 
+    
     <br>
     @endif
     <!-- Email Button trigger modal -->
@@ -158,7 +159,7 @@
         <div class="checkbox form-group">
             <label><input type="checkbox" name="employer" value="1"> I am an employer</label>
         </div>
-        {{-- <div class="form-group">
+       {{--  <div class="form-group">
             @include('layouts.partials.skills', ['skills'=>$skills])
         </div> --}}
         <div class="form-group">
@@ -332,7 +333,7 @@
 </div>
 <div class="col-lg-10">
  <h3>Skills: </h3>
- <span class="label label-default">skill badge</span>
+ <span class="label label-default"></span>
  <h3>Summary: </h3> 
  <p>{{ $users->content }}</p>
 </div>
