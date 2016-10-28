@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Post;
+use App\Models\Post_Skill;
 use App\Models\Skill;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
@@ -72,6 +73,7 @@ class PostsController extends Controller
         // $post->on_site = $request->get('on_site');
         $post->save();
 
+        self::post_store($request);
         // $request->session()->flash('SUCCESS_MESSAGE', 'Post was saved successfully');
 
         // Log::info('Post was created.' . $post);
@@ -147,12 +149,31 @@ class PostsController extends Controller
 
 // ******************* POST SKILLS ************************************
 
-    // public function post_index()
-    // {      
-    //     $data['skills'] = Skill::orderBy('name');
+    public function post_store(Request $request)
+    {
+        // $post_skill = new Post_Skill;
+        // $post_skill->post_id = 1;
+        // $post_skill->skill_id = $request->skill()->id;
+        // // dd($post_skill);
+        // $post_skill->save();
+        // $post->title = $request->get('title');
+        // $post->content = $request->get('content');
 
-    //     return view('layouts.partials.skills')->with($data);
-    // }
+        $post_skill = new Post_Skill;
+        // $post_skill->post_id = $request->post()->id;
+        $post_skill->post_id = 1;
+
+            dd($request->get('skillz'));
+    
+
+        // $post_skill->skill_id = $request->get('skillz');
+        // // dd($post_skill);
+        // $post_skill->save();
+        // $request->session()->flash('SUCCESS_MESSAGE', 'Post was saved successfully');
+
+        // Log::info('Post was created.' . $post);
+        
+    }
 
 
 

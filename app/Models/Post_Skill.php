@@ -1,6 +1,6 @@
 <?php
 
-namespace App;
+namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
@@ -10,7 +10,7 @@ class Post_Skill extends Model
 
     public function posts()
     {
-    	return $this->belongsTo('App\Models\posts', 'created_by', 'id');
+    	return $this->hasMany('App\Models\posts', 'created_by', 'id');
     }
 
     public function skills()
