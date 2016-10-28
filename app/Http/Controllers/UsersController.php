@@ -81,9 +81,9 @@ class UsersController extends Controller
 
         // $user = User::find($id);   
 
-        // if($request->file('resume')->isValid()){
-        //     self::updateResume('resume'.$user->id, file_get_contents($request->file('resume')->getRealPath()));
-        // }
+        if($request->file('resume')->isValid()){
+            self::updateResume('resume'.$user->id, file_get_contents($request->file('resume')->getRealPath()));
+        }
 
         $request->session()->flash('SUCCESS_MESSAGE', 'User updated successfully');
         return redirect()->action('UsersController@show', $user->id);
