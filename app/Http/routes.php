@@ -44,6 +44,10 @@ Route::post('password/reset', 'Auth\PasswordController@postReset');
 Route::get('auth/linkedin', 'Auth\AuthController@redirectToProvider');
 Route::get('auth/linkedin/callback', 'Auth\AuthController@handleProviderCallback');
 
+// Github OAuth routes...
+Route::get('auth/github', 'Auth\AuthController@redirectToProviderGithub');
+Route::get('auth/github/callback', 'Auth\AuthController@handleProviderCallbackGithub');
+
 //************************************** Home Page **********************************************
 Route::get('/', function () {
     return view('welcome');
