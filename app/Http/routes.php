@@ -13,11 +13,13 @@
 
 // Route to UsersController for users.
 Route::resource('users', 'UsersController', ['except' => ['create', 'store']]);
+// Route::resource('users/changepassword','UsersController');
 
 // Route to PostsController for posts.
 Route::resource('posts', 'PostsController');
 // Route to SkillsController for skills.
 Route::resource('skills', 'SkillsController');
+
 // Route to AuthController.
 // Authentication routes...
 Route::get('auth/login', 'Auth\AuthController@getLogin');
@@ -40,3 +42,7 @@ Route::post('password/reset', 'Auth\PasswordController@postReset');
 Route::get('/', function () {
     return view('welcome');
 });
+
+// Route::get('/users', function() {
+// 	return view('passwordchange');
+// });

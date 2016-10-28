@@ -64,7 +64,7 @@ class PostsController extends Controller
         // $request->session()->forget('ERROR_MESSAGE');
 
 
-
+        $post_skill = new Post_Skill($request->get('skillz'));
 
         $post = new Post;
         $post->created_by = $request->user()->id;
@@ -72,11 +72,12 @@ class PostsController extends Controller
         $post->content = $request->get('content');
         // $post->on_site = $request->get('on_site');
         $post->save();
-
-        self::post_store($request);
+        // self::post_store($request);
+        $post->post_skill()->save($post_skill);
+        // $post_skill = new Post_Skill;
+        // $post->post_skills()->save($request->get('skillz'));
         // $request->session()->flash('SUCCESS_MESSAGE', 'Post was saved successfully');
 
-        // Log::info('Post was created.' . $post);
         return redirect()->action('PostsController@index');
     }
 
@@ -149,31 +150,17 @@ class PostsController extends Controller
 
 // ******************* POST SKILLS ************************************
 
-    public function post_store(Request $request)
-    {
-        // $post_skill = new Post_Skill;
-        // $post_skill->post_id = 1;
-        // $post_skill->skill_id = $request->skill()->id;
-        // // dd($post_skill);
-        // $post_skill->save();
-        // $post->title = $request->get('title');
-        // $post->content = $request->get('content');
-
-        $post_skill = new Post_Skill;
-        // $post_skill->post_id = $request->post()->id;
-        $post_skill->post_id = 1;
-
-            dd($request->get('skillz'));
-    
-
-        // $post_skill->skill_id = $request->get('skillz');
-        // // dd($post_skill);
-        // $post_skill->save();
-        // $request->session()->flash('SUCCESS_MESSAGE', 'Post was saved successfully');
-
-        // Log::info('Post was created.' . $post);
+    // public function post_store(Request $request)
+    // {
+    //     $post_skill = new Post_Skill;
         
-    }
+
+    //     // foreach ($request->get('skillz') as $skills) {
+    //     //     return $skills;
+    //     // }
+    //         // dd($request->get('skillz'));
+        
+    // }
 
 
 

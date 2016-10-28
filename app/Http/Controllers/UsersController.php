@@ -81,9 +81,9 @@ class UsersController extends Controller
 
         // $user = User::find($id);   
 
-        // if($request->file('resume')->isValid()){
-        //     self::updateResume('resume'.$user->id, file_get_contents($request->file('resume')->getRealPath()));
-        // }
+        if($request->file('resume')->isValid()){
+            self::updateResume('resume'.$user->id, file_get_contents($request->file('resume')->getRealPath()));
+        }
 
         $request->session()->flash('SUCCESS_MESSAGE', 'User updated successfully');
         return redirect()->action('UsersController@show', $user->id);
@@ -97,6 +97,24 @@ class UsersController extends Controller
 
     //     return view('layouts.partials.skills')->with($data);
     // }
+    public function changePassword(Request $request, $id) 
+    {
+        $rules = [
+        'email' => 'required',
+        'password' => 'required',
+        'confirm_password' => 'required|same:password',
+        ];
+        // validates input for user edit form
+        $this->validate($request, $rules);
 
+        $user = User::find($id);
+        $user->email = $request->email;
+        $user->password = Hash::make($request->password);
+        $user->save();
+
+        $request->session()->flash('SUCCESS_MESSAGE', 'Password changed successfully');
+        return redirect()->action('UsersController@show', $user->id);
+
+    }
 
 }
