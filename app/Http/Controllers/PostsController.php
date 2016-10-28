@@ -64,7 +64,6 @@ class PostsController extends Controller
         // $request->session()->forget('ERROR_MESSAGE');
 
 
-        $post_skill = new Post_Skill($request->get('skillz'));
 
         $post = new Post;
         $post->created_by = $request->user()->id;
@@ -72,6 +71,7 @@ class PostsController extends Controller
         $post->content = $request->get('content');
         // $post->on_site = $request->get('on_site');
         $post->save();
+
        
 
        // $post->skills()->sync($request->get('skillz'));
@@ -80,8 +80,19 @@ class PostsController extends Controller
         // $skills2 = Skill::find(5);
         // $user->skills()->sync([4, 5]);
 
+
+        // $post->skills()->sync($request->get('skillz'));
+        // $user = User::find(5);
+        // $skill = Skill::find(4);
+        // $skills2 = Skill::find(5);
+        // $user->skills()->sync([4, 5]);
+    
+
+        $request->session()->flash('SUCCESS_MESSAGE', 'Post was saved successfully');
         return redirect()->action('PostsController@index');
     }
+
+
 
     // public function postSkill(Request $request)
     // {
@@ -90,6 +101,7 @@ class PostsController extends Controller
     //  $skills2 = App\Models\Skill::find(5);
     //  $user->skills()->sync([4, 5]);
     // }
+
 
     /**
      * Display the specified resource.
