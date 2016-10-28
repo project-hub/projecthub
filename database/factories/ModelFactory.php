@@ -23,7 +23,7 @@ $factory->define(App\Models\User::class, function (Faker\Generator $faker) {
         'email' => $faker->safeEmail,
         'employer' => $faker->boolean($chanceOfGettingTrue = 50),
         'content' => $faker->paragraphs(3, true),
-        'linkedIn' => $faker->url,
+        'linkedin_id' => $faker->url,
         'github' => $faker->url,
         'website' => $faker->url,
         'image' => $faker->imageUrl($width = 640, $height = 480),
