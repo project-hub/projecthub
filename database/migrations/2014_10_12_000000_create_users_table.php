@@ -24,7 +24,7 @@ class CreateUsersTable extends Migration
             $table->string('email')->unique();
             $table->boolean('employer');
             $table->text('content');
-            $table->string('linkedIn')->nullable();
+            $table->string('linkedin_id')->nullable();
             $table->string('github')->nullable();
             $table->string('website')->nullable();
             $table->binary('image');
