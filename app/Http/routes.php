@@ -38,6 +38,10 @@ Route::post('password/email', 'Auth\PasswordController@postEmail');
 Route::get('password/reset/{token}', 'Auth\PasswordController@getReset');
 Route::post('password/reset', 'Auth\PasswordController@postReset');
 
+// Linkedin OAuth routes...
+Route::get('auth/linkedin', 'Auth\AuthController@redirectToProvider');
+Route::get('auth/linkedin/callback', 'Auth\AuthController@handleProviderCallback');
+
 //************************************** Home Page **********************************************
 Route::get('/', function () {
     return view('welcome');

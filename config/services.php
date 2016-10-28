@@ -35,4 +35,10 @@ return [
         'secret' => env('STRIPE_SECRET'),
     ],
 
+    'linkedin' => [
+        'client_id' => '78ci7g1uqvv0ph',
+        'client_secret' => 'o8FxJcduplEcl3W6',
+        'redirect' => 'https://google.com',
+    ],
+
 ];

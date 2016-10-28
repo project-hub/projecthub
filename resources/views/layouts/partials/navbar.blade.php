@@ -87,7 +87,10 @@
 												</div>
 												<div class="form-group">
 													<button type="submit" class="btn btn-primary btn-block">Sign in</button>
-												</div>										
+												</div>
+												<a href="{{ ('/auth/linkedin') }}" class="btn btn-primary">
+                                    				<strong>Login With Linkedin</strong>
+                                				</a>										
 											</form>
 											<div class="bottom">
 												<h5>New user?</h5>
