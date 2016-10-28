@@ -18,6 +18,12 @@
 			    	<label for="email">Email:</label>
 			    	<input type="text" class="form-control" name="email" value="{{ old('email') }}">
 			  	</div>
+			  	<div class="checkbox form-group">
+                     <label>
+                     	<input type="hidden" name="employer" value="0">
+                        <input type="checkbox" name="employer" value="1"> I am an employer
+                     </label>
+                </div>
 			  	@if($errors->has('password'))
                 <div class="alert alert-danger">
                     {{ $errors->first('password') }}
