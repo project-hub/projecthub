@@ -74,11 +74,7 @@ class UsersController extends Controller
         $user->email = $request->email;
         $user->employer = $request->employer;
         $user->content = $request->content;
-<<<<<<< HEAD
         $user->linkedin_id = $request->linkedin_id;
-=======
-        $user->linkedin_id = $request->linkedin;
->>>>>>> ae2a319517659a771be6eea1409c6da0208cf429
         $user->github = $request->github;
         $user->website = $request->website;
         $user->save();
@@ -102,16 +98,13 @@ class UsersController extends Controller
     public function upload(Request $request, $id)
     {
 
-<<<<<<< HEAD
         // if($request->file('resume')->isValid()){
         //     self::updateResume('resume'.$user->id, file_get_contents($request->file('resume')->getRealPath()));
         // }
-=======
         $user = User::find($id);
         if($request->file('resume')->isValid()){
             self::updateResume('resume'.$user->id, file_get_contents($request->file('resume')->getRealPath()));
         }
->>>>>>> ae2a319517659a771be6eea1409c6da0208cf429
 
         $request->session()->flash('SUCCESS_MESSAGE', 'User updated successfully');
         return redirect()->action('UsersController@show', $user->id);
