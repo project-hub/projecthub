@@ -13,7 +13,7 @@
 
 // Route to UsersController for users.
 Route::resource('users', 'UsersController', ['except' => ['create', 'store']]);
-Route::resource('users/changepassword','UsersController');
+// Route::resource('users/changepassword','UsersController');
 
 // Route to PostsController for posts.
 Route::resource('posts', 'PostsController');
