@@ -8,7 +8,7 @@
         <h1 class="page-header title">Project Hub Users
             <form method="GET" action="{{ action('SkillsController@show') }}">
                 <small>@include('layouts.partials.skills', ['skills'=>$skills])</small>
-               {{--  <button type="submit">enter</button> --}}     
+                <button type="submit">enter</button>     
             </form>
         </h1>
     </div>
@@ -26,15 +26,15 @@
         <h4>{{ $user->company_name }}</h4>
         @endif
 
-            {{-- <h5><a href="{{ $user->email }}">{{ $user->email }}</a></h45> --}}
+            <h5><a href="{{ $user->email }}">{{ $user->email }}</a></h45>
 
-            {{-- <h5>Linked In: <a href="{{ $user->linkedIn }}">{{ $user->linkedIn }}</a></h5> --}}
+            <h5>Linked In: <a href="{{ $user->linkedIn }}">{{ $user->linkedIn }}</a></h5>
 
             @if($user->employer == 0)
             <h5>Github: <a href="{{ $user->github }}">{{ $user->github }}</a></h5>
             @endif
 
-            {{-- <h5>Website: <a href="{{ $user->website }}">{{ $user->website }}</a></h5> --}}
+            <h5>Website: <a href="{{ $user->website }}">{{ $user->website }}</a></h5>
 
             <h5>Skills: </h5>
             {{-- @foreach() --}}

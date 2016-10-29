@@ -3,7 +3,7 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
-use App\Models\BaseModel;
+
 
 class Post extends Model
 {
@@ -17,6 +17,8 @@ class Post extends Model
 
 	public function skills()
 	{
+
 		return $this->belongsToMany('App\Models\Skill', 'post_skills');
+
 	}
 }

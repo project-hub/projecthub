@@ -112,6 +112,7 @@ class UsersController extends Controller
 
     // ******************* USER SKILLS ************************************
 
+
     public function userSkills(Request $request, $id)
     {
         $user = User::find($id);

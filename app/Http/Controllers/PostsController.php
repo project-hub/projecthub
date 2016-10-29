@@ -72,6 +72,15 @@ class PostsController extends Controller
         // $post->on_site = $request->get('on_site');
         $post->save();
 
+       
+
+       // $post->skills()->sync($request->get('skillz'));
+        // $user = User::find(5);
+        // $skill = Skill::find(4);
+        // $skills2 = Skill::find(5);
+        // $user->skills()->sync([4, 5]);
+
+
         // $post->skills()->sync($request->get('skillz'));
         // $user = User::find(5);
         // $skill = Skill::find(4);
@@ -82,6 +91,7 @@ class PostsController extends Controller
         $request->session()->flash('SUCCESS_MESSAGE', 'Post was saved successfully');
         return redirect()->action('PostsController@index');
     }
+
 
 
     // public function postSkill(Request $request)
