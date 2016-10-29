@@ -56,12 +56,14 @@ Route::get('/', function () {
 
 Route::post('users/{id}', 'UsersController@userSkills');
 
-Route::get('/test', function () {
-	$post = App\Models\Post::find(3);
-	$skill = App\Models\Skill::find(4);
-	$skills2 = App\Models\Skill::find(5);
-	$post->skills()->sync([4, 5]);
-});
+// ********************* EXAMPLE OF HOW SYNC() WORKS ****************************
+
+// Route::get('/test', function () {
+// 	$post = App\Models\Post::find(3);
+// 	$skill = App\Models\Skill::find(4);
+// 	$skills2 = App\Models\Skill::find(5);
+// 	$post->skills()->sync([4, 5]);
+// });
 
 
 

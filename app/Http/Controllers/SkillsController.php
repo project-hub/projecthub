@@ -33,11 +33,11 @@ class SkillsController extends Controller
     // }
 
 // *********************** THIS IS HOW TO RETREIVE INFO FROM SELECT FORMS ****************************
-    public function show(Request $request)
-    {
-        $data['skills'] = $request->all('skillz');
-        // dd($data);
-    }
+    // public function show(Request $request)
+    // {
+    //     $data['skills'] = $request->all('skillz');
+    //     // dd($data);
+    // }
     // ************************************************************************************************
 
 // **************************************** CREATE POST_SKILL ********************************************************

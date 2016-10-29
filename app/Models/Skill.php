@@ -6,21 +6,20 @@ use Illuminate\Database\Eloquent\Model;
 
 class Skill extends Model
 {
-    protected $table = 'skills';
     protected $fillable = ['name'];
 
     public function post_skills()
     {
-    	return $this->hasMany('App\Models\post_skills');
+    	return $this->hasMany('App\Models\Post_Skill');
     }
 
     public function user_skills()
     {
-    	return $this->hasMany('App\Models\user_skills');
+    	return $this->hasMany('App\Models\User_Skill');
     }
 
     public function users()
     {
-        return $this->belongsToMany('App\Models\user_skills');
+        return $this->belongsToMany('App\Models\User_Skill');
     }
 }

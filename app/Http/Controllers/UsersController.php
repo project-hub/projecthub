@@ -6,6 +6,7 @@ use \Storage;
 use Illuminate\Http\Request;
 use App\Models\User;
 use App\Models\Skill;
+use App\Models\User_skill;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
@@ -19,6 +20,7 @@ class UsersController extends Controller
     public function index(Request $request)
     {
         $data['users'] = ($request->has('search')) ?  User::searchUsers($request->search)->paginate(10) : User::with('posts')->paginate(10);
+        // $data['users'] = User::all();
         $data['skills'] = Skill::all();
         // dd($data['skills']);
         return view('users.index')->with($data);
@@ -116,7 +118,11 @@ class UsersController extends Controller
     public function userSkills(Request $request, $id)
     {
         $user = User::find($id);
-        $user->skills()->sync($request->get('skillz'));
+        $userSkills = $request->get('skillz');
+        $user->skills()->sync($userSkills);
+        // dd($userSkills);
+        // $user->skills()->saveMany([$userSkills]);
+
         $request->session()->flash('SUCCESS_MESSAGE', 'Skills added');
         return redirect()->action('UsersController@show', $user->id);
 
