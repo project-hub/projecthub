@@ -15,7 +15,7 @@
 Route::resource('users', 'UsersController', ['except' => ['create', 'store']]);
 // Route::resource('users/changepassword','UsersController');
 
-Route::post('users/{id}', 'UsersController@upload');
+Route::post('users/{id}/upload', 'UsersController@upload');
 
 // Route to PostsController for posts.
 Route::resource('posts', 'PostsController');

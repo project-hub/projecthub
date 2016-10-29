@@ -6,7 +6,7 @@ use \Storage;
 use Illuminate\Http\Request;
 use App\Models\User;
 use App\Models\Skill;
-use App\Models\User_skill;
+use App\Models\User_Skill;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
@@ -118,10 +118,22 @@ class UsersController extends Controller
     public function userSkills(Request $request, $id)
     {
         $user = User::find($id);
-        $userSkills = $request->get('skillz');
-        $user->skills()->sync($userSkills);
-        // dd($userSkills);
-        // $user->skills()->saveMany([$userSkills]);
+        $newSkills = $request->has('skillz') ? $request->get('skillz') : [];
+
+        $ids = [];
+
+        foreach ($user->skills as $skill) {
+            $ids[] = $skill->id;
+        }
+
+        foreach ($newSkills as $id) {
+            if (!in_array($id,$ids)) {
+                $newSkill = new User_Skill;
+                $newSkill->user_id = $user->id;
+                $newSkill->skill_id = $id;
+                $newSkill->save();
+            }
+        }
 
         $request->session()->flash('SUCCESS_MESSAGE', 'Skills added');
         return redirect()->action('UsersController@show', $user->id);
