@@ -112,22 +112,16 @@ hr {
 
 /*----------navbar-------------*/
 
-
 .navbar-default {
     background-color: #F8F8F8;         /*bar color*/
     border-color: #F8F8F8;
-
-    border-radius: 0;
-}
-
-/*.navbar-default .navbar-brand,
-.navbar-default .navbar-brand:hover,     **changes font color/background where our logo is.**
-.navbar-default .navbar-brand:focus {
-    background-color: orange;*/
 }
 
 .navbar-default .navbar-nav > li > a {
-    color: grey;                       /* text color*/
+    color: black;                       /* text color*/
+    font-size: 15px;
+    font-weight: 200;
+
 }
 
 .navbar-default .navbar-nav > li > a:hover,
@@ -138,12 +132,13 @@ hr {
 .navbar-default .navbar-nav > .active > a,
 .navbar-default .navbar-nav > .active > a:hover,
 .navbar-default .navbar-nav > .active > a:focus {
-    color: light grey;  /* hover text color*/
+    color: lightgrey;  /* hover text color*/
     /*background-color: black;*/
 }
 
 .navbar-default .navbar-text {
     color: black;
+
 }
 
 .navbar-default .navbar-toggle {
@@ -156,8 +151,9 @@ hr {
 }
 
 .navbar-default .navbar-toggle .icon-bar {
-    background-color: grey;
+    background-color: grey; /*hamburger line color*/
 }
+
 
 
 

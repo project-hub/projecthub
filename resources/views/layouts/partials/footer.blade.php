@@ -1,11 +1,10 @@
 <footer>
   <div class="footer">
-    <div class="container">
-      <div class="">
-        <div class="col-md-4 footercontent">
+          <div class="">
+        <div class="col-md-4 footercontent text-center">
           <span class="copyright">Copyright &copy; Project Hub 2016</span>
         </div>
-        <div class="col-md-4 footercontent">
+        <div class="col-md-4 footercontent text-center">
           <ul class="list-inline social-buttons">
             <li><a href="#"><i class="fa fa-twitter socialicon"></i></a>
             </li>
@@ -15,7 +14,7 @@
             </li>
           </ul>
         </div>
-        <div class="col-md-4 footercontent">
+        <div class="col-md-4 footercontent text-center">
           <ul class="list-inline quicklinks">
             <li>
              <!-- Email Button trigger modal -->
@@ -97,7 +96,7 @@
           </ul>
         </div>
       </div>
-    </div>
+   
   </div>
 </footer>
 
