@@ -11,6 +11,7 @@
 	{{--  ******************** END SKILLS SELECT TABLE *************************** --}}
 
 	<h1 class=" span4 title">Project Posts</h1>
+	<h1>TEST TEST TEST TEST TEST</h1>
 	<hr>
 	@foreach($posts as $post)
 	<div class="row">		

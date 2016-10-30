@@ -17,7 +17,7 @@
 <div class="row">
     <div class="col-md-4">
         <a href="">
-            <img class="userPic img-responsive" src="{{ $user->image }}" alt="" height="450" width="">
+            <img class="userPic img-responsive" src="{{ $user->image }}" alt="User Profile" height="" width="">
         </a>
     </div>
     <div class="col-md-8">

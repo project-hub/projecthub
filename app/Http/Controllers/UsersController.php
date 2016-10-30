@@ -20,6 +20,7 @@ class UsersController extends Controller
     public function index(Request $request)
     {
         $data['users'] = ($request->has('search')) ?  User::searchUsers($request->search)->paginate(10) : User::with('posts')->paginate(10);
+        // $data['users'] = User::all();
         $data['skills'] = Skill::all();
         // dd($data['skills']);
         return view('users.index')->with($data);
@@ -117,7 +118,6 @@ class UsersController extends Controller
     public function userSkills(Request $request, $id)
     {
         $user = User::find($id);
-
         $newSkills = $request->has('skillz') ? $request->get('skillz') : [];
 
         $ids = [];
@@ -134,10 +134,10 @@ class UsersController extends Controller
                 $newSkill->save();
             }
         }
- 
-         $request->session()->flash('SUCCESS_MESSAGE', 'Skills added');
-         return redirect()->action('UsersController@show', $user->id);
-    }
+
+        $request->session()->flash('SUCCESS_MESSAGE', 'Skills added');
+        return redirect()->action('UsersController@show', $user->id);
+
 
 
 

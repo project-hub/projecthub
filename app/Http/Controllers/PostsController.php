@@ -134,8 +134,21 @@ class PostsController extends Controller
         // $this->voteScore($id);
         $data['post'] = Post::find($id);
         $data['skills'] = Skill::all();
+
+
+        // self::displaySkills($data['post']);
         return view('posts.show')->with($data);
     }
+
+    // ******************* DISPLAY POST SKILLS ************************************
+
+    // public function displaySkills($id)
+    // {
+    //     dd($id);
+    //     foreach ($id as $skill) {
+    //     echo $skill->pivot->skill_id;
+    //     }
+    // }
 
     /**
      * Show the form for editing the specified resource.
@@ -170,6 +183,37 @@ class PostsController extends Controller
         return redirect()->action('PostsController@show', $post->id);       
     }
 
+    // ******************* POST SKILLS ************************************
+
+    // public function postSkills(Request $request, $id)
+    // {
+    //     $post = Post::find($id);
+    //     $newSkills = $request->has('skillz') ? $request->get('skillz') : [];
+
+    //     $ids = [];
+
+    //     foreach ($post->skills as $skill) {
+    //         $ids[] = $skill->id;
+    //     }
+
+    //     foreach ($newSkills as $id) {
+    //         if (!in_array($id, $ids)) {
+    //             $newSkill = new Post_Skill;
+    //             $newSkill->post_id = $post->id;
+    //             $newSkill->skill_id = $id;
+    //             $newSkill->save();
+    //         }
+    //     }
+
+    //     $request->session()->flash('SUCCESS_MESSAGE', 'Skills added');
+    //     return redirect()->action('PostsController@show', $post->id);
+    // }
+
+
+
+
+
+
     /**
      * Remove the specified resource from storage.
      *
@@ -190,21 +234,5 @@ class PostsController extends Controller
         $data['results'] = Post::search($term)->paginate(5);
         return view('posts.results')->with($data);
     }
-
-// ******************* POST SKILLS ************************************
-
-    // public function post_store(Request $request)
-    // {
-    //     $post_skill = new Post_Skill;
-        
-
-    //     // foreach ($request->get('skillz') as $skills) {
-    //     //     return $skills;
-    //     // }
-    //         // dd($request->get('skillz'));
-        
-    // }
-
-
 
 }

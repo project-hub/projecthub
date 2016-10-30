@@ -26,7 +26,7 @@ $factory->define(App\Models\User::class, function (Faker\Generator $faker) {
         'linkedin_id' => $faker->url,
         'github' => $faker->url,
         'website' => $faker->url,
-        'image' => $faker->imageUrl($width = 640, $height = 480),
+        'image' => $faker->imageUrl($width = 400, $height = 300),
         'password' => bcrypt(str_random(10)),
         'remember_token' => str_random(10),
     ];
