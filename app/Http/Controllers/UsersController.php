@@ -68,6 +68,7 @@ class UsersController extends Controller
     {
         $rules = [
         'email' => 'required',
+        'zip_code' => 'required|min:5',
         ];
         // validates input for user edit form
         $this->validate($request, $rules);

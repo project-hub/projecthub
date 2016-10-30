@@ -23,16 +23,18 @@
     <div class="col-md-4">
       <h4>{{ $users->first_name . " " . $users->last_name }}</h4>
 
-      @if( $users->employer == 1)
+      @if($users->employer == 1)
       <h4>{{ $users->company_name }}</h4>
       @endif
 
-      @if( $users->employer == 0)
+      @if($users->employer == 0)
       <h4>Developer</h4>
       @endif
 
+      @if(isset($users->address) && isset($users->city) && $users->zip_code != 0)
       <p>{{ $users->address }}</p>
       <p>{{ $users->city . ", " . $users->state . "  " . $users->zip_code }}</p>
+      @endif
       <h5>Member Since: {{ $users->created_at->diffForHumans() }}</h5>
       <h5>Rating: </h5>
       <h5>Skills: </h5>
@@ -47,7 +49,7 @@
       @if($users->employer == 0 && Auth::id() == $users->id)
       <form enctype="multipart/form-data" method="POST" action="{{ action('UsersController@upload', $users->id) }}">
         {!! csrf_field() !!}
-        {!! method_field('PUT') !!}
+        {{-- {!! method_field('PUT') !!} --}}
         <label for="exampleInputFile">Upload Resume</label>
         <input type="file" id="exampleInputFile" name="resume">
         <br>
@@ -253,7 +255,13 @@
             <label>Content</label>
             <textarea class="form-control" rows="3" type="text" name="content">{{ empty(old('content')) ? $users->content : old('content') }}</textarea> 
           </div>
+          @if($errors->has('zip_code'))
+                <div class="alert alert-danger">
+                    {{ $errors->first('zip_code') }}
+                </div>
+          @else
           <button type="submit" class="btn btn-primary">Save changes</button>
+          @endif
         </form>
       </div>
       <div class="modal-footer">
