@@ -27,7 +27,7 @@
 					<li><a href="{{ action('PostsController@index') }}">Job Postings</a></li>
 					@endif
 					@if (Auth::check() == true && Auth::user()->employer == 1)
-					<li><a href="{{ action('PostsController@index') }}">Employer Posts</a></li>
+					<li><a href="{{ action('PostsController@index') }}">Project Posts</a></li>
 					@endif
 					@if (Auth::check() == true && Auth::user()->employer == 0)
 					<li><a href="{{ action('UsersController@index') }}">Employers</a></li>
@@ -64,7 +64,7 @@
 								<li>
 									<div class="row">
 										<div class="col-md-2">
-											<h5>Login:</h5>
+											<h5>Login</h5>
 											<form class="form" role="form" method="POST" action="{{ action('Auth\AuthController@postLogin')}}" accept-charset="UTF-8" id="login-nav">
 											{{ csrf_field() }}
 												@if($errors->has('email'))
@@ -73,7 +73,7 @@
                 									</div>
        	 										@endif
 												<div class="form-group">
-													<label class="sr-only" name="email">Email address</label>
+													<label class="sr-only" name="email">Email </label>
 													<input type="email" class="form-control" name="email" placeholder="Email Address" required>
 												</div>
 												@if($errors->has('password'))
