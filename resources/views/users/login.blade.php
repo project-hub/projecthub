@@ -3,7 +3,7 @@
 @section('content')
 <div class="container-fluid">
 	<div class="row">
-		<div class="col-sm-6 col-sm-offset-3">
+		<div class="col-sm-6 col-sm-offset-3 login">
 			<h1>Login:</h1>
 			{{-- <form method="POST" action="{{ action('Auth\AuthController@postLogin') }}">
 				{{ csrf_field() }} --}}
