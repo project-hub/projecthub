@@ -6,10 +6,10 @@
  <div class="row">
     <div class="col-lg-12">
         <h1 class="page-header title">Project Hub Users
-            <form method="GET" action="{{ action('SkillsController@show') }}">
+            {{-- <form method="GET" action="{{ action('SkillsController@show') }}">
                 <small>@include('layouts.partials.skills', ['skills'=>$skills])</small>
                 <button type="submit">enter</button>     
-            </form>
+            </form> --}}
         </h1>
     </div>
 </div>
@@ -28,7 +28,7 @@
 
             <h5><a href="{{ $user->email }}">{{ $user->email }}</a></h45>
 
-            <h5>Linked In: <a href="{{ $user->linkedIn }}">{{ $user->linkedIn }}</a></h5>
+            <h5>Linked In: <a href="{{ $user->linkedin_id }}">{{ $user->linkedin_id }}</a></h5>
 
             @if($user->employer == 0)
             <h5>Github: <a href="{{ $user->github }}">{{ $user->github }}</a></h5>
