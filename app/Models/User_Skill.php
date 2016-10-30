@@ -18,4 +18,4 @@ class User_Skill extends Model
 
     	return $this->belongsToMany('App\Models\Skill');    
     }
-
+}
