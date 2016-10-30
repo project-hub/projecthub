@@ -40,7 +40,7 @@ class UsersController extends Controller
         return view('users.profile')->with($data);
     }
 
-
+// ******************* STORE RESUME ************************************
      protected function updateResume($name, $file)
      {
         Storage::put(
@@ -48,7 +48,14 @@ class UsersController extends Controller
             $file
         );
      }
-    
+// ******************* RETRIEVE RESUME ************************************
+    // protected function pullResume($name, $file)
+    //  {
+    //     Storage::get(
+    //         $name,
+    //         $file
+    //     );
+    //  }
 
     /**
      * Update the specified resource in storage.
@@ -98,11 +105,7 @@ class UsersController extends Controller
 
 // ******************* UPLOAD RESUME ************************************
     public function upload(Request $request, $id)
-    {
-
-        // if($request->file('resume')->isValid()){
-        //     self::updateResume('resume'.$user->id, file_get_contents($request->file('resume')->getRealPath()));
-        // }
+    {   
         $user = User::find($id);
         if($request->file('resume')->isValid()){
             self::updateResume('resume'.$user->id, file_get_contents($request->file('resume')->getRealPath()));
@@ -111,6 +114,16 @@ class UsersController extends Controller
         $request->session()->flash('SUCCESS_MESSAGE', 'User updated successfully');
         return redirect()->action('UsersController@show', $user->id);
     }
+// ******************* DOWNLOAD RESUME ************************************
+    // public function download(Request $request, $id)
+    // {       
+    //     $user = User::find($id);
+    //     if($request->file('resume')->isValid()){
+    //         self::pullResume('resume'.$user->id, file_get_contents($request->file('resume')->getRealPath()));
+    //     }
+
+    //     return redirect()->action('UsersController@show', $user->id);
+    // }
 
     // ******************* USER SKILLS ************************************
 
