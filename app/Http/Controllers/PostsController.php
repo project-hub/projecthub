@@ -94,13 +94,33 @@ class PostsController extends Controller
 
 
 
-    // public function postSkill(Request $request)
-    // {
-    //     $user = App\Models\User::find(10);
-    //  $skill = App\Models\Skill::find(4);
-    //  $skills2 = App\Models\Skill::find(5);
-    //  $user->skills()->sync([4, 5]);
-    // }
+    // ******************* POST SKILLS ************************************
+
+
+    public function postSkills(Request $request, $id)
+    {
+        $post = Post::find($id);
+
+        $newSkills = $request->has('skillz') ? $request->get('skillz') : [];
+
+        $ids = [];
+
+        foreach ($post->skills as $skill) {
+            $ids[] = $skill->id;
+        }
+
+        foreach ($newSkills as $id) {
+            if (!in_array($id,$ids)) {
+                $newSkill = new Post_Skill;
+                $newSkill->post_id = $post->id;
+                $newSkill->skill_id = $id;
+                $newSkill->save();
+            }
+        }
+ 
+         $request->session()->flash('SUCCESS_MESSAGE', 'Skills added');
+         return redirect()->action('UsersController@show', $post->id);
+    }
 
 
     /**
@@ -113,6 +133,7 @@ class PostsController extends Controller
     {
         // $this->voteScore($id);
         $data['post'] = Post::find($id);
+        $data['skills'] = Skill::all();
         return view('posts.show')->with($data);
     }
 
