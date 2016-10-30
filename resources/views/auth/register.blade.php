@@ -25,6 +25,7 @@
 			  	</div>
 			  	<div class="checkbox form-group">
                      <label>
+                     	<input type="hidden" name="employer" value="0">
                         <input type="checkbox" name="employer" value="1"> I am an employer
                      </label>
                 </div>
