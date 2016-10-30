@@ -1,5 +1,5 @@
 @extends('layouts.master')
-
+@section('title', 'Posting')
 @section('content')
 
 <div class="container">
@@ -27,6 +27,16 @@
 				<p class="pull-left">Skill Skill Skill Skill</p>
 			</tr>
 		</div>
+
+{{-- *********************************** ADD SKILLS **************************************** --}}
+        <h3>Add Skills</h3>
+        <form method="POST" action="{{ action('PostsController@postSkills', $post->id) }}">
+            {!! csrf_field() !!}
+            <div class="form-group">
+                @include('layouts.partials.skills', ['skills'=>$skills])
+            </div>
+            <button type="submit">SUBMIT</button>
+        </form>
 	</div>
 
 {{-- ------------------create post modal------------------- --}}

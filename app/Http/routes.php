@@ -15,6 +15,7 @@
 Route::resource('users', 'UsersController', ['except' => ['create', 'store']]);
 // Route::resource('users/changepassword','UsersController');
 
+// Resume Upload
 Route::post('users/{id}/upload', 'UsersController@upload');
 
 // Route to PostsController for posts.
@@ -53,8 +54,11 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-
+// User skills 
 Route::post('users/{id}', 'UsersController@userSkills');
+
+// Post skills
+Route::post('posts/{id}', 'PostsController@postSkills');
 
 // ********************* EXAMPLE OF HOW SYNC() WORKS ****************************
 
