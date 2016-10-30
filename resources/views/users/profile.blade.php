@@ -44,7 +44,7 @@
       <h5>Github: <a href="{{ $users->github }}">{{ $users->github }}</a></h5>
       @endif
       <h5>Website: <a href="{{ $users->website }}">{{ $users->website }}</a></h5>
-      @if($users->employer == 0)
+      @if($users->employer == 0 && Auth::id() == $users->id)
       <form enctype="multipart/form-data" method="POST" action="{{ action('UsersController@upload', $users->id) }}">
         {!! csrf_field() !!}
         {!! method_field('PUT') !!}
@@ -328,6 +328,7 @@
 </div>
 <hr>
 <div class="col-lg-10">
+  @if (Auth::id() == $users->id)
   <form method="POST" action="{{ action('UsersController@userSkills', $users->id) }}">
     {!! csrf_field() !!}
     <div class="form-group">
@@ -335,6 +336,7 @@
     </div>
     <button class="btn-primary btn-sm" type="submit">SUBMIT</button>
   </form>
+  @endif
   <h3>Skills: </h3>
   <span class="label label-default"></span>
   <h3>Summary: </h3> 
