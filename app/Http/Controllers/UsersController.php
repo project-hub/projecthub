@@ -137,8 +137,8 @@ class UsersController extends Controller
 
         $request->session()->flash('SUCCESS_MESSAGE', 'Skills added');
         return redirect()->action('UsersController@show', $user->id);
-
     }
+
 
 
 

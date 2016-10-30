@@ -28,6 +28,7 @@
 			</tr>
 		</div>
 
+
 {{-- *********************************** ADD SKILLS **************************************** --}}
         <h3>Add Skills</h3>
         <form method="POST" action="{{ action('PostsController@postSkills', $post->id) }}">
