@@ -2,8 +2,10 @@
 
 @section('content')
 	<div class="row">
-		<div class="col-sm-6 col-sm-offset-3">
-			<h1>Login:</h1>
+		<div class="col-sm-4 col-sm-offset-4">
+<div class="login well">
+			<h3>Login</h3>
+			<hr class="loginHeader">
 			<form method="POST" action="{{ action('Auth\AuthController@postLogin') }}">
 				{{ csrf_field() }}
 				@if($errors->has('email'))
@@ -26,6 +28,7 @@
 				</div>
 			  	<button type="submit" class="btn btn-primary">Login</button>
 			</form>
+</div>
 		</div>
 	</div>
 @stop

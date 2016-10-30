@@ -64,7 +64,7 @@
 								<li>
 									<div class="row">
 										<div class="col-md-2">
-											<h5>Login</h5>
+											<h5>Login:</h5>
 											<form class="form" role="form" method="POST" action="{{ action('Auth\AuthController@postLogin')}}" accept-charset="UTF-8" id="login-nav">
 											{{ csrf_field() }}
 												@if($errors->has('email'))
@@ -88,9 +88,15 @@
 												<div class="form-group">
 													<button type="submit" class="btn btn-primary btn-block">Sign in</button>
 												</div>
-												<a href="{{ ('/auth/linkedin') }}" class="btn btn-primary">Login With Linkedin</a>
-												<a href="{{ ('/auth/github') }}" class="btn btn-primary">Login With GitHub</a>	
+												<hr>
+												<div class="form-group">
+												<a href="{{ ('/auth/linkedin') }}" class="btn btn-primary btn-block">Login With Linkedin</a>
+												</div>
+												<div class="form-group">
+												<a href="{{ ('/auth/github') }}" class="btn btn-primary btn-block">Login With GitHub</a>
+												</div>	
 											</form>
+											<hr>
 											<div class="bottom">
 												<h5>New user?</h5>
 												<a href="{{ action('Auth\AuthController@getRegister') }}"><button type="submit" class="btn btn-primary btn-block">Register</button></a>
