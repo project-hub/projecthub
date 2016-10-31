@@ -1,13 +1,13 @@
 body {
-	margin-top: 80px;
-    background-color: #F8F8F8;
+    margin-top: 85px;
     font-family: 'Lato', sans-serif;
-   /* background-color: #DCF0F0;*/
+    background-image: url("../img/bgnoise_lg.png");
+    background-repeat: repeat;
 }
 
 .footer {
 	background-color: #F8F8F8 ;
-	height: 50px;
+	height: 130px;
 }
 
 .footercontent {
@@ -17,30 +17,37 @@ body {
 hr {
     border: none;
     height: 2px;
-    /* Set the hr color */
-    color: lightgrey; /* old IE */
-    background-color: lightgrey; /* Modern Browsers */
+    color: #5A6064; /* old IE */
+    background-color: #5A6064; /* Modern Browsers */
     margin-top: 25px;
     margin-bottom: 25px;
 }
 
 /*------------welcome page--------*/
+.header {
+    color: white;
+    font-size: 120px;
+    margin-left: -10px;
+    margin-top: 10px;
+    opacity: 1;
+    padding-top: 120px;
+}
+
+.welcomeImgDiv {
+    height: 400px;
+    background-image: url("../img/welcomeBackground.gif");
+    background-repeat: repeat;
+    opacity: 0.6;
+    margin-top: 0px;   
 
 }
-.thumbnail {
-	padding-top: 25px;
-    max-height: 350px;
-    max-width: 600px;
+.container {
+    padding-left: 0px;
+    padding-right: 0px;
 }
 
 .logindrop {
-	width: 200px;
-}
-
-.header {
-    color: #2A5C68;
-    font-size: 130px;
-    margin-left: -10px;
+    width: 200px;
 }
 
 .welcomeSubHeader {    
@@ -48,9 +55,15 @@ hr {
 }
 
 .welcomeText {
-    color: #5B6772;    
+    color: #1C3B32;    
     font-weight: 400;
     font-size: 17px;
+}
+.aboutText{
+    color: black;    
+    font-weight: 400;
+    font-size: 17px;
+
 }
 
 .developersProjects {    
@@ -59,6 +72,12 @@ hr {
 
 .thumbs {
     padding: 10px;
+}
+.thumbnail {
+    background-color: #7A8083;
+}
+.captionWells {
+    background-color: #white;
 }
 
 /*-------- Users/Projects pages ------------*/
@@ -95,7 +114,7 @@ hr {
 /*------------- Login -------------*/
 .login {
     background-color: darkgrey
-    padding: 15px;
+    padding:10px;
     margin-top: 60px;
 }
 
@@ -167,7 +186,7 @@ hr {
 /**/           }                                      /**/
 /**/                                                  /**/
 /**/           #push{                                 /**/
-/**/             height:115px;                        /**/
+/**/             height:50px;                        /**/
 /**/             clear: both;                         /**/
 /**/           }                                      /**/
 /*------------------------------------------------------*/
@@ -180,8 +199,6 @@ hr {
 /*\*/	  -moz-border-radius: 0 !important;                                             /*\*/
 /*\*/	  }                                                                             /*\*/
 /*-----------------------------------------------------------------------------------------*/
-
-
 
 
 
