@@ -1,21 +1,22 @@
 <?php
 
-namespace App\Models;
+// namespace App\Models;
 
-use Illuminate\Database\Eloquent\Model;
+// use Illuminate\Database\Eloquent\Model;
 
-class User_Skill extends Model
-{
-    protected $table = 'user_skills';
+// class User_Skill extends Model
+// {
+//     protected $table = 'user_skills';
 
-    public function users()
-    {
-    	return $this->belongsToMany('App\Models\User');
-    }
+//     public function users()
+//     {
+//     	return $this->belongsToMany('App\Models\User');
+//     }
 
-    public function skills()
-    {
+//     public function skills()
+//     {
 
-    	return $this->belongsToMany('App\Models\Skill');    
-    }
-}
+//     	// return $this->belongsToMany('App\Models\Skill')->withPivot('name');    
+//     	return $this->belongsToMany('App\Models\Skill');    
+//     }
+// }

@@ -1,7 +1,7 @@
 <?php 
 
 namespace App\Http\Controllers;
-
+use Response;
 use \Storage;
 use Illuminate\Http\Request;
 use App\Models\User;
@@ -43,19 +43,21 @@ class UsersController extends Controller
 // ******************* STORE RESUME ************************************
      protected function updateResume($name, $file)
      {
-        Storage::put(
+        // Storage::put(
+        //     $name.'.pdf',
+        //     $file
+        // );
+        $result = Storage::get($name.'.pdf');
+        return $result;
+     }
+// ******************* RETRIEVE RESUME ************************************
+    protected function pullResume($name, $file)
+     {
+        Storage::get(
             $name,
             $file
         );
      }
-// ******************* RETRIEVE RESUME ************************************
-    // protected function pullResume($name, $file)
-    //  {
-    //     Storage::get(
-    //         $name,
-    //         $file
-    //     );
-    //  }
 
     /**
      * Update the specified resource in storage.
@@ -109,22 +111,37 @@ class UsersController extends Controller
     {   
         $user = User::find($id);
         if($request->file('resume')->isValid()){
-            self::updateResume('resume'.$user->id, file_get_contents($request->file('resume')->getRealPath()));
+            $file = self::updateResume('resume'.$user->id, file_get_contents($request->file('resume')->getRealPath()));
+            return response()->download($file);
         }
 
         $request->session()->flash('SUCCESS_MESSAGE', 'User updated successfully');
         return redirect()->action('UsersController@show', $user->id);
     }
 // ******************* DOWNLOAD RESUME ************************************
-    // public function download(Request $request, $id)
-    // {       
-    //     $user = User::find($id);
-    //     if($request->file('resume')->isValid()){
-    //         self::pullResume('resume'.$user->id, file_get_contents($request->file('resume')->getRealPath()));
-    //     }
+    public function download(Request $request, $id)
+    {       
+        $user = User::find($id);
+        // if(file('resume')->isValid()){
+            // self::pullResume('resume'.$user->id, file_get_contents($request->file('resume')->getRealPath()));
 
-    //     return redirect()->action('UsersController@show', $user->id);
-    // }
+        // dd(file('resume11')->getRealPath());
+          // self::pullResume('resume'.$user->id, response()->download('resume'.$user->id));
+
+        $filename = 'resume'.$user->id;
+        $path = storage_path($filename);
+
+// return Response::make(file_get_contents($filename), 200, [
+//     'Content-Type' => 'application/pdf',
+//     'Content-Disposition' => 'inline; filename="'.$filename.'"'
+// ]);
+
+        // Storage::get('resume'.$user->id);
+        // }
+          // dd($resume);
+        // return response()->download(Storage::get('resume'.$user->id));
+        return redirect()->action('UsersController@show', $user->id);
+    }
 
     // ******************* USER SKILLS ************************************
 
@@ -132,26 +149,43 @@ class UsersController extends Controller
     public function userSkills(Request $request, $id)
     {
         $user = User::find($id);
-        $newSkills = $request->has('skillz') ? $request->get('skillz') : [];
+        // dd($request->get('skillz'));
+        $user->skills()->sync($request->get('skillz'));
+        // $user->skills()->attach(5);//->sync([4, 5]);
+        // dd($user->skills);
 
-        $ids = [];
+        // $newSkills = $request->has('skillz') ? $request->get('skillz') : [];
 
-        foreach ($user->skills as $skill) {
-            $ids[] = $skill->id;
-        }
+        // $ids = [];
 
-        foreach ($newSkills as $id) {
-            if (!in_array($id,$ids)) {
-                $newSkill = new User_Skill;
-                $newSkill->user_id = $user->id;
-                $newSkill->skill_id = $id;
-                $newSkill->save();
-            }
-        }
+        // foreach ($user->skills as $skill) {
+        //     $ids[] = $skill->id;
+        // }
+
+        // foreach ($newSkills as $id) {
+        //     if (!in_array($id,$ids)) {
+        //         $newSkill = new User_Skill;
+        //         $newSkill->user_id = $user->id;
+        //         $newSkill->skill_id = $id;
+        //         $newSkill->save();
+        //     }
+        // }
 
         $request->session()->flash('SUCCESS_MESSAGE', 'Skills added');
         return redirect()->action('UsersController@show', $user->id);
     }
+
+
+// ******************* DISPLAY USER SKILLS ************************************
+    // public function displaySkills 
+    // {     
+    //     $user = User::with('user_skills')->find(11);
+    //     dd($user);
+
+    //     // $skillsArray = $user->f->lists('posts');
+    //     return view('users.profile');
+    // }
+
 
 
 

@@ -10,6 +10,20 @@
     <div class="col-md-4">
       <img class="img-responsive" src="{{ $users->image }}" alt="">
 
+<form method="POST" action="{{ action('UsersController@download', $users->id) }}">
+    {!! csrf_field() !!}
+    <input type="hidden" name="resume">
+
+    <button type="submit">GET RESUME</button>
+</form>
+
+{{-- <a href="{{ asset(Storage::disk('s3')->get('resume'.$users->id)) }}">Open the pdf!</a> --}}
+{{-- <a href="{{ action('UsersController@download', $users->id) }}">Open the pdf!</a> --}}
+
+  {{-- <img src="{{ Storage::get('resume11') }}"> --}}
+  {{-- <img src="https://s3-us-west-2.amazonaws.com/codeup-projecthub/resume11"> --}}
+  <img src="https://s3-us-west-2.amazonaws.com/codeup-projecthub/resume11?X-Amz-Date=20161031T195127Z&X-Amz-Expires=300&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Signature=cbc20dab938ab8e2d3f1d266d1a89016bbec60c53e7b7b15c7075830a71f9a75&X-Amz-Credential=ASIAJOV4WQ5Q7SXMNEWA/20161031/us-west-2/s3/aws4_request&X-Amz-SignedHeaders=Host&x-amz-security-token=FQoDYXdzEF8aDNfV1RIJby6%2Bup3YwiL6AT2wa4UyOQcnC8l/07HdMpMq1K7N1UHUK7UeEVEdNentXuR7lHIF657764Aqp0QE2Z2HPx%2Bt5eis9Q6s80T%2BSN78SPz0Z5xxzuGtR0bHP3aiNwKELi8sLl5Zf7SQW9ETJsfnBnaMgXLl0cUxrSZpFh15r0W/Bl%2BficI3yj3QTeA0gYDVmr/7jhIFnC10nUW0u0Rug5JDO1vz5ibBtYOeLo96fFZJPTJ8xbGYXto4%2BT/axrm80FzPM5DJK7RDi52tWsmILOOuzYU0GPqKXrHuvkwrqq2qVb3lnOXnLFunXhh//ewZ1wLmYTyeO0DOWyaexl9eyXGnzqithdgos5bdwAU%3D" style="max-height: 200px; max-width: 200px;">
+
       @if (Auth::id() == $users->id)
       <form method="POST" action="">
         <label for="exampleInputFile">Update Profile Image</label>
@@ -346,6 +360,11 @@
   </form>
   @endif
   <h3>Skills: </h3>
+    @foreach($users->skills as $skill)
+            {{$skill->name}}
+    @endforeach
+  
+
   <span class="label label-default"></span>
   <h3>Summary: </h3> 
   <p>{{ $users->content }}</p>

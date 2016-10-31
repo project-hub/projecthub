@@ -22,7 +22,7 @@ return [
     |
     */
 
-    'default' => 'local',
+    'default' => 'awss3',
 
     /*
     |--------------------------------------------------------------------------
@@ -39,10 +39,10 @@ return [
 
         'awss3' => [
             'driver'          => 'awss3',
-            'key'             => 'your-key',
-            'secret'          => 'your-secret',
-            'bucket'          => 'your-bucket',
-            'region'          => 'your-region',
+            'key'             => env('S3_KEY'),
+            'secret'          => env('S3_SECRET_KEY'),
+            'bucket'          => env('S3_BUCKET'),
+            'region'          => env('S3_REGION'),
             'version'         => 'latest',
             // 'bucket_endpoint' => false,
             // 'calculate_md5'   => true,

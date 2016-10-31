@@ -18,6 +18,9 @@ Route::resource('users', 'UsersController', ['except' => ['create', 'store']]);
 
 // Resume Upload
 Route::post('users/{id}/upload', 'UsersController@upload');
+// Resume Download
+Route::post('users/{id}/download', 'UsersController@download');
+Route::post('users/{id}/download', 'UsersController@download');
 
 // Route to PostsController for posts.
 Route::resource('posts', 'PostsController');
@@ -70,9 +73,24 @@ Route::post('posts/{id}', 'PostsController@postSkills');
 // 	$post->skills()->sync([4, 5]);
 // });
 
+Route::get('/test', function () {	
+	
+	$user = App\Models\User::with('skills')->find(11);
+	dd($user->skills);
+	// foreach ($user as $skill) {
+	// 	echo $skill->pivot->name;
+	// }
+	// $skill = App\Models\Skill::with('User_Skills')->find(2);
+	// dd($skill->name);
+
+	// $user->withPivot()
+});
 
 
 
-// Route::get('/users', function() {
-// 	return view('passwordchange');
-// });
+
+
+
+
+
+
