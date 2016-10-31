@@ -10,6 +10,20 @@
     <div class="col-md-4">
       <img class="img-responsive" src="{{ $users->image }}" alt="">
 
+<form method="POST" action="{{ action('UsersController@download', $users->id) }}">
+    {!! csrf_field() !!}
+    <input type="hidden" name="resume">
+
+    <button type="submit">GET RESUME</button>
+</form>
+
+{{-- <a href="{{ asset(Storage::disk('s3')->get('resume'.$users->id)) }}">Open the pdf!</a> --}}
+{{-- <a href="{{ action('UsersController@download', $users->id) }}">Open the pdf!</a> --}}
+
+  {{-- <img src="{{ Storage::get('resume11') }}"> --}}
+  {{-- <img src="https://s3-us-west-2.amazonaws.com/codeup-projecthub/resume11"> --}}
+  <img src="https://s3-us-west-2.amazonaws.com/codeup-projecthub/resume11?X-Amz-Date=20161031T195127Z&X-Amz-Expires=300&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Signature=cbc20dab938ab8e2d3f1d266d1a89016bbec60c53e7b7b15c7075830a71f9a75&X-Amz-Credential=ASIAJOV4WQ5Q7SXMNEWA/20161031/us-west-2/s3/aws4_request&X-Amz-SignedHeaders=Host&x-amz-security-token=FQoDYXdzEF8aDNfV1RIJby6%2Bup3YwiL6AT2wa4UyOQcnC8l/07HdMpMq1K7N1UHUK7UeEVEdNentXuR7lHIF657764Aqp0QE2Z2HPx%2Bt5eis9Q6s80T%2BSN78SPz0Z5xxzuGtR0bHP3aiNwKELi8sLl5Zf7SQW9ETJsfnBnaMgXLl0cUxrSZpFh15r0W/Bl%2BficI3yj3QTeA0gYDVmr/7jhIFnC10nUW0u0Rug5JDO1vz5ibBtYOeLo96fFZJPTJ8xbGYXto4%2BT/axrm80FzPM5DJK7RDi52tWsmILOOuzYU0GPqKXrHuvkwrqq2qVb3lnOXnLFunXhh//ewZ1wLmYTyeO0DOWyaexl9eyXGnzqithdgos5bdwAU%3D" style="max-height: 200px; max-width: 200px;">
+
       @if (Auth::id() == $users->id)
       <form method="POST" action="">
         <label for="exampleInputFile">Update Profile Image</label>
@@ -23,16 +37,18 @@
     <div class="col-md-4">
       <h4>{{ $users->first_name . " " . $users->last_name }}</h4>
 
-      @if( $users->employer == 1)
+      @if($users->employer == 1)
       <h4>{{ $users->company_name }}</h4>
       @endif
 
-      @if( $users->employer == 0)
+      @if($users->employer == 0)
       <h4>Developer</h4>
       @endif
 
+      @if(isset($users->address) && isset($users->city) && $users->zip_code != 0)
       <p>{{ $users->address }}</p>
       <p>{{ $users->city . ", " . $users->state . "  " . $users->zip_code }}</p>
+      @endif
       <h5>Member Since: {{ $users->created_at->diffForHumans() }}</h5>
       <h5>Rating: </h5>
       <h5>Skills: </h5>
@@ -47,7 +63,7 @@
       @if($users->employer == 0 && Auth::id() == $users->id)
       <form enctype="multipart/form-data" method="POST" action="{{ action('UsersController@upload', $users->id) }}">
         {!! csrf_field() !!}
-        {!! method_field('PUT') !!}
+        {{-- {!! method_field('PUT') !!} --}}
         <label for="exampleInputFile">Upload Resume</label>
         <input type="file" id="exampleInputFile" name="resume">
         <br>
@@ -138,9 +154,10 @@
           <div class="modal-header">
             <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
             <h4 class="modal-title" id="myModalLabel">Edit Profile</h4>
+            <a href="/auth/password">Change Password</a>
           </div>
           <div class="modal-body">
-
+            
             <form enctype="multipart/form-data" method="POST" action="{{ action('UsersController@update', $users->id) }}">
               {!! csrf_field() !!}
               {!! method_field('PUT') !!}
@@ -253,7 +270,13 @@
             <label>Content</label>
             <textarea class="form-control" rows="3" type="text" name="content">{{ empty(old('content')) ? $users->content : old('content') }}</textarea> 
           </div>
+          @if($errors->has('zip_code'))
+                <div class="alert alert-danger">
+                    {{ $errors->first('zip_code') }}
+                </div>
+          @else
           <button type="submit" class="btn btn-primary">Save changes</button>
+          @endif
         </form>
       </div>
       <div class="modal-footer">
@@ -338,6 +361,11 @@
   </form>
   @endif
   <h3>Skills: </h3>
+    @foreach($users->skills as $skill)
+            {{$skill->name}}
+    @endforeach
+  
+
   <span class="label label-default"></span>
   <h3>Summary: </h3> 
   <p>{{ $users->content }}</p>

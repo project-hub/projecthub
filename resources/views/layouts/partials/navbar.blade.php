@@ -67,14 +67,14 @@
 													<input type="password" class="form-control" name="password" placeholder="Password" required>
 												</div>
 												<div class="form-group">
-													<button type="submit" class="btn btn-primary btn-block">Sign in</button>
+													<button type="submit" class="btn btn-primary btn-block">Login</button>
 												</div>
 												<hr>
 												<div class="form-group">
-												<a href="{{ ('/auth/linkedin') }}" class="btn btn-primary btn-block">Login With Linkedin</a>
+												<a href="{{ ('/auth/linkedin') }}" class="btn btn-primary btn-block">Login With Linkedin <i class="fa fa-linkedin-square" aria-hidden="true"></i></a>
 												</div>
 												<div class="form-group">
-												<a href="{{ ('/auth/github') }}" class="btn btn-primary btn-block">Login With GitHub</a>
+												<a href="{{ ('/auth/github') }}" class="btn btn-primary btn-block">Login With GitHub <i class="fa fa-github" aria-hidden="true"></i></a>
 												</div>	
 											</form>
 											<hr>

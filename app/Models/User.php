@@ -28,7 +28,7 @@ class User extends Model implements AuthenticatableContract,
      *
      * @var array
      */
-    protected $fillable = ['first_name', 'last_name', 'company_name', 'employer', 'address', 'city', 'state', 'zip_code', 'email', 'password'];
+    protected $fillable = ['first_name', 'last_name', 'company_name', 'employer', 'email', 'password'];
 
     /**
      * The attributes excluded from the model's JSON form.
@@ -44,7 +44,8 @@ class User extends Model implements AuthenticatableContract,
 
     public function skills()
     {
-        return $this->hasMany('App\Models\User_Skill', 'user_id');
+        return $this->belongsToMany('App\Models\Skill', 'user_skills', 'user_id', 'skill_id');
+        // return $this->hasMany('App\Models\User_Skill', 'user_id');
     }
 
     public static function searchUsers($searchTerm) 
