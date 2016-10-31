@@ -362,7 +362,7 @@
   @endif
   <h3>Skills: </h3>
     @foreach($users->skills as $skill)
-            {{$skill->name}}
+            <span class="badge">{{$skill->name}}</span>
     @endforeach
   
 
