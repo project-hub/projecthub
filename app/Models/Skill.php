@@ -18,8 +18,14 @@ class Skill extends Model
     // 	return $this->hasMany('App\Models\User_Skill');
     // }
 
+
     public function users()
     {
         return $this->belongsToMany('App\Models\User');
+    }
+
+    public function posts()
+    {
+        return $this->belongsToMany('App\Models\Post');
     }
 }
