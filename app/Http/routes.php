@@ -14,7 +14,13 @@
 // Route to UsersController for users.
 Route::resource('users', 'UsersController', ['except' => ['create', 'store']]);
 // Route::resource('users/changepassword','UsersController');
+Route::get('/users/changepassword/{id}', function(){
+	return view('/users/changepassword');
+});
 
+Route::get('/auth/password', function() {
+	return view('/auth/password');
+});
 
 // Resume Upload
 Route::post('users/{id}/upload', 'UsersController@upload');
