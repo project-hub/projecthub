@@ -25,7 +25,10 @@
 
 					<p class="pull-right">{{ $post->created_at->diffForHumans() }}</p>
 				</div>
-				<p class="pull-left">Skill Skill Skill Skill</p>
+				<h3>Skills: </h3>
+    @foreach($post->skills as $skill)
+            {{$skill->name}}
+    @endforeach
 			</tr>
 		</div>
 

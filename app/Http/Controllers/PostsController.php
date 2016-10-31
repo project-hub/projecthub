@@ -101,25 +101,26 @@ class PostsController extends Controller
     {
         $post = Post::find($id);
 
-        $newSkills = $request->has('skillz') ? $request->get('skillz') : [];
+        $post->skills()->sync($request->get('skillz'));
+        // $newSkills = $request->has('skillz') ? $request->get('skillz') : [];
 
-        $ids = [];
+        // $ids = [];
 
-        foreach ($post->skills as $skill) {
-            $ids[] = $skill->id;
-        }
+        // foreach ($post->skills as $skill) {
+        //     $ids[] = $skill->id;
+        // }
 
-        foreach ($newSkills as $id) {
-            if (!in_array($id,$ids)) {
-                $newSkill = new Post_Skill;
-                $newSkill->post_id = $post->id;
-                $newSkill->skill_id = $id;
-                $newSkill->save();
-            }
-        }
+        // foreach ($newSkills as $id) {
+        //     if (!in_array($id,$ids)) {
+        //         $newSkill = new Post_Skill;
+        //         $newSkill->post_id = $post->id;
+        //         $newSkill->skill_id = $id;
+        //         $newSkill->save();
+        //     }
+        // }
  
          $request->session()->flash('SUCCESS_MESSAGE', 'Skills added');
-         return redirect()->action('UsersController@show', $post->id);
+         return redirect()->action('PostsController@show', $post->id);
     }
 
 

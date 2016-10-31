@@ -18,7 +18,7 @@ class Post extends Model
 	public function skills()
 	{
 
-		return $this->belongsToMany('App\Models\Skill', 'post_skills');
+		return $this->belongsToMany('App\Models\Skill', 'post_skills', 'post_id', 'skill_id');
 
 	}
 }
