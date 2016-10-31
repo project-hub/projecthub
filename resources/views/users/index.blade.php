@@ -32,9 +32,9 @@
             <h5>Website: <a href="{{ $user->website }}">{{ $user->website }}</a></h5>
 
             <h5>Skills: </h5>
-            {{-- @foreach() --}}
-            <span class="label label-default">skill badge</span>
-            {{-- @endforeach --}}
+            @foreach($user->skills as $skill)
+            <span class="badge">{{$skill->name}}</span>
+            @endforeach
             <h5>Rating: </h5>
             <p class="welcomeText">{{ $user->content }}</p>
             <a class="btn btn-default" href="{{ action('UsersController@show', $user->id) }}">View Profile <span class="glyphicon glyphicon-chevron-right"></span></a>
