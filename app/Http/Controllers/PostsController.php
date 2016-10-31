@@ -13,6 +13,9 @@ use Illuminate\Support\Facades\Log;
 
 class PostsController extends Controller
 {
+    protected $attributes = [
+   'on_site' => false
+    ];
 
     public function __construct()
     {
@@ -55,6 +58,7 @@ class PostsController extends Controller
         $rules = [
             'title'   => 'required|min:5',
             'content' => 'required',
+            'on_site' => 'required',
         ];
 
         // $request->session()->flash('ERROR_MESSAGE', 'Post was not saved. Please see messages under inputs');
@@ -69,7 +73,7 @@ class PostsController extends Controller
         $post->created_by = $request->user()->id;
         $post->title = $request->get('title');
         $post->content = $request->get('content');
-        // $post->on_site = $request->get('on_site');
+        $post->on_site = $request->get('location');
         $post->save();
 
        
@@ -176,7 +180,7 @@ class PostsController extends Controller
         $post = Post::findOrFail($id);
         $post->title = $request->title;               
         $post->content = $request->content;
-        // $post->on_site = $request->on_site;
+        $post->on_site = $request->location;
         $post->save();
 
         $request->session()->flash('SUCCESS_MESSAGE', 'Post was saved successfully');

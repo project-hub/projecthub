@@ -318,10 +318,10 @@
           </div>
 
           <div class="form-group">
-            <label>Desired Skills: </label>
-            {{-- <div class="form-group">
-              @include('layouts.partials.skills', ['skills'=>$skills])
-            </div> --}}
+            <div class="checkbox form-group">
+                <label><input type="checkbox" name="location" value="1">On Site</label>
+                <input type="hidden" name="on_site" value="0">
+            </div>
           </div>
 
           <button type="submit" class="btn btn-primary">Post</button>

@@ -12,12 +12,19 @@ class SkillSeeder extends Seeder
     public function run()
     {
     	DB::table('skills')->insert(array(
+             array('name'=>'Java'),
+             array('name'=>'Python'),
+             array('name'=>'C'),
+             array('name'=>'C#'),
+             array('name'=>'C++'),
+             array('name'=>'Objective-C'),
+             array('name'=>'Ruby'),
+             array('name'=>'JavaScript'),
              array('name'=>'PHP'),
              array('name'=>'HTML'),
              array('name'=>'CSS'),
-             array('name'=>'Laravel'),
-             array('name'=>'Java'),
-             array('name'=>'Angular'),
+             array('name'=>'SQL'),
+             array('name'=>'Perl'),
           ));
     }
 }

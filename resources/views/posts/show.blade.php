@@ -34,6 +34,7 @@
 
 
 {{-- *********************************** ADD SKILLS **************************************** --}}
+
         <h3>Add Skills</h3>
         <form method="POST" action="{{ action('PostsController@postSkills', $post->id) }}">
             {!! csrf_field() !!}
@@ -42,40 +43,44 @@
             </div>
             <button type="submit">SUBMIT</button>
         </form>
-	</div>
-
-{{-- ------------------create post modal------------------- --}}
-
-<!-- Button trigger modal -->
-<button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModalCreate">
-  Edit Post
-</button>
-
-<!-- Modal -->
-<div class="modal fade" id="myModalCreate" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title" id="myModalLabel">Edit Post</h4>
     </div>
-    <div class="modal-body">
-        {{-- -----modal body------- --}}
-        
-        <form method="POST" action="{{ action('PostsController@update', $post->id) }}">
-            {!! csrf_field() !!}
-            {!! method_field('PUT') !!}
-            <div class="form-group">
-                <label>Title</label>
-                <input  class="form-control" id="" name="title" placeholder="Title">
-            </div>
+
+    {{-- ------------------create post modal------------------- --}}
+
+    <!-- Button trigger modal -->
+    <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModalCreate">
+      Edit Post
+  </button>
+
+  <!-- Modal -->
+  <div class="modal fade" id="myModalCreate" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title" id="myModalLabel">Edit Post</h4>
+        </div>
+        <div class="modal-body">
+            {{-- -----modal body------- --}}
             
-            <div class="form-group">
-                <label>Description</label>
-                <textarea class="form-control" rows="3" name="content"></textarea> 
-            </div>
-            <button type="submit" class="btn btn-primary">Post</button>
-        </form>
+            <form method="POST" action="{{ action('PostsController@update', $post->id) }}">
+                {!! csrf_field() !!}
+                {!! method_field('PUT') !!}
+                <div class="form-group">
+                    <label>Title</label>
+                    <input  class="form-control" id="" name="title" placeholder="Title">
+                </div>
+                
+                <div class="form-group">
+                    <label>Description</label>
+                    <textarea class="form-control" rows="3" name="content"></textarea> 
+                </div>
+                <div class="checkbox form-group">
+                    <label><input type="checkbox" name="location" value="1">On Site</label>
+                    <input type="hidden" name="on_site" value="0">
+                </div>
+                <button type="submit" class="btn btn-primary">Post</button>
+            </form>
 
 
 
@@ -84,15 +89,15 @@
 
 
 
-        {{-- -----modal body------- --}}
+            {{-- -----modal body------- --}}
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
     </div>
-    <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-    </div>
-</div>
 </div>
 </div>
 
 </div>
-	
+
 @stop
