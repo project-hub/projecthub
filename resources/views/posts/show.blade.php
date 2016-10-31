@@ -27,7 +27,7 @@
 				</div>
 				<h3>Skills: </h3>
     @foreach($post->skills as $skill)
-            {{$skill->name}}
+            <span class="badge">{{$skill->name}}</span>
     @endforeach
 			</tr>
 		</div>
