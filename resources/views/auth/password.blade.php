@@ -9,7 +9,7 @@
             @endforeach
         </ul>
     @endif
-
+<div class="container">
     <div>
         Email
         <input type="email" name="email" value="{{ old('email') }}">
@@ -20,5 +20,6 @@
             Send Password Reset Link
         </button>
     </div>
+</div>
 </form>
 @stop
