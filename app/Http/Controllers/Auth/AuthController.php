@@ -89,10 +89,20 @@ class AuthController extends Controller
      *
      * @return Response
      */
-    public function handleProviderCallback()
+    public function handleProviderCallbackLinkedIn()
     {
-        $user = Socialite::driver('linkedin')->user();
-
+        try {
+            $user = Socialite::driver('linkedin')->user();
+            $create['email'] = $user->email;
+            $create['linkedin_id'] = $user->id;
+            
+            $userModel = new User;
+            $createdUser = $userModel->addNew($create);
+            Auth::loginUsingId($createdUser->id);
+            return redirect()->route('https://www.google.com');
+        } catch (Exception $e) {
+            return redirect('auth/linkedin');
+        }
         // $user->token;
     }
 
@@ -113,10 +123,36 @@ class AuthController extends Controller
      */
     public function handleProviderCallbackGithub()
     {
+        try{
         $user = Socialite::driver('github')->user();
+    } catch(Exception $e) {
+        return Redirect::to('auth/github');
+    }
+        $authUser = $this->findOrCreateUser($user);
 
+        Auth::login($authUser, true);
+
+        return Redirect::to('/');
         // $user->token;
     }
 
+    /**
+     * Return user if exists; create and return if doesn't
+     *
+     * @param $githubUser
+     * @return User
+     */
+    private function findOrCreateUser($githubUser)
+    {
+        if ($authUser = User::where('github', $githubUser->id)->first()) {
+            return $authUser;
+        }
+
+        return User::create([
+            'email' => $githubUser->email,
+            'github' => $githubUser->id,
+            'image' => $githubUser->avatar
+        ]);
+    }
     
 }
