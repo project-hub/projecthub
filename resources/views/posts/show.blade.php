@@ -4,6 +4,7 @@
 
 <div class="container">
 	<h1>Show Post</h1>
+    
 	<div class='container'>
 		<div class="row table well">
 			<tr>

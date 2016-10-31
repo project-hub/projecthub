@@ -44,7 +44,8 @@ class User extends Model implements AuthenticatableContract,
 
     public function skills()
     {
-        return $this->hasMany('App\Models\User_Skill', 'user_id');
+        return $this->belongsToMany('App\Models\Skill', 'user_skills', 'user_id', 'skill_id');
+        // return $this->hasMany('App\Models\User_Skill', 'user_id');
     }
 
     public static function searchUsers($searchTerm) 
