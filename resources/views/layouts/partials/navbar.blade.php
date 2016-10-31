@@ -35,27 +35,8 @@
 					@if (Auth::check() == true && Auth::user()->employer == 1)
 					<li><a href="{{ action('UsersController@index') }}">Developers</a></li>
 					@endif
-				</ul>
-				<form class="navbar-form navbar-right" method="GET" action="{{ action('UsersController@index')}}">
-					<div class="form-group">
-						<input type="text" class="form-control" name="search" placeholder="Search">
-					</div>
-					<button type="submit" class="btn btn-default">Submit</button>
-				</form>
-				<ul class="nav navbar-nav navbar-right">
-					{{-- <li><a href="#">Login/Register</a></li> --}}
-					<li class="dropdown">
-						<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Posts by Skills<span class="caret"></span></a>
-						<ul class="dropdown-menu">
-							<li><a href="#">Back-End</a></li>
-							<li role="separator" class="divider"></li>
-							<li><a href="#">Front-End</a></li>
-							<li role="separator" class="divider"></li>
-							<li><a href="#">Full-Stack</a></li> 
-						</ul>
-					</li>
-				</ul>
-
+				
+				
 				<ul class="nav navbar-nav navbar-right">
 					<li class="dropdown">
 						<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Login/Register <span class="caret"></span></a>
@@ -109,6 +90,13 @@
 						</ul>
 					</li>
 				</ul>
+				</ul>
+				<form class="navbar-form navbar-right" method="GET" action="{{ action('UsersController@index')}}">
+					<div class="form-group">
+						<input type="text" class="form-control" name="search" placeholder="Search">
+					</div>
+					<button type="submit" class="btn btn-default">Submit</button>
+				</form>
 
 			</div><!-- /.navbar-collapse -->
 		</div><!-- /.container-fluid -->
