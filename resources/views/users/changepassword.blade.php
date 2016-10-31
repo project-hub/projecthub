@@ -6,10 +6,10 @@
 <div class="container-fluid">
 	<div class="row">
 		<div class="col-lg-6">
-			<form class="form" method="POST" action="{{ action('UsersController@changePassword', $users->id) }}">
+			<form class="form" method="POST" action="{{action('UsersController@changePassword', $users->id )}}">
 				{!! csrf_field() !!}
 				{!! method_field('PUT') !!}
-				Email: <input class="form-control" type="text" name="email" value="{{ (old('email') ==null) ? $users->email : old('email') }}">
+				Email: <input class="form-control" type="text" name="email" >
 				New Password: <input class="form-control" type="password" name="password">
 				@if($errors->has('password'))
                 <div class="alert alert-danger">

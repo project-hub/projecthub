@@ -72,7 +72,6 @@ class AuthController extends Controller
         ]);
 
         $request->session()->flash('SUCCESS_MESSAGE', 'User created successfully! Please complete your profile');
-        return redirect()->action('users.profile', $user->id);
     }
 
      /**

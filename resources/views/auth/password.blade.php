@@ -1,3 +1,4 @@
+@extends('layouts.master')
 @section('content')
 <form method="POST" action="/password/email">
     {!! csrf_field() !!}
@@ -13,8 +14,9 @@
         Email
         <input type="email" name="email" value="{{ old('email') }}">
     </div>
+    <br>
     <div>
-        <button type="submit">
+        <button class="btn-primary btn-sm" type="submit">
             Send Password Reset Link
         </button>
     </div>
