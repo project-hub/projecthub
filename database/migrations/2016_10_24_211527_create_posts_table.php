@@ -21,7 +21,8 @@ class CreatePostsTable extends Migration
             $table->string('title');
             $table->string('content');
             $table->boolean('on_site');
-            $table->timestamps();
+            $table->timestamp('created_at')->useCurrent();
+            $table->timestamp('updated_at');
         });
     }
 

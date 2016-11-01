@@ -44,9 +44,10 @@ class UsersController extends Controller
      protected function updateResume($name, $file)
      {
         Storage::put(
-            $name,
+            '/folder/'.$name.'.pdf',
             $file
         );
+       Storage::disk('s3')->setVisibility($name, 'public');
         // $result = Storage::get($name.'.pdf');
         // return $result;
      }
@@ -63,9 +64,11 @@ class UsersController extends Controller
      protected function updatePic($name, $file)
      {
         Storage::put(
-            $name,
+            '/folder/'.$name,
             $file
         );
+       Storage::disk('s3')->setVisibility($name, 'public');
+
      }
 
     /**
@@ -120,40 +123,38 @@ class UsersController extends Controller
     public function download(Request $request, $id)
     {       
         $user = User::find($id);
-        // if(file('resume')->isValid()){
-            // self::pullResume('resume'.$user->id, file_get_contents($request->file('resume')->getRealPath()));
 
-        // dd(file('resume11')->getRealPath());
-          // self::pullResume('resume'.$user->id, response()->download('resume'.$user->id));
+        $key = env('S3_KEY');
 
-        $filename = 'resume'.$user->id;
-        $path = storage_path($filename);
+        $file = "/folder/resume{$user->id}.pdf";
+        $path = "https://s3-us-west-2.amazonaws.com/codeup-projecthub" . $file;
+        return redirect()->to($path);
 
-// return Response::make(file_get_contents($filename), 200, [
-//     'Content-Type' => 'application/pdf',
-//     'Content-Disposition' => 'inline; filename="'.$filename.'"'
-// ]);
-
-        // Storage::get('resume'.$user->id);
-        // }
-          // dd($resume);
-        // return response()->download(Storage::get('resume'.$user->id));
-        return redirect()->action('UsersController@show', $user->id);
+        ob_end_clean(); // <- this is important, i have forgotten why.
+        // return $response;
     }
 
     // ******************* UPLOAD PROFILE PIC ************************************
     public function uploadPic(Request $request, $id)
     {   
         $user = User::find($id);
-        // if($request->file('image')->isValid()){
-        //     $file = self::updatePic('image'.$user->id, file_get_contents($request->file('image')->getRealPath()));
-        // }
-        $user->image = $request->image;
-        $user->save();
+        if($request->file('image')->isValid()){
+            $file = self::updatePic('image'.$user->id, file_get_contents($request->file('image')->getRealPath()));
+        }
 
         $request->session()->flash('SUCCESS_MESSAGE', 'Picture updated successfully');
         return redirect()->action('UsersController@show', $user->id);
     }
+
+    // ******************* VIEW PROFILE PIC ************************************
+    // public function viewPic(){
+    //     $user = User::find($id);
+    //     $key = env('S3_KEY');
+
+    //     $file = "/folder/image{$user->id}.png";
+    //     $path = "https://s3-us-west-2.amazonaws.com/codeup-projecthub" . $file;
+    //     return $path;
+    // }
 
     // ******************* USER SKILLS ************************************
 
