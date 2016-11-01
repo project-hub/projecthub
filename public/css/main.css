@@ -22,6 +22,9 @@ hr {
     margin-top: 25px;
     margin-bottom: 25px;
 }
+#Container .mix{
+    display: none;
+}
 
 /*------------welcome page--------*/
 .header {

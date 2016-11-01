@@ -11,10 +11,18 @@
     <link rel="stylesheet" type="text/css" href="/css/main.css">
     <link href='http://fonts.googleapis.com/css?family=Lato:400,700' rel='stylesheet' type='text/css'>
 
+    {{-- -----jquery---- --}}
   	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    {{-- -----mix it up----- --}}
+    <script src="http://cdn.jsdelivr.net/jquery.mixitup/latest/jquery.mixitup.min.js"></script>
+   {{-- ----- bootstrap ----  --}}
   	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    {{-- ----- fancy dropdown ---- --}}
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-multiselect/0.9.13/js/bootstrap-multiselect.js" type="text/javascript" charset="utf-8" async defer></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-multiselect/0.9.13/js/bootstrap-multiselect.min.js" type="text/javascript" charset="utf-8" async defer></script>
+
+    <script src="/js/main.js"></script>
 
 </head>
 <body>
