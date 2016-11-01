@@ -71,35 +71,20 @@ class PostsController extends Controller
 
 
 
-    // ******************* POST SKILLS ************************************
+    // ******************* POST SKILLS ************************************************************************
 
 
     public function postSkills(Request $request, $id)
     {
         $post = Post::find($id);
 
-        $post->skills()->sync($request->get('skillz'));
-        // $newSkills = $request->has('skillz') ? $request->get('skillz') : [];
-
-        // $ids = [];
-
-        // foreach ($post->skills as $skill) {
-        //     $ids[] = $skill->id;
-        // }
-
-        // foreach ($newSkills as $id) {
-        //     if (!in_array($id,$ids)) {
-        //         $newSkill = new Post_Skill;
-        //         $newSkill->post_id = $post->id;
-        //         $newSkill->skill_id = $id;
-        //         $newSkill->save();
-        //     }
-        // }
- 
-         $request->session()->flash('SUCCESS_MESSAGE', 'Skills added');
+        if(!empty($request->get('skillz'))){
+            $post->skills()->sync($request->get('skillz'));
+            $request->session()->flash('SUCCESS_MESSAGE', 'Skills added');
+        }         
          return redirect()->action('PostsController@show', $post->id);
     }
-
+// ************************************************************************************************************
 
     /**
      * Display the specified resource.
@@ -118,15 +103,6 @@ class PostsController extends Controller
         return view('posts.show')->with($data);
     }
 
-    // ******************* DISPLAY POST SKILLS ************************************
-
-    // public function displaySkills($id)
-    // {
-    //     dd($id);
-    //     foreach ($id as $skill) {
-    //     echo $skill->pivot->skill_id;
-    //     }
-    // }
 
     /**
      * Show the form for editing the specified resource.
@@ -160,36 +136,6 @@ class PostsController extends Controller
 
         return redirect()->action('PostsController@show', $post->id);       
     }
-
-    // ******************* POST SKILLS ************************************
-
-    // public function postSkills(Request $request, $id)
-    // {
-    //     $post = Post::find($id);
-    //     $newSkills = $request->has('skillz') ? $request->get('skillz') : [];
-
-    //     $ids = [];
-
-    //     foreach ($post->skills as $skill) {
-    //         $ids[] = $skill->id;
-    //     }
-
-    //     foreach ($newSkills as $id) {
-    //         if (!in_array($id, $ids)) {
-    //             $newSkill = new Post_Skill;
-    //             $newSkill->post_id = $post->id;
-    //             $newSkill->skill_id = $id;
-    //             $newSkill->save();
-    //         }
-    //     }
-
-    //     $request->session()->flash('SUCCESS_MESSAGE', 'Skills added');
-    //     return redirect()->action('PostsController@show', $post->id);
-    // }
-
-
-
-
 
 
     /**
