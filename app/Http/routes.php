@@ -28,6 +28,10 @@ Route::post('users/{id}/upload', 'UsersController@upload');
 Route::post('users/{id}/download', 'UsersController@download');
 Route::post('users/{id}/download', 'UsersController@download');
 
+// Profile Pic Upload
+Route::post('users/{id}/uploadPic', 'UsersController@uploadPic');
+
+
 // Route to PostsController for posts.
 Route::resource('posts', 'PostsController');
 // Route to SkillsController for skills.
