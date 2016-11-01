@@ -8,7 +8,7 @@
   </div>
 </div>
     <div class="col-md-4">
-      <img class="img-responsive" src="" alt="PROFILE_PIC">
+      <img class="img-responsive" src="{{ $users->image }}" alt="PROFILE_PIC">
 {{-- {{ var_dump($users->image) }} --}}
 {{-- <form method="POST" action="{{ action('UsersController@download', $users->id) }}">
     {!! csrf_field() !!}
@@ -30,7 +30,7 @@
 {{-- ******************************************************************************************************************* --}}
     </div>
     <div class="col-md-4">
-      <h4>{{ $users->first_name . " " . $users->last_name }}</h4>
+      <h3>{{ $users->first_name . " " . $users->last_name }}</h3>
 
       @if($users->employer == 1)
       <h4>{{ $users->company_name }}</h4>
