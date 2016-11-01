@@ -14,6 +14,10 @@
         <a href="">
             <img class="userPic img-responsive" src="{{ $user->image }}" alt="User Profile" height="" width="">
         </a>
+            <h5>Skills: </h5>
+            @foreach($user->skills as $skill)
+            <span class="badge">{{$skill->name}}</span>
+            @endforeach
     </div>
     <div class="col-md-8">
         <h4 class="name postTitle">{{ $user->first_name . " " . $user->last_name }}</h4>
@@ -31,11 +35,6 @@
 
             <h5>Website: <a href="{{ $user->website }}">{{ $user->website }}</a></h5>
 
-            <h5>Skills: </h5>
-            @foreach($user->skills as $skill)
-            <span class="badge">{{$skill->name}}</span>
-            @endforeach
-            <h5>Rating: </h5>
             <p class="welcomeText">{{ $user->content }}</p>
             <a class="btn btn-default" href="{{ action('UsersController@show', $user->id) }}">View Profile <span class="glyphicon glyphicon-chevron-right"></span></a>
         </div>

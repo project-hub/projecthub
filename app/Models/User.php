@@ -54,9 +54,9 @@ class User extends Model implements AuthenticatableContract,
                     ->orWhere('last_name', 'LIKE', '%' . $searchTerm . '%')
                     ->orWhere('company_name', 'LIKE', '%' . $searchTerm . '%')
                     ->orWhere('address', 'LIKE', '%' . $searchTerm . '%')
-                    ->orWhere('city', 'LIKE', '&' . $searchTerm . '%')
-                    ->orWhere('state', 'LIKE', '&' . $searchTerm . '%')
-                    ->orWhere('email', 'LIKE', '&' . $searchTerm . '%')
-                    ->orWhere('content', 'LIKE', '&' . $searchTerm . '&');
+                    ->orWhere('city', 'LIKE', '%' . $searchTerm . '%')
+                    ->orWhere('state', 'LIKE', '%' . $searchTerm . '%')
+                    ->orWhere('email', 'LIKE', '%' . $searchTerm . '%')
+                    ->orWhere('content', 'LIKE', '%' . $searchTerm . '%');
     }
 }
