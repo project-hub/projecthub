@@ -8,14 +8,15 @@
   </div>
 </div>
     <div class="col-md-4">
-      <img class="img-responsive" src="{{ $users->image }}" alt="PROFILE_PIC">
-{{-- {{ var_dump($users->image) }} --}}
-{{-- <form method="POST" action="{{ action('UsersController@download', $users->id) }}">
+      <img class="img-responsive" src="https://s3-us-west-2.amazonaws.com/codeup-projecthub/folder/image{{$users->id}}" alt="Don't forget to upload your profile picture!">
+
+
+<form method="POST" target="_blank" action="{{ action('UsersController@download', $users->id) }}">
     {!! csrf_field() !!}
     <input type="hidden" name="resume">
 
     <button type="submit">GET RESUME</button>
-</form> --}}
+</form>
 
 {{-- ********************************** PROFILE PIC ******************************************************************* --}}
     @if (Auth::id() == $users->id)
