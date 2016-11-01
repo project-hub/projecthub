@@ -20,7 +20,7 @@
     </div>
     <div class="col-md-8">
         <h3>{{ $post->title}}</h3>
-        <h5>Created by: {{ $post->users->company_name }}</h5>
+        <h5>Created by: <a href="{{ action('UsersController@show', $post->users->id )}}">{{ $post->users->company_name }}</a></h5>
         <h5>Posted {{ $post->created_at->diffForHumans() }}</h5>
         @if($post->on_site == 1)
             <p>On Site</p>

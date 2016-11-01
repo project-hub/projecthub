@@ -8,7 +8,7 @@
   </div>
 </div>
     <div class="col-md-4">
-      <img class="img-responsive" src="" alt="PROFILE_PIC">
+      <img class="img-responsive" src="{{ $users->image }}" alt="PROFILE_PIC">
 {{-- {{ var_dump($users->image) }} --}}
 {{-- <form method="POST" action="{{ action('UsersController@download', $users->id) }}">
     {!! csrf_field() !!}
