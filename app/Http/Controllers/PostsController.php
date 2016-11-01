@@ -58,35 +58,13 @@ class PostsController extends Controller
         ];
         $this->validate($request, $rules);
 
-        // $request->session()->flash('ERROR_MESSAGE', 'Post was not saved. Please see messages under inputs');
-        // will redirect back with $errors object populated if validation fails
-        // $request->session()->flash('SUCCESS_MESSAGE', 'Post was saveed successfully');
-        // $request->session()->forget('ERROR_MESSAGE');
-            
-
-        // $request->session()->flash('SUCCESS_MESSAGE', 'User created successfully! Please complete your profile');
-
         $post = new Post;
         $post->created_by = $request->user()->id;
         $post->title = $request->get('title');
         $post->content = $request->get('content');
         $post->on_site = $request->get('location');
         $post->save();
-
-       // $post->skills()->sync($request->get('skillz'));
-        // $user = User::find(5);
-        // $skill = Skill::find(4);
-        // $skills2 = Skill::find(5);
-        // $user->skills()->sync([4, 5]);
-
-
-        // $post->skills()->sync($request->get('skillz'));
-        // $user = User::find(5);
-        // $skill = Skill::find(4);
-        // $skills2 = Skill::find(5);
-        // $user->skills()->sync([4, 5]);
     
-
         $request->session()->flash('SUCCESS_MESSAGE', 'Post was saved successfully');
         return redirect()->action('PostsController@index');
     }
