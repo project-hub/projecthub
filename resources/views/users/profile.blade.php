@@ -305,7 +305,7 @@
       <div class="modal-body">
         {{-- -----modal body------- --}}
         
-        <form enctype="multipart/form-data" method="POST" action="{{ action('PostsController@store') }}">
+        <form method="POST" action="{{ action('PostsController@store') }}">
           {!! csrf_field() !!}
           {{-- {!! method_field('PUT') !!} --}}
           <div class="form-group">
@@ -319,8 +319,10 @@
 
           <div class="form-group">
             <div class="checkbox form-group">
-                <label><input type="checkbox" name="location" value="1">On Site</label>
-                <input type="hidden" name="on_site" value="0">
+                <label>
+                <input type="hidden" name="location" value="0">
+                <input type="checkbox" name="location" value="1">On Site
+                </label>
             </div>
           </div>
 
