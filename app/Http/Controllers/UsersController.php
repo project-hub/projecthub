@@ -43,17 +43,26 @@ class UsersController extends Controller
 // ******************* STORE RESUME ************************************
      protected function updateResume($name, $file)
      {
-        // Storage::put(
-        //     $name.'.pdf',
-        //     $file
-        // );
-        $result = Storage::get($name.'.pdf');
-        return $result;
+        Storage::put(
+            $name,
+            $file
+        );
+        // $result = Storage::get($name.'.pdf');
+        // return $result;
      }
 // ******************* RETRIEVE RESUME ************************************
     protected function pullResume($name, $file)
      {
         Storage::get(
+            $name,
+            $file
+        );
+     }
+
+     // ******************* STORE PROFILE PIC ************************************
+     protected function updatePic($name, $file)
+     {
+        Storage::put(
             $name,
             $file
         );
@@ -112,7 +121,7 @@ class UsersController extends Controller
         $user = User::find($id);
         if($request->file('resume')->isValid()){
             $file = self::updateResume('resume'.$user->id, file_get_contents($request->file('resume')->getRealPath()));
-            return response()->download($file);
+            // return response()->download($file);
         }
 
         $request->session()->flash('SUCCESS_MESSAGE', 'User updated successfully');
@@ -140,6 +149,20 @@ class UsersController extends Controller
         // }
           // dd($resume);
         // return response()->download(Storage::get('resume'.$user->id));
+        return redirect()->action('UsersController@show', $user->id);
+    }
+
+    // ******************* UPLOAD PROFILE PIC ************************************
+    public function uploadPic(Request $request, $id)
+    {   
+        $user = User::find($id);
+        // if($request->file('image')->isValid()){
+        //     $file = self::updatePic('image'.$user->id, file_get_contents($request->file('image')->getRealPath()));
+        // }
+        $user->image = $request->image;
+        $user->save();
+
+        $request->session()->flash('SUCCESS_MESSAGE', 'Picture updated successfully');
         return redirect()->action('UsersController@show', $user->id);
     }
 
