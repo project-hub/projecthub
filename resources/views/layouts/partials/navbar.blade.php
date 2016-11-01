@@ -20,8 +20,7 @@
 					<li><a href="{{ action('UsersController@index') }}">Users</a></li>
 					@endif
 					@if (Auth::check())
-                    <li><a href="{{ action('UsersController@show', Auth::id()) }}"><span class="glyphicon glyphicon-user" aria-hidden="true"></span> Welcome, {{ Auth::user()->first_name }}!</a></li>
-					<li><a href="{{ action('Auth\AuthController@getLogout') }}">Logout</a></li>
+                    <li><a href="{{ action('UsersController@show', Auth::id()) }}"><i class="fa fa-user" aria-hidden="true"></i> Welcome, {{ Auth::user()->first_name }}!</a></li>
                     @endif
           			@if (Auth::check() == true && Auth::user()->employer == 0)
 					<li><a href="{{ action('PostsController@index') }}">Job Postings</a></li>
@@ -35,8 +34,10 @@
 					@if (Auth::check() == true && Auth::user()->employer == 1)
 					<li><a href="{{ action('UsersController@index') }}">Developers</a></li>
 					@endif
-				
-				
+					@if (Auth::check())
+					<li><a href="{{ action('Auth\AuthController@getLogout') }}">Logout</a></li>
+					@endif
+				@if (Auth::check() == false)
 				<ul class="nav navbar-nav navbar-right">
 					<li class="dropdown">
 						<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Login/Register <span class="caret"></span></a>
@@ -86,8 +87,8 @@
 									</div>
 								</li>
 							</div>
-
 						</ul>
+						@endif
 					</li>
 				</ul>
 				</ul>
