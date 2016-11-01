@@ -100,17 +100,6 @@ class UsersController extends Controller
         $user->website = $request->website;
         $user->save();
 
-        // foreach ($request->get('skillz') as $key=>$value) {
-            // $user->skills()->sync($request->get('skillz'[$id]));
-        // dd($value);
-        // }
-
-    // $user->skills()->sync([$request->get('skillz')]);
-
-    
-    // $skill = App\Models\Skill::find(4);
-    // $skills2 = App\Models\Skill::find(5);
-
         $request->session()->flash('SUCCESS_MESSAGE', 'User updated successfully');
         return redirect()->action('UsersController@show', $user->id);
     }
@@ -173,45 +162,12 @@ class UsersController extends Controller
     {
         $user = User::find($id);
         // dd($request->get('skillz'));
-        $user->skills()->sync($request->get('skillz'));
-        // $user->skills()->attach(5);//->sync([4, 5]);
-        // dd($user->skills);
-
-        // $newSkills = $request->has('skillz') ? $request->get('skillz') : [];
-
-        // $ids = [];
-
-        // foreach ($user->skills as $skill) {
-        //     $ids[] = $skill->id;
-        // }
-
-        // foreach ($newSkills as $id) {
-        //     if (!in_array($id,$ids)) {
-        //         $newSkill = new User_Skill;
-        //         $newSkill->user_id = $user->id;
-        //         $newSkill->skill_id = $id;
-        //         $newSkill->save();
-        //     }
-        // }
-
-        $request->session()->flash('SUCCESS_MESSAGE', 'Skills added');
+        if(!empty($request->get('skillz'))){
+            $user->skills()->sync($request->get('skillz'));
+            $request->session()->flash('SUCCESS_MESSAGE', 'Skills added');
+        }
         return redirect()->action('UsersController@show', $user->id);
     }
-
-
-// ******************* DISPLAY USER SKILLS ************************************
-    // public function displaySkills 
-    // {     
-    //     $user = User::with('user_skills')->find(11);
-    //     dd($user);
-
-    //     // $skillsArray = $user->f->lists('posts');
-    //     return view('users.profile');
-    // }
-
-
-
-
 
     public function changePassword (Request $request, $id) 
     {
