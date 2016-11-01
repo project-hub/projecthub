@@ -12,7 +12,7 @@
 <div class="container">
     <div>
         Email
-        <input type="email" name="email" value="{{ old('email') }}">
+        <input type="email" name="email" value="{{ Auth::user()->email }}">
     </div>
     <br>
     <div>

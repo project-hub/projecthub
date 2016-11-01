@@ -8,7 +8,7 @@
   </div>
 </div>
     <div class="col-md-4">
-      <img class="img-responsive" src="" alt="PROFILE_PIC">
+      <img class="img-responsive" src="{{ $users->image }}" alt="PROFILE_PIC">
 {{-- {{ var_dump($users->image) }} --}}
 {{-- <form method="POST" action="{{ action('UsersController@download', $users->id) }}">
     {!! csrf_field() !!}
@@ -45,8 +45,6 @@
       <p>{{ $users->city . ", " . $users->state . "  " . $users->zip_code }}</p>
       @endif
       <h5>Member Since: {{ $users->created_at->diffForHumans() }}</h5>
-      <h5>Rating: </h5>
-      <h5>Skills: </h5>
     </div>
     <div class="col-md-4">
       <br>

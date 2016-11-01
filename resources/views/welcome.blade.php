@@ -17,13 +17,11 @@
   <div class="row">
       <div class="col-sm-8 col-sm-offset-2 text-center">
         <h4 class="welcomeSubHeader">About Project Hub</h4>
-        <p class='aboutText'>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-          tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-          tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-          quis nostrud exercitation
+        <p class="aboutText text-justify">
+          Project Hub was was designed to connect employers that have web development projects, whether short-term or long-term, with local developers that fit their specific needs. Project Hub allows employers to seek out developers that have the skills needed for their project while allowing developers to search for projects that fit their skill set.
         </p>
+        <p class="aboutText">Project Hub connecting employers and developers!</p> 
+        <p class="aboutText"><a href="{{ action('Auth\AuthController@getRegister') }}">Get started!</a></p>
       </div>   
   </div>
 
