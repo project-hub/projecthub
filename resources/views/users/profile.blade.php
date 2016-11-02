@@ -61,17 +61,21 @@
       @endif
 {{-- ************************************ VIEW RESUME ************************************* --}}
       <br>
+      @if(Auth::check() == true)
       <form method="POST" target="_blank" action="{{ action('UsersController@download', $users->id) }}">
           {!! csrf_field() !!}
           <input type="hidden" name="resume">
           <button class="btn btn-primary" type="submit">VIEW RESUME</button>
       </form>
+      @endif
 {{-- ************************************************************************************** --}}
       <br>
       <!-- Email Button trigger modal -->
+      @if(Auth::check() == true)
       <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal1">
        <i class="fa fa-envelope" aria-hidden="true"></i> 
      </button>
+     @endif
      <!-- Modal -->
      <div class="modal fade" id="myModal1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
       <div class="modal-dialog" role="document">
