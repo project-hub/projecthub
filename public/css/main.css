@@ -5,15 +5,6 @@ body {
     background-repeat: repeat;
 }
 
-.footer {
-	background-color: #F8F8F8 ;
-	height: 160px;
-}
-
-.footercontent {
-	padding-top: 15px;
-}
-
 hr {
     border: none;
     height: 2px;
@@ -25,7 +16,10 @@ hr {
 #Container .mix{
     display: none;
 }
-
+.btn {
+    color: white;
+    background-color: grey;
+}
 /*------------welcome page--------*/
 .header {
     color: white;
@@ -106,7 +100,7 @@ hr {
     font-size: 30px;
 }
 .posted {
-    
+
     font-size: 13px;
     font-weight: 800;
 }
@@ -180,19 +174,27 @@ hr {
 
 /*-------welcome page--------*/
 .phDiv {
-    background-color: purple;
-    height: 800px;
-       
+    background-color: navy;
+    height: 700px;
+
 }
 
 .phDev {
-    background-color: green;
-     height: 400px;
+    background-color: lightblue;
+    height: 350px;
+    opacity: .7;
 
 }
+.phDev:hover{
+    opacity: 1;
+}
 .phProjects {
-    background-color: orange;
-     height: 400px;
+    background-color: papayawhip;
+    height: 350px;   
+    opacity: .7;
+}
+.phProjects:hover{
+    opacity: 1;
 }
 .masterBladeContainer {
     margin-right: 0px;
@@ -204,28 +206,69 @@ hr {
 
 
 /*---------------------Sticky Footer--------------------*/
-/**/           #wrapper, html, body {                 /**/
-/**/              min-height:100%!important;          /**/
-/**/                                                  /**/
-/**/           }                                      /**/
-/**/           #wrapper {                             /**/
-/**/              margin-bottom:0px;                /**/
-/**/           }                                      /**/
-/**/                                                  /**/
-/**/           #push{                                 /**/
-/**/             height:0px;                        /**/
-/**/             clear: both;                         /**/
-/**/           }                                      /**/
-/*------------------------------------------------------*/
+html {
+  position: relative;
+  min-height: 100%;
+}
+body {
+  /* Margin bottom by footer height */
+  margin-bottom: 60px;
+}
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  /* Set the fixed height of the footer here */
+  height: 60px;
+  background-color: #f5f5f5;
+}
+/*
+           #wrapper, html, body {             
+             height:100%!important;                                                           
+           }                                      
+     /*      #wrapper {
+                min-height: 100%;                             
+              margin: 0 auto -160px; 
+                  height:auto;               
+          }                                     
+             */                                     
+  /*         #push{                                
+             height:160px;                        
+            clear: both;                        
+            }  
+            .footer {
+                background-color: #F8F8F8 ;
+                height: 50px;
+                margin-top: -50px;
+            }
+
+            .footercontent {
+                padding-top: 15px;
+            }     
+           /* #wrapper, html, body {
+                height: 100%;
+                min-height:100%!important;
+                margin-bottom: 0px;*/
+     /*      }
+           #wrapper {
+               margin-bottom:-100px;
+           }
+
+           #push{
+
+                /*height: 50px;*/
+          /*      clear: both;
+           }*/
+/*------------------------------------------------------*
 
 /*-------------------/* gets rid of rounded corners on bootstrap --------------------------*/
 /*\*/	.btn {border-radius: 0;}                                                        /*\*/
 /*\*/                                                                                   /*\*/
 /*\*/	* {                                                                             /*\*/
-/*\*/	  border-radius: 0 !important;                                                  /*\*/
-/*\*/	  -moz-border-radius: 0 !important;                                             /*\*/
-/*\*/	  }                                                                             /*\*/
-/*-----------------------------------------------------------------------------------------*/
+    /*\*/	  border-radius: 0 !important;                                                  /*\*/
+    /*\*/	  -moz-border-radius: 0 !important;                                             /*\*/
+    /*\*/	  }                                                                             /*\*/
+    /*-----------------------------------------------------------------------------------------*/
 
 
 

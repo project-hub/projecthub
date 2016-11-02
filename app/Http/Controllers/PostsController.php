@@ -26,6 +26,7 @@ class PostsController extends Controller
      */
     public function index()
     {
+        // $data['posts'] = Post::all();
         $data['posts'] = Post::with('users')->orderBy('created_at', 'desc')->paginate(5);
         $data['skills'] = Skill::all();
         return view('posts.index')->with($data);

@@ -42,8 +42,10 @@
             @endif
             @yield('content')
         </div>
+           
     </div>
-    <div id="push"></div>
+ <div id="push"></div>
+
     @include('layouts.partials.footer')
 </body>
 </html>
