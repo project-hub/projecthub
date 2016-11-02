@@ -97,6 +97,8 @@ class AuthController extends Controller
             $user = Socialite::driver('linkedin')->user();
             $create['email'] = $user->email;
             $create['linkedin_id'] = $user->id;
+        
+            $token = $user->token;
             
             $userModel = new User;
             $createdUser = $userModel->addNew($create);
@@ -105,7 +107,6 @@ class AuthController extends Controller
         } catch (Exception $e) {
             return redirect('auth/linkedin');
         }
-        // $user->token;
     }
 
     /**
@@ -135,7 +136,7 @@ class AuthController extends Controller
 
         Auth::login($authUser, true);
 
-        return Redirect::to('/');
+        return Redirect::to('http://projecthub.us');
     }
 
     /**
