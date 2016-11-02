@@ -12,9 +12,7 @@
 @if(Auth::check() == false)
 <div class="row">
     <div class="col-md-4">
-        <a href="">
-            <img class="userPic img-responsive" src="{{ $user->image }}" alt="User Profile" height="" width="">
-        </a>
+            <img class="img-responsive" src="https://s3-us-west-2.amazonaws.com/codeup-projecthub/folder/image{{$user->id}}" onerror="this.src='/img/profile_placeholder.png'" >
             <h5>Skills: </h5>
             @foreach($user->skills as $skill)
             <span class="badge">{{$skill->name}}</span>
@@ -44,9 +42,7 @@
 @elseif(Auth::user()->employer == 0 && $user->employer == 1)
 <div class="row">
     <div class="col-md-4">
-        <a href="">
-            <img class="userPic img-responsive" src="{{ $user->image }}" alt="User Profile" height="" width="">
-        </a>
+            <img class="img-responsive" src="https://s3-us-west-2.amazonaws.com/codeup-projecthub/folder/image{{$user->id}}" onerror="this.src='/img/profile_placeholder.png'" >
             <h5>Skills Needed: </h5>
             @foreach($user->skills as $skill)
             <span class="badge">{{$skill->name}}</span>
@@ -66,9 +62,7 @@
 @elseif(Auth::user()->employer == 1 && $user->employer == 0)
 <div class="row">
     <div class="col-md-4">
-        <a href="">
-            <img class="userPic img-responsive" src="{{ $user->image }}" alt="User Profile" height="" width="">
-        </a>
+            <img class="img-responsive" src="https://s3-us-west-2.amazonaws.com/codeup-projecthub/folder/image{{$user->id}}" onerror="this.src='/img/profile_placeholder.png'" >
             <h5>Skills: </h5>
             @foreach($user->skills as $skill)
             <span class="badge">{{$skill->name}}</span>

@@ -97,15 +97,16 @@ class AuthController extends Controller
             $user = Socialite::driver('linkedin')->user();
             $create['email'] = $user->email;
             $create['linkedin_id'] = $user->id;
+        
+            $token = $user->token;
             
             $userModel = new User;
             $createdUser = $userModel->addNew($create);
             Auth::loginUsingId($createdUser->id);
-            return redirect()->route('https://www.google.com');
+            return redirect()->route('http://projecthub.us');
         } catch (Exception $e) {
             return redirect('auth/linkedin');
         }
-        // $user->token;
     }
 
     /**
@@ -127,6 +128,7 @@ class AuthController extends Controller
     {
         try{
         $user = Socialite::driver('github')->user();
+        $token = $user->token;
     } catch(Exception $e) {
         return Redirect::to('auth/github');
     }
@@ -134,8 +136,7 @@ class AuthController extends Controller
 
         Auth::login($authUser, true);
 
-        return Redirect::to('/');
-        // $user->token;
+        return Redirect::to('http://projecthub.us');
     }
 
     /**

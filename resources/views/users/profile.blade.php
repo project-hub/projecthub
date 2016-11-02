@@ -4,7 +4,7 @@
 <div class="container-fluid">
  <div class="row">
   <div class="col-lg-12">
-    <h1 class="page-header">User Profile</h1>
+    <h1 class="page-header">{{ $users->first_name . " " . $users->last_name }}</h1>
   </div>
 </div>
     <div class="col-md-4">
@@ -25,14 +25,14 @@
 
     </div>
     <div class="col-md-4">
-      <h3>{{ $users->first_name . " " . $users->last_name }}</h3>
+      {{-- <h3>{{ $users->first_name . " " . $users->last_name }}</h3> --}}
 
       @if($users->employer == 1)
-      <h4>{{ $users->company_name }}</h4>
+      <h3>{{ $users->company_name }}</h3>
       @endif
 
       @if($users->employer == 0)
-      <h4>Developer</h4>
+      <h3>Developer</h3>
       @endif
 
       @if(isset($users->address) && isset($users->city) && $users->zip_code != 0)
@@ -61,17 +61,21 @@
       @endif
 {{-- ************************************ VIEW RESUME ************************************* --}}
       <br>
+      @if(Auth::check() == true)
       <form method="POST" target="_blank" action="{{ action('UsersController@download', $users->id) }}">
           {!! csrf_field() !!}
           <input type="hidden" name="resume">
           <button class="btn btn-primary" type="submit">VIEW RESUME</button>
       </form>
+      @endif
 {{-- ************************************************************************************** --}}
       <br>
       <!-- Email Button trigger modal -->
+      @if(Auth::check() == true)
       <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal1">
        <i class="fa fa-envelope" aria-hidden="true"></i> 
      </button>
+     @endif
      <!-- Modal -->
      <div class="modal fade" id="myModal1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
       <div class="modal-dialog" role="document">
