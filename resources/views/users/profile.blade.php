@@ -4,7 +4,7 @@
 <div class="container-fluid">
  <div class="row">
   <div class="col-lg-12">
-    <h1 class="page-header">User Profile</h1>
+    <h1 class="page-header">{{ $users->first_name . " " . $users->last_name }}</h1>
   </div>
 </div>
     <div class="col-md-4">
@@ -25,14 +25,14 @@
 
     </div>
     <div class="col-md-4">
-      <h3>{{ $users->first_name . " " . $users->last_name }}</h3>
+      {{-- <h3>{{ $users->first_name . " " . $users->last_name }}</h3> --}}
 
       @if($users->employer == 1)
-      <h4>{{ $users->company_name }}</h4>
+      <h3>{{ $users->company_name }}</h3>
       @endif
 
       @if($users->employer == 0)
-      <h4>Developer</h4>
+      <h3>Developer</h3>
       @endif
 
       @if(isset($users->address) && isset($users->city) && $users->zip_code != 0)
