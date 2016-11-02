@@ -155,6 +155,7 @@ class UsersController extends Controller
     //     $file = "/folder/image{$user->id}.png";
     //     $path = "https://s3-us-west-2.amazonaws.com/codeup-projecthub" . $file;
     //     return $path;
+    
     // }
 
     // ******************* USER SKILLS ************************************
