@@ -30,7 +30,8 @@ class CreateUsersTable extends Migration
             $table->binary('image');
             $table->string('password', 60);
             $table->rememberToken();
-            $table->timestamps();
+            $table->timestamp('created_at')->useCurrent();
+            $table->timestamp('updated_at');
         });
     }
 

@@ -8,16 +8,10 @@
   </div>
 </div>
     <div class="col-md-4">
-      <img class="img-responsive" src="{{ $users->image }}" alt="PROFILE_PIC">
-{{-- {{ var_dump($users->image) }} --}}
-{{-- <form method="POST" action="{{ action('UsersController@download', $users->id) }}">
-    {!! csrf_field() !!}
-    <input type="hidden" name="resume">
+      <img class="img-responsive" src="https://s3-us-west-2.amazonaws.com/codeup-projecthub/folder/image{{$users->id}}" onerror="this.src='/img/profile_placeholder.png'" >
 
-    <button type="submit">GET RESUME</button>
-</form> --}}
 
-{{-- ********************************** PROFILE PIC ******************************************************************* --}}
+{{-- ********************************** PROFILE PIC ************************************************* --}}
     @if (Auth::id() == $users->id)
         <form method="POST" enctype="multipart/form-data" action="{{ action('UsersController@uploadPic', $users->id) }}">
             {!! csrf_field() !!}
@@ -27,10 +21,11 @@
             <button type="submit" class="btn btn-primary btn-xs">Save</button>
         </form>
     @endif  
-{{-- ******************************************************************************************************************* --}}
+{{-- ************************************************************************************************ --}}
+
     </div>
     <div class="col-md-4">
-      <h4>{{ $users->first_name . " " . $users->last_name }}</h4>
+      <h3>{{ $users->first_name . " " . $users->last_name }}</h3>
 
       @if($users->employer == 1)
       <h4>{{ $users->company_name }}</h4>
@@ -53,8 +48,8 @@
       <h5>Github: <a href="{{ $users->github }}">{{ $users->github }}</a></h5>
       @endif
       <h5>Website: <a href="{{ $users->website }}">{{ $users->website }}</a></h5>
+{{-- ********************************** UPLOAD RESUME ************************************* --}}
       @if($users->employer == 0 && Auth::id() == $users->id)
-{{-- ********************************** RESUME ******************************************************************* --}}
       <form enctype="multipart/form-data" method="POST" action="{{ action('UsersController@upload', $users->id) }}">
         {!! csrf_field() !!}
         {{-- {!! method_field('PUT') !!} --}}
@@ -63,9 +58,16 @@
         <br>
         <button type="submit" class="btn btn-primary btn-xs">Save</button>
       </form> 
-{{-- ******************************************************************************************************************* --}}
-      <br>
       @endif
+{{-- ************************************ VIEW RESUME ************************************* --}}
+      <br>
+      <form method="POST" target="_blank" action="{{ action('UsersController@download', $users->id) }}">
+          {!! csrf_field() !!}
+          <input type="hidden" name="resume">
+          <button class="btn btn-primary" type="submit">VIEW RESUME</button>
+      </form>
+{{-- ************************************************************************************** --}}
+      <br>
       <!-- Email Button trigger modal -->
       <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal1">
        <i class="fa fa-envelope" aria-hidden="true"></i> 
@@ -328,41 +330,30 @@
       <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
       </div>
-
-
-
     </div>
   </div>
 </div>
-
-
-
-
-
-
-
-{{-- -------------------------------------------- --}}
-
-
 </div>
 </div>
 <hr>
 <div class="col-lg-10">
   @if (Auth::id() == $users->id)
+
+{{-- *************** SKILLS SELECTOR ************************ --}}
   <form method="POST" action="{{ action('UsersController@userSkills', $users->id) }}">
     {!! csrf_field() !!}
     <div class="form-group">
       @include('layouts.partials.skills', ['skills'=>$skills])
     </div>
-    <button class="btn-primary btn-sm" type="submit">SUBMIT</button>
+    <button class="btn btn-primary btn-sm" type="submit">SUBMIT</button>
   </form>
+{{-- ****************** END OF SKILLS SELECTOR ************** --}}
+
   @endif
   <h3>Skills: </h3>
     @foreach($users->skills as $skill)
             <span class="badge">{{$skill->name}}</span>
     @endforeach
-  
-
   <span class="label label-default"></span>
   <h3>Summary: </h3> 
   <p>{{ $users->content }}</p>
