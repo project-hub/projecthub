@@ -40,7 +40,7 @@ class UserSeeder extends Seeder
                     'content'=>"Seeking jobs that help me to improve my programming skills, accomplish my professional goals, extend and apply my knowledge as a systems engineer and ongoing development field to learn new technologies.",
                     'linkedin_id'=>'https://www.linkedin.com/in/fernando-mendoza-rodriguez-a7369123',
                     'github'=>'https://gist.github.com/wrobstory/5609803',
-                    'website'=>'www.brandon_jets_marshall.com',
+                    'website'=>'www.brandon_marshall.com',
                     'image'=>'https://upop.mit.edu/sites/default/files/DASO%20Frederick%20LinkedIn%20Profile%20Photo.jpg',
                     'password'=>bcrypt('tastyburger')),
              array('first_name'=>'Alexander',
@@ -76,6 +76,21 @@ class UserSeeder extends Seeder
                     'website'=>'www.st_velven.com',
                     'image'=>'http://matchpredictions.in/wp-content/uploads/2015/09/MS-Dhoni-Cricinfo-Yahoo-Profile-Stats-Highlights.jpg',
                     'password'=>bcrypt('tastyburger')),
+             array('first_name'=>'Brice',
+                    'last_name'=>'Wilkinson',
+                    'company_name'=>'',
+                    'address'=>'3236 Braesview Ln',
+                    'city'=>'San Antonio',
+                    'state'=>'TX',
+                    'zip_code'=>78253,
+                    'email'=>'b_dub@gmail.com',
+                    'employer'=>0,
+                    'content'=>"My focus is on learning and mastering JavaScript functional programming design patterns, React, jQuery, OOP, PHP, MySQL, Laravel, Node, Python, HTML5, and CSS3. All time favorite apps: Evernote, Spotify, Twitter, Trello and Slack. In love with computers since programming my first game in BASIC on an Apple IIE in 1995. I have carried this excitement, fascination and wonder with me as I watch computer science and the internet grow. As a musician, artist and all around geek, it has been my dream to apply these passions and skills in the workplace. This special cocktail of obsessions gives me a unique view of the web and has challenged me to apply myself as a web developer. Currently, I am a Student Fellow at Codeup San Antonio where I am honing my skills and spending my spare time learning new web technologies.",
+                    'linkedin_id'=>'https://www.linkedin.com/in/will78006',
+                    'github'=>'https://gist.github.com/wrobstory/5609803',
+                    'website'=>'www.wilkinson.com',
+                    'image'=>'https://lh4.googleusercontent.com/-fHlz7kScna4/AAAAAAAAAAI/AAAAAAABS38/m2l9kOds1mE/photo.jpg',
+                    'password'=>bcrypt('tastyburger')),
              array('first_name'=>'Matthew',
              		'last_name'=>'Deal',
              		'company_name'=>'Spectraforce Technology',
@@ -92,6 +107,7 @@ class UserSeeder extends Seeder
              		'website'=>'http://www.spectraforce.com/index.aspx',
              		'image'=>'https://www.bandtogethernc.org/wp-content/uploads/2015/08/SpectraForce.gif',
              		'password'=>bcrypt('tastyburger')),
+
           ));
     }
 }
