@@ -2,9 +2,30 @@
 
 @section('content')
 {{-- ----------------Jumbotron------------------- --}}
-<div class='container'>
+<div class="container-fluid">
+    <div class="row">
+        <div class="phDiv col-sm-6">
+            <h2 class="header text-center">Project Hub</h2>
+            <p class="aboutText text-center">Connecting employers and developers!</p> 
+            <p class=" aboutText text-center"><a href="{{ action('Auth\AuthController@getRegister') }}">Get started!</a></p>
+        </div>
+        <div class="col-sm-6">
+            <div class="row">
+                <a href="{{ action('UsersController@index') }}"><div class="phDev col-sm-12">
+                  <h3 class='developersProjects'>Developers</h3>
+                  <p class="welcomeText">Find the perfect Dev for your project. </p>
+                </div></a>
+                <a href="{{ action('PostsController@index') }}"><div class="phProjects col-sm-12">
+                  <h3>Projects</h3>
+                  <p class="welcomeText">Check out all the great projects that fit your skill set. </p>
+                </div></a>
+            </div>
+        </div>
+    </div>
+</div>
 
- <div class="row">
+
+ {{-- <div class="row">
   <div class="col-sm-12">
     <div class="welcomeImgDiv">
     <h2 class="header text-center">Project Hub</h2>
@@ -27,7 +48,7 @@
 
  <hr class="">
 
- {{-- -- ----------------info boxes------------------- --}}
+  ----------------info boxes-------------------
    <div class="row">
        <div class="col-md-6"> 
         <div class="thumbnail">
@@ -52,8 +73,7 @@
       </div>
     </div>
   </div>
-
-</div>
+ --}}
 
 @stop
 
