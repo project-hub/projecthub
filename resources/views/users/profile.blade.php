@@ -8,7 +8,8 @@
   </div>
 </div>
     <div class="col-md-4">
-      <img class="img-responsive" src="https://s3-us-west-2.amazonaws.com/codeup-projecthub/folder/image{{$users->id}}" alt="Don't forget to upload your profile picture!">
+    <img class="img-responsive" src="https://s3-us-west-2.amazonaws.com/codeup-projecthub/folder/image{{$users->id}}"
+     alt="Profile Picture">
 
 
 <form method="POST" target="_blank" action="{{ action('UsersController@download', $users->id) }}">
