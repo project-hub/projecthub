@@ -107,6 +107,21 @@ class UserSeeder extends Seeder
              		'website'=>'http://www.spectraforce.com/index.aspx',
              		'image'=>'https://www.bandtogethernc.org/wp-content/uploads/2015/08/SpectraForce.gif',
              		'password'=>bcrypt('tastyburger')),
+             array('first_name'=>'David',
+                    'last_name'=>'Berry',
+                    'company_name'=>'Experis Manpower Group',
+                    'address'=>'301 Congress Ave Suite 375',
+                    'city'=>'Austin',
+                    'state'=>'TX',
+                    'zip_code'=>78701,
+                    'email'=>'d_berry@experis.com',
+                    'employer'=>1,
+                    'content'=>"Experis is the global leader in professional resourcing and project-based workforce solutions. We accelerate organizations' growth by intensely attracting, assessing, and placing specialized expertise in IT, Finance, Engineering, and Healthcare to precisely deliver in-demand talent for mission-critical positions, enhancing the competitiveness of the organizations and people we serve.",
+                    'linkedin_id'=>'',
+                    'github'=>'',
+                    'website'=>'http://www.experis.com',
+                    'image'=>'http://www.sandfbizsolutions.com/images/Experis-logo.png',
+                    'password'=>bcrypt('tastyburger')),
 
           ));
     }
