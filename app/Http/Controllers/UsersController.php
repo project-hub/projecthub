@@ -111,12 +111,13 @@ class UsersController extends Controller
     public function upload(Request $request, $id)
     {   
         $user = User::find($id);
-        if($request->file('resume')->isValid()){
+        
+        if($request->file('resume'))
+        {
             $file = self::updateResume('resume'.$user->id, file_get_contents($request->file('resume')->getRealPath()));
-            // return response()->download($file);
-        }
+            $request->session()->flash('SUCCESS_MESSAGE', 'User updated successfully');    
+        } 
 
-        $request->session()->flash('SUCCESS_MESSAGE', 'User updated successfully');
         return redirect()->action('UsersController@show', $user->id);
     }
 // ******************* DOWNLOAD RESUME ************************************
@@ -154,6 +155,7 @@ class UsersController extends Controller
     //     $file = "/folder/image{$user->id}.png";
     //     $path = "https://s3-us-west-2.amazonaws.com/codeup-projecthub" . $file;
     //     return $path;
+    
     // }
 
     // ******************* USER SKILLS ************************************

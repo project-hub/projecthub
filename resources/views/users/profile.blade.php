@@ -10,6 +10,7 @@
     <div class="col-md-4">
       <img class="img-responsive" src="https://s3-us-west-2.amazonaws.com/codeup-projecthub/folder/image{{$users->id}}" onerror="this.src='/img/profile_placeholder.png'" >
 
+
 {{-- ********************************** PROFILE PIC ************************************************* --}}
     @if (Auth::id() == $users->id)
         <form method="POST" enctype="multipart/form-data" action="{{ action('UsersController@uploadPic', $users->id) }}">
