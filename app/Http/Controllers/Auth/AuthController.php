@@ -127,6 +127,7 @@ class AuthController extends Controller
     {
         try{
         $user = Socialite::driver('github')->user();
+        $token = $user->token;
     } catch(Exception $e) {
         return Redirect::to('auth/github');
     }
@@ -135,7 +136,6 @@ class AuthController extends Controller
         Auth::login($authUser, true);
 
         return Redirect::to('/');
-        // $user->token;
     }
 
     /**
