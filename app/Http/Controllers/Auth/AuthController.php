@@ -101,7 +101,7 @@ class AuthController extends Controller
             $userModel = new User;
             $createdUser = $userModel->addNew($create);
             Auth::loginUsingId($createdUser->id);
-            return redirect()->route('https://www.google.com');
+            return redirect()->route('http://projecthub.us');
         } catch (Exception $e) {
             return redirect('auth/linkedin');
         }

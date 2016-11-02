@@ -38,13 +38,13 @@ return [
     'linkedin' => [
         'client_id' => '78ci7g1uqvv0ph',
         'client_secret' => 'o8FxJcduplEcl3W6',
-        'redirect' => 'https://google.com',
+        'redirect' => 'http://projecthub.us',
     ],
 
     'github' => [
         'client_id' => '24d40d055c64ed651ea5',
         'client_secret' => '5b88aa486845cd857d85270cfc4702ca57684ad2',
-        'redirect' => 'https://google.com',
+        'redirect' => 'http://projecthub.us',
     ]
 
 ];
