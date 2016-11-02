@@ -96,6 +96,7 @@ class PostsController extends Controller
     {
         // $this->voteScore($id);
         $data['post'] = Post::find($id);
+        $data['users'] = User::find($id);
         $data['skills'] = Skill::all();
 
 
