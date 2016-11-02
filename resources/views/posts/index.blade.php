@@ -25,7 +25,7 @@
 			<div class="mix @foreach($post->skills as $skill) category-{{ $skill->id }} @endforeach" style="display: inline-block;">
 				{{-- --------/mix---------------- --}}
 				<div class="col-sm-3">
-					<img class="img-responsive" src="https://s3-us-west-2.amazonaws.com/codeup-projecthub/folder/image{{$posts->users->id}}" onerror="this.src='/img/profile_placeholder.png'" >
+					<img class="img-responsive" src="https://s3-us-west-2.amazonaws.com/codeup-projecthub/folder/image{{$post->users->id}}" onerror="this.src='/img/profile_placeholder.png'" >
 				</div>
 				<div class="col-sm-9">
 					<h4 class="name postTitle">{{ $post->users->company_name }}</h4>
@@ -40,7 +40,7 @@
 			@endforeach
 		</div>
 	</div>
-
+<div class="text-center">{!! $posts->render() !!} </div>
 
 </div>	
 
