@@ -1,5 +1,5 @@
 body {
-    margin-top: 85px;
+    margin-top: 50px;
     font-family: 'Lato', sans-serif;
     background-image: url("../img/bgnoise_lg.png");
     background-repeat: repeat;
@@ -7,7 +7,7 @@ body {
 
 .footer {
 	background-color: #F8F8F8 ;
-	height: 130px;
+	height: 160px;
 }
 
 .footercontent {
@@ -128,7 +128,7 @@ hr {
 
 /*--------------------------------*/
 .container {
-	margin-bottom: 20px;
+	margin-bottom:0px;
 }
 
 
@@ -137,6 +137,7 @@ hr {
 .navbar-default {
     background-color: #F8F8F8;         /*bar color*/
     border-color: #F8F8F8;
+    margin-bottom: 0px;
 }
 
 .navbar-default .navbar-nav > li > a {
@@ -177,9 +178,30 @@ hr {
 }
 
 
-/*-------codepen--------*/
+/*-------welcome page--------*/
+.phDiv {
+    background-color: purple;
+    height: 800px;
+       
+}
 
-/*------/codepen--------*/
+.phDev {
+    background-color: green;
+     height: 400px;
+
+}
+.phProjects {
+    background-color: orange;
+     height: 400px;
+}
+.masterBladeContainer {
+    margin-right: 0px;
+    margin-left: 0px;
+    padding-left: 0px;
+    padding-right: 0px;
+}
+
+
 
 /*---------------------Sticky Footer--------------------*/
 /**/           #wrapper, html, body {                 /**/
@@ -187,11 +209,11 @@ hr {
 /**/                                                  /**/
 /**/           }                                      /**/
 /**/           #wrapper {                             /**/
-/**/              margin-bottom:100px;                /**/
+/**/              margin-bottom:0px;                /**/
 /**/           }                                      /**/
 /**/                                                  /**/
 /**/           #push{                                 /**/
-/**/             height:115px;                        /**/
+/**/             height:0px;                        /**/
 /**/             clear: both;                         /**/
 /**/           }                                      /**/
 /*------------------------------------------------------*/

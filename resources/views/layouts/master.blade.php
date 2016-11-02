@@ -27,9 +27,9 @@
 
 </head>
 <body>
-    <div id="wrapper">
+    <div id="wrapper" class="">
         @include('layouts.partials.navbar')
-        <div class="container">
+        <div class="masterBladeContainer container-fluid">
             @if(session()->has('SUCCESS_MESSAGE'))
                 <div class="alert alert-success">
                     <p>{{ session('SUCCESS_MESSAGE') }}</p>
