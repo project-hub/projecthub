@@ -41,7 +41,11 @@
 					<h4 class="name postTitle">{{ $post->users->company_name }}</h4>
 					<h4 class="welcomeSubHeader">{{ $post->title }}</h4>
 					<p class="welcomeText">{{ $post->content }}</p>
-					<p class="location">Location</p>
+					<p class="location">@if($post->on_site == 1)
+            								<p>On Site</p>
+        								@elseif($post->on_site == 0)
+            								<p>Off site</p>
+        								@endif</p>
 					<p class="posted">Posted {{ $post->created_at->diffForHumans() }}</p>
 					<a class="posted btn btn-default" href="{{ action('PostsController@show', $post->id) }}" role="button">See More</a>
 				</div>
