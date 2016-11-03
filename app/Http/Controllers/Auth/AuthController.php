@@ -129,17 +129,16 @@ class AuthController extends Controller
     {
         try{
         $user = Socialite::driver('github')->user();
-    } catch(Exception $e) {
-        return Redirect::to('auth/github');
-    }
+        } catch(Exception $e) {
+            return Redirect::to('auth/github');
+        }
+        
         $authUser = $this->findOrCreateUser($user);
-        dd($authUser);
         
         Auth::login($authUser, true);
 
         return redirect()->action('UsersController@show', $authUser->id );
         
-
         // return Redirect::to('http://projecthub.us/users/{$users->id}');
     }
 
