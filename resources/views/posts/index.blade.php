@@ -2,21 +2,31 @@
 
 @section('content')
 
-<div class="container">
+<div class="container-fluid">
 	<h1 class="span4 title">Project Posts</h1>
 	<hr>
 	{{-- ------------ buttons ------------ --}}
 
 	<div class="row">
 		<div class="col-sm-2">
-			<span class="span2">Filter:</span>
-			<span class="btn filter" data-filter=".category-1">PHP</span>
-			<span class="btn filter" data-filter=".category-2">HTML</span>
-			<span class="btn filter" data-filter=".category-3">CSS</span>
-			<span class="btn filter" data-filter=".category-4">Laravel</span>
-			<span class="btn filter" data-filter=".category-5">Java</span>
-			<span class="btn filter" data-filter=".category-6">Angular</span>
-			<span class="btn" onclick="$('#Container').mixItUp('filter','').mixItUp('filter','all')">Reset</span>
+			<div class="skillsBox">
+				<h4 class=>Filter:</h4><br>
+				<span class="btn filter" data-filter=".category-10">HTML</span>
+				<span class="btn filter" data-filter=".category-11">CSS</span>
+				<span class="btn filter" data-filter=".category-8">JavaScript</span>
+				<span class="btn filter" data-filter=".category-7">Ruby</span>
+				<span class="btn filter" data-filter=".category-1">Java</span>
+				<span class="btn filter" data-filter=".category-2">Python</span>
+				<span class="btn filter" data-filter=".category-3">C</span>
+				<span class="btn filter" data-filter=".category-4">C#</span>
+				<span class="btn filter" data-filter=".category-5">C++</span>
+				<span class="btn filter" data-filter=".category-6">Objective-C</span>
+				<span class="btn filter" data-filter=".category-9">PHP</span>
+				<span class="btn filter" data-filter=".category-12">SQL</span>
+				<span class="btn filter" data-filter=".category-13">Perl</span>
+				<br>
+				<span class="btn resetBtn" onclick="$('#Container').mixItUp('filter','').mixItUp('filter','all')">Reset</span>
+			</div>
 		</div>
 		{{-- ------------/buttons---------------- --}}
 		<div id="Container" class="col-sm-10">
