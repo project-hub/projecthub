@@ -133,6 +133,7 @@ class AuthController extends Controller
         return Redirect::to('auth/github');
     }
         $authUser = $this->findOrCreateUser($user);
+        dd($authUser);
         
         Auth::login($authUser, true);
 
@@ -154,7 +155,6 @@ class AuthController extends Controller
         if ($authUser = User::where('email', $githubUser->email)->first()) {
             return $authUser;
         }
-
         return User::create([
             'email' => $githubUser->email,
             'github' => $githubUser->user['url'],
