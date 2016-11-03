@@ -34,9 +34,9 @@
 {{-- ----- --}}
 
 <div id="Container" class="col-sm-10">
-
-
 @foreach($users as $user)
+<div class="mix @foreach($user->skills as $skill) category-{{ $skill->id }} @endforeach postsIndex" style="display: inline-block;">
+
 @if(Auth::check() == false)
 <div class="row">
     <div class="col-md-4">
@@ -108,6 +108,7 @@
     </div>
     <hr>
 @endif
+</div>
 @endforeach
 
 </div>
