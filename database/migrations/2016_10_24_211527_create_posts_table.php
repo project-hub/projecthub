@@ -19,7 +19,7 @@ class CreatePostsTable extends Migration
             $table->foreign('created_by')->references('id')->on('users');
 
             $table->string('title');
-            $table->string('content');
+            $table->text('content');
             $table->boolean('on_site');
             $table->timestamp('created_at')->useCurrent();
             $table->timestamp('updated_at');
