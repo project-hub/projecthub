@@ -47,11 +47,12 @@
             @endforeach
     </div>
     <div class="col-md-8">
-        <h4 class="name postTitle">{{ $user->first_name . " " . $user->last_name }}</h4>
         @if($user->employer == 1)
-        <h4>{{ $user->company_name }}</h4>
+        <h4 class="name postTitle">{{ $user->company_name }}</h4>
+        <h4>Company Contact: {{ $user->first_name . " " . $user->last_name }}</h4>
+        @elseif($user->employer == 0)
+        <h4 class="name postTitle">{{ $user->first_name . " " . $user->last_name }}</h4>
         @endif
-
             <h5><a href="{{ $user->email }}">{{ $user->email }}</a></h45>
 
             <h5>Linked In: <a href="{{ $user->linkedin_id }}">{{ $user->linkedin_id }}</a></h5>
