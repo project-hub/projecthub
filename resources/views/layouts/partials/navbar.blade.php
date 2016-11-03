@@ -41,12 +41,14 @@
 				<ul class="nav navbar-nav navbar-right">
 					<li class="dropdown">
 						<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Login/Register <span class="caret"></span></a>
+
 						<ul class="dropdown-menu logindrop">
 							<div class="container">
 								<li>
 									<div class="row">
-										<div class="col-md-2">
+										<div class="col-sm-3 loginDrop">
 											<h5>Login</h5>
+											<div>
 											<form class="form" role="form" method="POST" action="{{ action('Auth\AuthController@postLogin')}}" accept-charset="UTF-8" id="login-nav">
 											{{ csrf_field() }}
 												@if($errors->has('email'))
@@ -78,6 +80,7 @@
 												<a href="{{ ('/auth/github') }}" class="btn btn-primary btn-block">Login With GitHub <i class="fa fa-github" aria-hidden="true"></i></a>
 												</div>	
 											</form>
+										</div>
 											<hr>
 											<div class="bottom">
 												<h5>New user?</h5>

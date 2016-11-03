@@ -5,10 +5,11 @@
  <div class="row">
   <div class="col-lg-12">
     <h1 class="page-header">{{ $users->first_name . " " . $users->last_name }}</h1>
+
   </div>
 </div>
     <div class="col-md-4">
-      <img class="img-responsive" src="https://s3-us-west-2.amazonaws.com/codeup-projecthub/folder/image{{$users->id}}" onerror="this.src='/img/profile_placeholder.png'" >
+      <img class="img-responsive" src="https://s3-us-west-2.amazonaws.com/codeup-projecthub/folder/image{{$users->id}}" onerror="this.src='/img/profile_placeholder.png'">
 
 
 {{-- ********************************** PROFILE PIC ************************************************* --}}
