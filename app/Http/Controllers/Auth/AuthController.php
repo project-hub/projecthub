@@ -136,7 +136,7 @@ class AuthController extends Controller
 
         Auth::login($authUser, true);
 
-        return Redirect::to('http://projecthub.us');
+        return Redirect::to('http://projecthub.us/users/{$users->id}');
     }
 
         // $token = $user->token;
@@ -154,7 +154,7 @@ class AuthController extends Controller
 
         return User::create([
             'email' => $githubUser->email,
-            'github' => $githubUser->id,
+            // 'github' => $githubUser->id,
             'image' => $githubUser->avatar
         ]);
     }
