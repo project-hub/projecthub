@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Auth;
 
+use Auth;
 use Socialite;
 use App\Models\User;
 use Validator;
@@ -98,7 +99,6 @@ class AuthController extends Controller
             $create['email'] = $user->email;
             $create['linkedin_id'] = $user->id;
         
-            $token = $user->token;
             
             $userModel = new User;
             $createdUser = $userModel->addNew($create);
@@ -107,6 +107,7 @@ class AuthController extends Controller
         } catch (Exception $e) {
             return redirect('auth/linkedin');
         }
+            // $token = $user->token;
     }
 
     /**
@@ -128,7 +129,6 @@ class AuthController extends Controller
     {
         try{
         $user = Socialite::driver('github')->user();
-        $token = $user->token;
     } catch(Exception $e) {
         return Redirect::to('auth/github');
     }
@@ -139,6 +139,7 @@ class AuthController extends Controller
         return Redirect::to('http://projecthub.us');
     }
 
+        // $token = $user->token;
     /**
      * Return user if exists; create and return if doesn't
      *
