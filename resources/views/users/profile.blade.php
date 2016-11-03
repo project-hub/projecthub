@@ -271,12 +271,7 @@
           <div class="form-group">
             <label>Content</label>
             <textarea class="form-control" rows="3" type="text" name="content">{{ empty(old('content')) ? $users->content : old('content') }}</textarea> 
-          </div>
-                <div class="alert alert-danger">
-                    {{ $errors->first('zip_code') }}
-                </div>
           <button type="submit" class="btn btn-primary">Save changes</button>
-          @endif
         </form>
       </div>
       <div class="modal-footer">
