@@ -111,6 +111,7 @@ hr {
 .skillsBox{
   background-color: lightgrey;
   padding: 5px;
+  margin-bottom: 5px;
 }
 .filter{
   margin:1px;
@@ -132,6 +133,8 @@ hr {
 .loginDrop {
   margin-left: 10px;
   margin-right: 10px;
+  background-color: #F8F8F8;
+
 }
 
 
@@ -189,15 +192,17 @@ hr {
 
 /*-------welcome page--------*/
 .phDiv {
-    background-color: #02786F;
+    /*background-color: #02786F;*/
     height: 700px;
-
+    background-image: url("../img/webProjects.jpg");
 }
 
 .phDev {
     background-color: lightblue;
     height: 350px;
     opacity: .7;
+   
+
 
 }
 .phDev:hover{
@@ -207,6 +212,7 @@ hr {
     background-color: papayawhip;
     height: 350px;   
     opacity: .7;
+    
 }
 .phProjects:hover{
     opacity: 1;

@@ -6,8 +6,36 @@
  <div class="row">
     <div class="col-lg-12">
         <h1 class="page-header title">Project Hub Users</h1>
+        <hr>
     </div>
 </div>
+{{-- ----- --}}
+    <div class="row">
+        <div class="col-sm-2">
+            <div class="skillsBox">
+                <h4 class=>Filter By Skill:</h4><br>
+                <span class="btn filter" data-filter=".category-10">HTML</span>
+                <span class="btn filter" data-filter=".category-11">CSS</span>
+                <span class="btn filter" data-filter=".category-8">JavaScript</span>
+                <span class="btn filter" data-filter=".category-7">Ruby</span>
+                <span class="btn filter" data-filter=".category-1">Java</span>
+                <span class="btn filter" data-filter=".category-2">Python</span>
+                <span class="btn filter" data-filter=".category-3">C</span>
+                <span class="btn filter" data-filter=".category-4">C#</span>
+                <span class="btn filter" data-filter=".category-5">C++</span>
+                <span class="btn filter" data-filter=".category-6">Objective-C</span>
+                <span class="btn filter" data-filter=".category-9">PHP</span>
+                <span class="btn filter" data-filter=".category-12">SQL</span>
+                <span class="btn filter" data-filter=".category-13">Perl</span>
+                <br>
+                <span class="btn resetBtn" onclick="$('#Container').mixItUp('filter','').mixItUp('filter','all')">Reset</span>
+            </div>
+        </div>
+{{-- ----- --}}
+
+<div id="Container" class="col-sm-10">
+
+
 @foreach($users as $user)
 @if(Auth::check() == false)
 <div class="row">
@@ -81,6 +109,9 @@
     <hr>
 @endif
 @endforeach
+
+</div>
+
 </div>
 {{-- <div class="text-center">{!! $users->render() !!} </div> --}}
 </div>
