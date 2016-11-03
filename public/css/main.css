@@ -28,7 +28,7 @@ hr {
     margin-left: -10px;
     margin-top: 10px;
     opacity: 1;
-    padding-top: 120px;
+    padding-top: 40%;
 }
 
 .welcomeImgDiv {
@@ -46,6 +46,7 @@ hr {
 
 .logindrop {
     max-width: 200px;
+
 }
 
 .welcomeSubHeader {    
@@ -117,6 +118,7 @@ hr {
   margin:1px;
 }
 .resetBtn {
+  margin:1px;
   background-color: black;
   border-color: black;
 }
@@ -193,13 +195,13 @@ hr {
 /*-------welcome page--------*/
 .phDiv {
     /*background-color: #02786F;*/
-    height: 700px;
+    height: 900px;
     background-image: url("../img/webProjects.jpg");
 }
 
 .phDev {
     background-color: lightblue;
-    height: 350px;
+    height: 450px;
     opacity: .7;
    
 
@@ -210,7 +212,7 @@ hr {
 }
 .phProjects {
     background-color: papayawhip;
-    height: 350px;   
+    height: 450px;   
     opacity: .7;
     
 }
