@@ -7,7 +7,8 @@
         <div class="phDiv col-sm-6">
             <h2 class="header text-center">Project Hub</h2>
             <p class="aboutText text-center">Connecting employers and developers!</p> 
-            <p class=" aboutText text-center"><a href="{{ action('Auth\AuthController@getRegister') }}">Get started!</a></p>
+            <p class=" aboutText text-center"><a href="{{ action('Auth\AuthController@getRegister') }}" class="btn resetBtn">Get started!</a></p>
+
         </div>
         <div class="row">
                 <a href="{{ action('UsersController@index') }}"><div class="phDev col-sm-6">

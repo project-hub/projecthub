@@ -10,7 +10,7 @@
 	<div class="row">
 		<div class="col-sm-2">
 			<div class="skillsBox">
-				<h4 class=>Filter:</h4><br>
+				<h4 class=>Filter By Skill:</h4><br>
 				<span class="btn filter" data-filter=".category-10">HTML</span>
 				<span class="btn filter" data-filter=".category-11">CSS</span>
 				<span class="btn filter" data-filter=".category-8">JavaScript</span>
@@ -32,10 +32,10 @@
 		<div id="Container" class="col-sm-10">
 			@foreach($posts as $post)
 			{{-- ------ mix / category ------ --}}	
-			<div class="mix @foreach($post->skills as $skill) category-{{ $skill->id }} @endforeach" style="display: inline-block;">
+			<div class="mix @foreach($post->skills as $skill) category-{{ $skill->id }} @endforeach postsIndex" style="display: inline-block;">
 				{{-- --------/mix---------------- --}}
 				<div class="col-sm-3">
-					<img class="img-responsive" src="https://s3-us-west-2.amazonaws.com/codeup-projecthub/folder/image{{$post->users->id}}" onerror="this.src='/img/profile_placeholder.png'" >
+					<img class="img-responsive" src="https://s3-us-west-2.amazonaws.com/codeup-projecthub/folder/image{{$post->users->id}}" onerror="this.src='/img/profile_placeholder.png'" height="300" width="300">
 				</div>
 				<div class="col-sm-9">
 					<h4 class="name postTitle">{{ $post->users->company_name }}</h4>

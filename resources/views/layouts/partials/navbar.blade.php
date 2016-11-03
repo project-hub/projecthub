@@ -46,7 +46,7 @@
 							<div class="container">
 								<li>
 									<div class="row">
-										<div class="col-md-2 loginDrop">
+										<div class="col-sm-3 loginDrop">
 											<h5>Login</h5>
 											<div>
 											<form class="form" role="form" method="POST" action="{{ action('Auth\AuthController@postLogin')}}" accept-charset="UTF-8" id="login-nav">

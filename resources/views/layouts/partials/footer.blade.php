@@ -4,8 +4,8 @@
         <div class="col-md-4 footercontent text-center">
           <span class="copyright">Copyright &copy; Project Hub 2016</span>
         </div>
-        <div class="col-md-4 footercontent text-center">
-          <ul class="list-inline social-buttons">
+        <div class="col-md-4 footercontent text-center socialbtn">
+          <ul class="list-inline social-buttons socialbtn">
             <li><a href="#"><i class="fa fa-twitter socialicon"></i></a>
             </li>
             <li><a href="#"><i class="fa fa-facebook socialicon"></i></a>
