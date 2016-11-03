@@ -133,11 +133,9 @@ class AuthController extends Controller
         return Redirect::to('auth/github');
     }
         $authUser = $this->findOrCreateUser($user);
-        session([
-            'login_' . md5("Illuminate\Auth\Guard") => $authUser->id,
-            ]);
+    
         return redirect()->action('UsersController@show', $authUser->id );
-        // Auth::login($authUser, true);
+        Auth::login($authUser, true);
 
         // return Redirect::to('http://projecthub.us/users/{$users->id}');
     }
