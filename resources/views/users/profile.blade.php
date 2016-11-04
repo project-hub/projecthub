@@ -288,7 +288,7 @@
 {{-- ------------------create post modal------------------- --}}
 
 <!-- Button trigger modal -->
-@if (Auth::id() == $users->id)
+@if (Auth::id() == $users->id && $users->employer == 1)
 <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModalCreate">
   Create Post
 </button>
