@@ -1,7 +1,7 @@
 body {
     margin-top: 50px;
     /*font-family: 'Lato'; */
-    background-color: black;
+    background-color: #ddd;
 }
 
 hr {
@@ -20,6 +20,13 @@ hr {
     color: black;
     background-color: #f8f8f8;
     border-color: #f8f8f8;
+}
+.btn-xs {
+    color: black;
+    background-color: #f8f8f8;
+    border-color: #f8f8f8;
+
+
 }
 .devHomeBtn{
   background-color: #E1DFE4;
@@ -74,7 +81,7 @@ hr {
 }
 
 .welcomeText {
-    color: #1C3B32;    
+    color: black;    
     font-weight: 400;
     font-size: 15px;
 }
@@ -88,8 +95,8 @@ hr {
     font-size: 25px;
 }
 .badge {
-  background-color: black;
-  color: white;
+  background-color: #ddd;
+  color: black;
   margin-bottom: 5px;
 }
 
@@ -101,11 +108,11 @@ hr {
     font-size: 40px;
     
 }
-.userName {
+/*.userName {
     color: black;
     font-size: 20px;
-    margin-top: 15px;
-}
+    margin-top: 10px;
+}*/
 .location {
     color: #373F51;
     font-size: 17px;
@@ -113,7 +120,7 @@ hr {
     
 }
 .postTitle {
-    margin-top: 0px;
+    margin-top: 10px;
     font-size: 30px;
 }
 .posted {
@@ -121,7 +128,8 @@ hr {
     font-weight: 800;
 }
 .userImg {
-    margin-top: 15px;
+    margin-top: 10px;
+    
 }
 .skillsBox{
   background-color: lightgrey;
@@ -129,7 +137,8 @@ hr {
   margin-bottom: 5px;
 }
 .filter{
-  margin:1px;
+  margin:2px;
+
 }
 .links {
   color: black;
@@ -302,13 +311,20 @@ body {
 }
 /*-----------Text------------*/
 .filterBySkill {
-  color: #f8f8f8;
+  color: #666;
 }
 .usersBackground{
   background-color: #f8f8f8;
-  margin-bottom: 5px;
-  padding: 5px;
-
+  margin-bottom: 20px;
+  padding: 20px;
+  border-style: solid;
+  border-size: 1px;
+  border-color: #888;
+  margin-right: 0px;
+  margin-left: 0px;
+}
+.userImgDiv{
+  padding: 0px;
 }
 
 
