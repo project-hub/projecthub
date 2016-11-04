@@ -8,9 +8,12 @@ Front end design uses HTML, CSS, Twitter Bootstrap, jQuery and Javascript.
 Back end development uses the Larvel PHP Framework, mySQL(Database), Amazon s3 Cloud Service for file upload and download and Social Authentication using GitHub Oauth. 
 
 Development Team:
-Hector Trevino, LinkedIn: (https://www.linkedin.com/in/htrevino29), GitHub: (https://github.com/htrevino29)
-Joey Garcia, LinkedIn: (https://www.linkedin.com/in/joey-garcia), GitHub: (https://github.com/jmg0343)
-Dewayne Allen, LinkedIn: (https://www.linkedin.com/in/dewayne-allen), GitHub: (https://github.com/dewayneallen76)
+
+Hector Trevino: [LinkedIn](https://www.linkedin.com/in/htrevino29), [GitHub](https://github.com/htrevino29)
+
+Joey Garcia: [LinkedIn](https://www.linkedin.com/in/joey-garcia), [GitHub](https://github.com/jmg0343)
+
+Dewayne Allen: [LinkedIn](https://www.linkedin.com/in/dewayne-allen), [GitHub](https://github.com/dewayneallen76)
 
 ## Laravel PHP Framework
 
