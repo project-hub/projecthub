@@ -156,7 +156,7 @@ class AuthController extends Controller
         }
         return User::create([
             'email' => $githubUser->email,
-            'github' => $githubUser->user['url'],
+            'github' => $githubUser->user['html_url'],
             'image' => $githubUser->avatar
         ]);
     }
