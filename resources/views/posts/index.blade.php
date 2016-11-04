@@ -46,10 +46,15 @@
         								@elseif($post->on_site == 0)
             								<p>Off site</p>
         								@endif</p>
+        								 @foreach($post->skills as $skill)
+  <span class="badge">{{$skill->name}}</span>
+  @endforeach
 					<p class="posted">Posted {{ $post->created_at->diffForHumans() }}</p>
 					<a class="posted btn btn-default" href="{{ action('PostsController@show', $post->id) }}" role="button">See More</a>
 				</div>
 			</div>
+
+
 			{{-- </div>	 --}}
 			@endforeach
 		</div>

@@ -70,7 +70,7 @@ Route::get('/', function () {
 //************************************** ABOUT PAGE **********************************************
 
 Route::get('/about', function (){
-	return view('about');
+	return view('layouts.about');
 });
 
 
