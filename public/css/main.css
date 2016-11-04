@@ -320,6 +320,8 @@ body {
   border-style: solid;
   border-size: 1px;
   border-color: #888;
+  margin-right: 0px;
+  margin-left: 0px;
 }
 .userImgDiv{
   padding: 0px;
