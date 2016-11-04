@@ -12,12 +12,16 @@
             {{-- <p class="aboutText text-center connecting">Connecting employers and developers!</p>  --}}
             <br>
             <br>
-            <p class=" aboutText text-center"><a href="{{ action('Auth\AuthController@getRegister') }}" class="btn-lg resetBtn startedProjectsBtn">Get started!</a></p>
             <div class="col-sm-12">
-              <div class="col-sm-6">
-            <p class=" aboutText text-center"><a href="{{ action('UsersController@index') }}"class=" btn-lg devHomeBtn ">Developers</a></p>
+              <div class="col-sm-12">
+            <p class=" aboutText text-center"><a href="{{ action('Auth\AuthController@getRegister') }}" class="btn-lg resetBtn startedProjectsBtn">Get started!</a></p>
               </div>
-              <div class="col-sm-6">
+              
+              <div class="col-sm-12">
+            <p class=" aboutText text-center"><a href="{{ action('UsersController@index') }}"class=" btn-lg  resetBtn startedProjectsBtn ">Developers</a></p>
+              </div>
+
+              <div class="col-sm-12">
             <p class=" aboutText text-center"><a href="{{ action('PostsController@index') }}" class="btn-lg resetBtn startedProjectsBtn">Projects</a></p>
               </div>
             </div>
