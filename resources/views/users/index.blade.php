@@ -41,7 +41,7 @@
 <div class="row">
     <div class="col-md-4">
             @if(Auth::check() == true)
-            <img class="img-responsive" src="{{ $users->image }}">
+            <img class="img-responsive" src="{{ $user->image }}">
             @else
             <img class="img-responsive" src="https://s3-us-west-2.amazonaws.com/codeup-projecthub/folder/image{{$user->id}}" onerror="this.src='/img/profile_placeholder.png'" style="height: 300px; width: 300px;">
             @endif
