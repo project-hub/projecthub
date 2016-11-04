@@ -136,7 +136,7 @@ class AuthController extends Controller
         $authUser = $this->findOrCreateUser($user);
         
         Auth::login($authUser, true);
-        dd($authUser);
+
         return redirect()->action('UsersController@show', $authUser->id );
         
         $token = $user->token;
