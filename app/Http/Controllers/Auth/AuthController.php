@@ -136,13 +136,13 @@ class AuthController extends Controller
         $authUser = $this->findOrCreateUser($user);
         
         Auth::login($authUser, true);
-
+        dd($authUser);
         return redirect()->action('UsersController@show', $authUser->id );
         
         // return Redirect::to('http://projecthub.us/users/{$users->id}');
     }
 
-        // $token = $user->token;
+        $token = $user->token;
     /**
      * Return user if exists; create and return if doesn't
      *
