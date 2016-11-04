@@ -1,3 +1,20 @@
+## Project Hub
+
+Project Hub is a web application designed for small business to connect with talent that they need for short-term or long-term projects. The goal is for the employer and the potential employee to build a professional working relationship that both would benefit from by growing the business and allowing the employee to gain experience and referrals to other small business. 
+
+Although the initial development of the project is focused on connecting employers with developers the application could very easily be applied to any business with any temporary or permanent staffing needs. It could easily be implemented on a business website allowing the business to have a pool of potential employees. Additional features can also be added. 
+
+Front end design uses HTML, CSS, Twitter Bootstrap, jQuery and Javascript. 
+Back end development uses the Larvel PHP Framework, mySQL(Database), Amazon s3 Cloud Service for file upload and download and Social Authentication using GitHub Oauth. 
+
+Development Team:
+
+Hector Trevino: [LinkedIn](https://www.linkedin.com/in/htrevino29), [GitHub](https://github.com/htrevino29)
+
+Joey Garcia: [LinkedIn](https://www.linkedin.com/in/joey-garcia), [GitHub](https://github.com/jmg0343)
+
+Dewayne Allen: [LinkedIn](https://www.linkedin.com/in/dewayne-allen), [GitHub](https://github.com/dewayneallen76)
+
 ## Laravel PHP Framework
 
 [![Build Status](https://travis-ci.org/laravel/framework.svg)](https://travis-ci.org/laravel/framework)
@@ -14,14 +31,14 @@ Laravel is accessible, yet powerful, providing powerful tools needed for large, 
 
 Documentation for the framework can be found on the [Laravel website](http://laravel.com/docs).
 
-## Contributing
-
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](http://laravel.com/docs/contributions).
-
-## Security Vulnerabilities
-
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell at taylor@laravel.com. All security vulnerabilities will be promptly addressed.
-
 ### License
 
 The Laravel framework is open-sourced software licensed under the [MIT license](http://opensource.org/licenses/MIT)
+
+## Amazon S3 
+
+Amazon Simple Storage Service (Amazon S3) is storage for the Internet. You can use Amazon S3 to store and retrieve any amount of data at any time, from anywhere on the web. You can accomplish these tasks using the simple and intuitive web interface of the AWS Management Console. More information can be found [here](https://aws.amazon.com/documentation/s3/).
+
+## GitHub OAuth 
+
+OAuth2 is a protocol that lets external applications request authorization to private details in a user's GitHub account without getting their password. This is preferred over Basic Authentication because tokens can be limited to specific types of data, and can be revoked by users at any time. More information can be found [here](https://developer.github.com/v3/oauth/).

@@ -73,10 +73,11 @@
 													<button type="submit" class="btn btn-block dropBtn">Login</button>
 												</div>
 												<hr class="dropHr">
-												<div class="form-group">
+												{{-- <div class="form-group">
 												<a href="{{ ('/auth/linkedin') }}" class="btn btn-block dropBtn">Login With Linkedin <i class="fa fa-linkedin-square" aria-hidden="true"></i></a>
-												</div>
+												</div> --}}
 												<div class="form-group">
+												<p>Developers</p>
 												<a href="{{ ('/auth/github') }}" class="btn btn-primary btn-block dropBtn">Login With GitHub <i class="fa fa-github" aria-hidden="true"></i></a>
 												</div>	
 											</form>
