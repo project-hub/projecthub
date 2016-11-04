@@ -35,10 +35,10 @@ Documentation for the framework can be found on the [Laravel website](http://lar
 
 The Laravel framework is open-sourced software licensed under the [MIT license](http://opensource.org/licenses/MIT)
 
-## Amazon S3 (https://aws.amazon.com/documentation/s3/)
+## Amazon S3 
 
-Amazon Simple Storage Service (Amazon S3) is storage for the Internet. You can use Amazon S3 to store and retrieve any amount of data at any time, from anywhere on the web. You can accomplish these tasks using the simple and intuitive web interface of the AWS Management Console.
+Amazon Simple Storage Service (Amazon S3) is storage for the Internet. You can use Amazon S3 to store and retrieve any amount of data at any time, from anywhere on the web. You can accomplish these tasks using the simple and intuitive web interface of the AWS Management Console. More information can be found [here](https://aws.amazon.com/documentation/s3/).
 
-## GitHub OAuth (https://developer.github.com/v3/oauth/)
+## GitHub OAuth 
 
-OAuth2 is a protocol that lets external applications request authorization to private details in a user's GitHub account without getting their password. This is preferred over Basic Authentication because tokens can be limited to specific types of data, and can be revoked by users at any time.
+OAuth2 is a protocol that lets external applications request authorization to private details in a user's GitHub account without getting their password. This is preferred over Basic Authentication because tokens can be limited to specific types of data, and can be revoked by users at any time. More information can be found [here](https://developer.github.com/v3/oauth/).
