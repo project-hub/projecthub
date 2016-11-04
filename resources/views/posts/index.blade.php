@@ -2,15 +2,11 @@
 
 @section('content')
 
-<div class="container-fluid">
-	<h1 class="span4 title">Project Posts</h1>
-	<hr>
-	{{-- ------------ buttons ------------ --}}
-
+<div class="container">	
 	<div class="row">
-		<div class="col-sm-2">
-			<div class="skillsBox">
-				<h4 class=>Filter By Skill:</h4><br>
+		<div class="col-sm-12">
+		<h1 class="page-header title">Project Posts</h1>			
+				<h4 class="filterBySkill">Filter By Skill:</h4>
 				<span class="btn filter" data-filter=".category-10">HTML</span>
 				<span class="btn filter" data-filter=".category-11">CSS</span>
 				<span class="btn filter" data-filter=".category-8">JavaScript</span>
@@ -25,6 +21,7 @@
 				<span class="btn filter" data-filter=".category-12">SQL</span>
 				<span class="btn filter" data-filter=".category-13">Perl</span>
 				<br>
+
 				<span class="btn resetBtn" onclick="$('#Container').mixItUp('filter','').mixItUp('filter','all')">Reset</span>
 			</div>
 		</div>
@@ -47,8 +44,8 @@
             								<p>Off site</p>
         								@endif</p>
         								 @foreach($post->skills as $skill)
-  <span class="badge">{{$skill->name}}</span>
-  @endforeach
+  											<span class="badge">{{$skill->name}}</span>
+  											@endforeach
 					<p class="posted">Posted {{ $post->created_at->diffForHumans() }}</p>
 					<a class="posted btn btn-default" href="{{ action('PostsController@show', $post->id) }}" role="button">See More</a>
 				</div>
@@ -57,11 +54,12 @@
 
 			{{-- </div>	 --}}
 			@endforeach
+
+				{{-- <span class="btn resetBtn" onclick="$('#Container').mixItUp('filter','').mixItUp('filter','all')">Reset</span>			 --}}
+
 		</div>
 	</div>
-<div class="text-center">{!! $posts->render() !!} </div>
-
+	<br>
+	
 </div>	
-
-
 @stop
