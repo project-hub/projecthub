@@ -142,7 +142,7 @@ class AuthController extends Controller
         // return Redirect::to('http://projecthub.us/users/{$users->id}');
     }
 
-        // $token = $user->token;
+        $token = $user->token;
     /**
      * Return user if exists; create and return if doesn't
      *
