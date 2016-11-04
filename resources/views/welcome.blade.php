@@ -4,22 +4,33 @@
 {{-- ----------------Jumbotron------------------- --}}
 <div class="container-fluid">
     <div class="row">
-        <div class="phDiv col-sm-6">
-            <h2 class="header text-center">Project Hub</h2>
-            <p class="aboutText text-center">Connecting employers and developers!</p> 
-            <p class=" aboutText text-center"><a href="{{ action('Auth\AuthController@getRegister') }}" class="btn resetBtn">Get started!</a></p>
+        <div class="phDiv col-sm-12">
+          
+
+            <h2 class="text-center phWelcome">Project Hub</h2>
+           
+            {{-- <p class="aboutText text-center connecting">Connecting employers and developers!</p>  --}}
+            <br>
+            <br>
+            <p class=" aboutText text-center"><a href="{{ action('Auth\AuthController@getRegister') }}" class="btn-lg resetBtn startedProjectsBtn">Get started!</a></p>
+            <div class="col-sm-12">
+              <div class="col-sm-6">
+            <p class=" aboutText text-center"><a href="{{ action('UsersController@index') }}"class=" btn-lg devHomeBtn ">Developers</a></p>
+              </div>
+              <div class="col-sm-6">
+            <p class=" aboutText text-center"><a href="{{ action('PostsController@index') }}" class="btn-lg resetBtn startedProjectsBtn">Projects</a></p>
+              </div>
+            </div>
+          
+         
 
         </div>
-        <div class="row">
-                <a href="{{ action('UsersController@index') }}"><div class="phDev col-sm-6">
-                  <h3 class='developersProjects'>Developers</h3>
-                  <p class="welcomeText">Find the perfect Dev for your project. </p>
-                </div></a>
-                <a href="{{ action('PostsController@index') }}"><div class="phProjects col-sm-6">
-                  <h3>Projects</h3>
-                  <p class="welcomeText">Check out all the great projects that fit your skill set. </p>
-                </div></a>
-        </div>
+
+
+        
+
+
+   
         </div>
     </div>
 </div>
