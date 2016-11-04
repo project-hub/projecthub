@@ -9,8 +9,11 @@
   </div>
 </div>
     <div class="col-md-4">
+    @if(Auth::check() == true)
+    <img class="img-responsive" src="{{ $users->image }}">
+    @else
       <img class="img-responsive" src="https://s3-us-west-2.amazonaws.com/codeup-projecthub/folder/image{{$users->id}}" onerror="this.src='/img/profile_placeholder.png'">
-
+    @endif
 
 {{-- ********************************** PROFILE PIC ************************************************* --}}
     @if (Auth::id() == $users->id)
