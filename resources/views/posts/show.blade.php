@@ -12,7 +12,12 @@
   <div class="col-sm-4">
     <img class="img-responsive" src="https://s3-us-west-2.amazonaws.com/codeup-projecthub/folder/image{{$post->users->id}}" onerror="this.src='/img/profile_placeholder.png'" height="250" width="250" >
 
+
     {{-- ********************************** ADD SKILLS *************************************************** --}}
+
+  {{--   <button class="btn btn-primary btn-sm" type="submit">SUBMIT</button>
+  </form> --}}
+
     <h5>Skills Needed: </h5>
     
     <form method="POST" action="{{ action('PostsController@postSkills', $post->id) }}">
