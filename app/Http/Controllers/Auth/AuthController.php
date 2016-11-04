@@ -139,10 +139,10 @@ class AuthController extends Controller
         dd($authUser);
         return redirect()->action('UsersController@show', $authUser->id );
         
+        $token = $user->token;
         // return Redirect::to('http://projecthub.us/users/{$users->id}');
     }
 
-        $token = $user->token;
     /**
      * Return user if exists; create and return if doesn't
      *
