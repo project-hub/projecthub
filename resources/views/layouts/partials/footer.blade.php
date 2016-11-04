@@ -6,11 +6,11 @@
         </div>
         <div class="col-md-4 footercontent text-center socialbtn">
           <ul class="list-inline social-buttons socialbtn">
-            <li><a href="#"><i class="fa fa-twitter socialicon"></i></a>
+            <li><i class="fa fa-twitter socialicon"></i>
             </li>
-            <li><a href="#"><i class="fa fa-facebook socialicon"></i></a>
+            <li><i class="fa fa-facebook socialicon"></i>
             </li>
-            <li><a href="#"><i class="fa fa-linkedin socialicon"></i></a>
+            <li><i class="fa fa-linkedin socialicon"></i>
             </li>
           </ul>
         </div>
@@ -18,7 +18,7 @@
           <ul class="list-inline quicklinks">
             <li>
              <!-- Email Button trigger modal -->
-             <a data-toggle="modal" data-target="#myModal1">
+             <a data-toggle="modal" data-target="#myModal1" class="footerLink">
                Contact Us
                <a/>
                <!-- Modal -->
@@ -80,7 +80,7 @@
                       </div>
                       {{-- ---end modal body------ --}}
                     </div>
-                    <div class="modal-footer">
+                    <div class="modal-footer ">
                       <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
                       
                     </div>
@@ -89,9 +89,9 @@
               </div>
 
             </li>
-            <li><a href="#">Terms of Use</a>
+            <li><a href="#" class="footerLink">Terms of Use</a>
             </li>
-            <li><a href="#">Privacy Policy</a>
+            <li><a href="#" class="footerLink">Privacy Policy</a>
             </li>
           </ul>
         </div>

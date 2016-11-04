@@ -9,7 +9,7 @@
 					<span class="icon-bar"></span>
 				</button>
 				<a class="navbar-brand" href="/"><img style="max-height:100px; margin-top: -40px;"
-					src="/img/projecthublogo.png"></a>
+					src="/img/phWhiteLogo.png"></a>
 				</a>
 			</div>
 			<!-- Collect the nav links, forms, and other content for toggling -->
@@ -38,15 +38,15 @@
 					<li><a href="{{ action('Auth\AuthController@getLogout') }}">Logout</a></li>
 					@endif
 				@if (Auth::check() == false)
+
 				<ul class="nav navbar-nav navbar-right">
 					<li class="dropdown">
 						<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Login/Register <span class="caret"></span></a>
 
 						<ul class="dropdown-menu logindrop">
-							<div class="container">
+							
 								<li>
-									<div class="row">
-										<div class="col-sm-3 loginDrop">
+									
 											<h5>Login</h5>
 											<div>
 											<form class="form" role="form" method="POST" action="{{ action('Auth\AuthController@postLogin')}}" accept-charset="UTF-8" id="login-nav">
@@ -70,26 +70,25 @@
 													<input type="password" class="form-control" name="password" placeholder="Password" required>
 												</div>
 												<div class="form-group">
-													<button type="submit" class="btn btn-primary btn-block">Login</button>
+													<button type="submit" class="btn btn-block dropBtn">Login</button>
 												</div>
-												<hr>
+												<hr class="dropHr">
 												<div class="form-group">
-												<a href="{{ ('/auth/linkedin') }}" class="btn btn-primary btn-block">Login With Linkedin <i class="fa fa-linkedin-square" aria-hidden="true"></i></a>
+												<a href="{{ ('/auth/linkedin') }}" class="btn btn-block dropBtn">Login With Linkedin <i class="fa fa-linkedin-square" aria-hidden="true"></i></a>
 												</div>
 												<div class="form-group">
-												<a href="{{ ('/auth/github') }}" class="btn btn-primary btn-block">Login With GitHub <i class="fa fa-github" aria-hidden="true"></i></a>
+												<a href="{{ ('/auth/github') }}" class="btn btn-primary btn-block dropBtn">Login With GitHub <i class="fa fa-github" aria-hidden="true"></i></a>
 												</div>	
 											</form>
 										</div>
-											<hr>
+											<hr class="dropHr">
 											<div class="bottom">
 												<h5>New user?</h5>
-												<a href="{{ action('Auth\AuthController@getRegister') }}"><button type="submit" class="btn btn-primary btn-block">Register</button></a>
+												<a href="{{ action('Auth\AuthController@getRegister') }}"><button type="submit" class="btn dropBtn btn-block">Register</button></a>
 											</div>
-										</div>
-									</div>
+									
 								</li>
-							</div>
+					
 						</ul>
 						@endif
 					</li>
@@ -99,7 +98,7 @@
 					<div class="form-group">
 						<input type="text" class="form-control" name="search" placeholder="Search">
 					</div>
-					<button type="submit" class="btn btn-default">Submit</button>
+					<button type="submit" class="btn btn-default dropBtn">Submit</button>
 				</form>
 
 			</div><!-- /.navbar-collapse -->
