@@ -135,7 +135,7 @@ class UserSeeder extends Seeder
                     'linkedin_id'=>'',
                     'github'=>'',
                     'website'=>'http://www.matrix.com',
-                    'image'=>'https://media.licdn.com/media/p/2/000/1be/17e/3633534.png',
+                    'image'=>'https://s-media-cache-ak0.pinimg.com/736x/85/89/79/85897931daee99b46d1b1a974efe4b13.jpg',
                     'password'=>bcrypt('tastyburger')),
              array('first_name'=>'Sarah',
                     'last_name'=>'Nordman',
