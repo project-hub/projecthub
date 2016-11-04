@@ -9,8 +9,11 @@
   </div>
 </div>
     <div class="col-md-4">
+    @if(Auth::check() == true)
+    <img class="img-responsive" src="{{ $users->image }}">
+    @else
       <img class="img-responsive" src="https://s3-us-west-2.amazonaws.com/codeup-projecthub/folder/image{{$users->id}}" onerror="this.src='/img/profile_placeholder.png'">
-
+    @endif
 
 {{-- ********************************** PROFILE PIC ************************************************* --}}
     @if (Auth::id() == $users->id)
@@ -272,13 +275,7 @@
             <label>Content</label>
             <textarea class="form-control" rows="3" type="text" name="content">{{ empty(old('content')) ? $users->content : old('content') }}</textarea> 
           </div>
-          @if($errors->has('zip_code'))
-                <div class="alert alert-danger">
-                    {{ $errors->first('zip_code') }}
-                </div>
-          @else
           <button type="submit" class="btn btn-primary">Save changes</button>
-          @endif
         </form>
       </div>
       <div class="modal-footer">

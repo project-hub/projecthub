@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Auth;
 
+use Auth;
 use Socialite;
 use App\Models\User;
 use Validator;
@@ -98,7 +99,6 @@ class AuthController extends Controller
             $create['email'] = $user->email;
             $create['linkedin_id'] = $user->id;
         
-            $token = $user->token;
             
             $userModel = new User;
             $createdUser = $userModel->addNew($create);
@@ -107,6 +107,7 @@ class AuthController extends Controller
         } catch (Exception $e) {
             return redirect('auth/linkedin');
         }
+            // $token = $user->token;
     }
 
     /**
@@ -128,15 +129,18 @@ class AuthController extends Controller
     {
         try{
         $user = Socialite::driver('github')->user();
-        $token = $user->token;
-    } catch(Exception $e) {
-        return Redirect::to('auth/github');
-    }
+        } catch(Exception $e) {
+            return Redirect::to('auth/github');
+        }
+        
         $authUser = $this->findOrCreateUser($user);
-
+        
         Auth::login($authUser, true);
 
-        return Redirect::to('http://projecthub.us');
+        return redirect()->action('UsersController@show', $authUser->id );
+        
+        $token = $user->token;
+        // return Redirect::to('http://projecthub.us/users/{$users->id}');
     }
 
     /**
@@ -147,13 +151,12 @@ class AuthController extends Controller
      */
     private function findOrCreateUser($githubUser)
     {
-        if ($authUser = User::where('github', $githubUser->id)->first()) {
+        if ($authUser = User::where('email', $githubUser->email)->first()) {
             return $authUser;
         }
-
         return User::create([
             'email' => $githubUser->email,
-            'github' => $githubUser->id,
+            'github' => $githubUser->user['html_url'],
             'image' => $githubUser->avatar
         ]);
     }
