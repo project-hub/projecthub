@@ -1,6 +1,6 @@
 body {
     margin-top: 50px;
-    /*font-family: 'Lato'; */
+    font-family: 'Lato'; 
     background-color: #ddd;
 }
 
@@ -25,8 +25,6 @@ hr {
     color: black;
     background-color: #f8f8f8;
     border-color: #f8f8f8;
-
-
 }
 .devHomeBtn{
   background-color: #E1DFE4;
@@ -40,6 +38,7 @@ hr {
   background-color: #E1DFE4;
   color: black;
 }
+
 .socialbtn {
   color: #DCD9DB;
   margin-bottom: 0px;
@@ -53,6 +52,12 @@ hr {
   background-color: black;
   border-color: black;
   color: #f8f8f8;
+}
+.welcomeBtnLink {
+  color: #f8f8f8;
+}
+.welcomeBtnLink:hover{
+  color:black;
 }
 /*------------welcome page--------*/
 .header {
@@ -70,7 +75,7 @@ hr {
 }
 
 .logindrop {
-    max-width: 200px;
+    padding: 5px;
     background-color: black;
     color: #F8F8F8;
 
@@ -104,7 +109,7 @@ hr {
 
 /*-------- Users/Projects pages ------------*/
 .title {
-    color: #f8f8f8;
+    color: black;
     font-size: 40px;
     
 }
@@ -211,7 +216,7 @@ hr {
 .phDiv {
     /*background-color: #02786F;*/
     height: 900px;
-    background-image: url("../img/macbook1.jpeg");
+    background-image: url("../img/macbook6.jpeg");
       -webkit-background-size: cover;
       -moz-background-size: cover;
       -o-background-size: cover;
@@ -280,18 +285,31 @@ body {
 /*------------------------------------------------------*
 
 /*-------------------/* gets rid of rounded corners on bootstrap --------------------------*/
-/*\*/	.btn {border-radius: 0;}                                                        /*\*/
-/*\*/                                                                                   /*\*/
-/*\*/	* {                                                                             /*\*/
-    /*\*/	  border-radius: 0 !important;                                                  /*\*/
-    /*\*/	  -moz-border-radius: 0 !important;                                             /*\*/
-    /*\*/	  }                                                                             /*\*/
-    /*-----------------------------------------------------------------------------------------*/
+.btn {border-radius: 0;}                                                      
+                                                                                
+* {                                                                             
+  border-radius: 15px !important;                                                  
+  -moz-border-radius: 0 !important;                                             
+}
+.navbar {
+  border-radius: 0 !important;
+}
+.footer {
+  border-radius: 0 !important;
+}
+.phDiv {
+  border-radius: 0 !important;
+}
+.title {
+  border-radius: 0 !important;
+}
+/*-----------------------------------------------------------------------------------------*/
 .phWelcome{
   color: white;
-  margin-top: 10%;
-  font-size: 90px;
+  margin-top: 0px;
+  font-size: 100px;
   font-weight: 200;
+  margin-top: 20%;
 }
 .connecting {
   color:white;
@@ -305,6 +323,8 @@ body {
 } 
 .signUpDiv {
   background-color: #f8f8f8;
+  
+  padding: 20px;
 }
 .form-control{
   background-color: #f8f8f8;
@@ -326,6 +346,41 @@ body {
 .userImgDiv{
   padding: 0px;
 }
+
+.profileShowDiv {
+  background-color: #fff;
+  margin-top: 40px;
+  padding: 24px;
+  border-style: solid;
+  border-width: 2px;
+  border-color: #666;
+  margin-bottom: 50px;
+}
+a {
+  color: #666;
+  /*font-size: 12px;*/
+  padding: 0px
+}
+
+.userSummary {
+  background-color: #ddd;
+  padding: 15px;
+}
+.summaryTitle {
+  margin-top: 5px;
+}
+.signUpDiv {
+  margin-top: 50px;
+  border-style: solid;
+  border-width: 2px;
+  border-color: #ccc;
+  padding: 30px;
+}
+.signUpTitle {
+  margin-top: 8px;
+}
+
+
 
 
 

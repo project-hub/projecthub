@@ -37,7 +37,7 @@
 		<div class="col-sm-4 userImgDiv">
 			<img class="img-responsive userImgDiv" src="https://s3-us-west-2.amazonaws.com/codeup-projecthub/folder/image{{$post->users->id}}" onerror="this.src='/img/profile_placeholder.png'">
 			<br>
-			<a class="posted btn btn-default" href="{{ action('PostsController@show', $post->id) }}" role="button">See More</a>
+			<a class="posted btn resetBtn" href="{{ action('PostsController@show', $post->id) }}" role="button">See More</a>
 		</div>
 		<div class="col-sm-8 userContentDiv">
 			<h4 class="name postTitle">{{ $post->users->company_name }}</h4>

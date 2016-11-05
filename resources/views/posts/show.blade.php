@@ -2,39 +2,27 @@
 @section('title', 'Post')
 @section('content')
 
-<div class="container-fluid">
- <div class="row">
+<div class="container profileShowDiv">
+
   <div class="col-sm-12">
     <h1 class="page-header title">Project Postings</h1>
-</div>
-</div>
-<div class="row">
+  </div>
+
+{{-- <div class="row"> --}}
   <div class="col-sm-4">
     <img class="img-responsive" src="https://s3-us-west-2.amazonaws.com/codeup-projecthub/folder/image{{$post->users->id}}" onerror="this.src='/img/profile_placeholder.png'" height="250" width="250" >
-
-
-    {{-- ********************************** ADD SKILLS *************************************************** --}}
-
-  {{--   <button class="btn btn-primary btn-sm" type="submit">SUBMIT</button>
-  </form> --}}
-
-    <h5>Skills Needed: </h5>
-    
+   <h5>Skills Needed:</h5>
+  @foreach($post->skills as $skill)
+  <span class="badge">{{$skill->name}}</span>
+  @endforeach
     <form method="POST" action="{{ action('PostsController@postSkills', $post->id) }}">
         {!! csrf_field() !!}
         <div class="form-group">
             @include('layouts.partials.skills', ['skills'=>$skills])
         </div>
-        <button class="btn btn-primary btn-sm" type="submit">SUBMIT</button>
+        <button class="btn resetBtn btn-sm" type="submit">SUBMIT</button>
     </form>
-
-
-
-
-  @foreach($post->skills as $skill)
-  <span class="badge">{{$skill->name}}</span>
-  @endforeach
-</div>
+  </div>
 <div class="col-sm-8">
     <h3 class="postShowTitle">{{ $post->title}}</h3>
     <h4>Project Description:</h4>
@@ -42,18 +30,17 @@
     <h5>Created by: <a href="{{ action('UsersController@show', $post->users->id )}}">{{ $post->users->company_name }}</a></h5>
     <h5>Posted {{ $post->created_at->diffForHumans() }}</h5>
     @if($post->on_site == 1)
-    <p>On Site</p>
+    <h5>On Site</h5>
     @elseif($post->on_site == 0)
-    <p>Off site</p>
+    <h4>Off site</h4>
     @endif
     <h5>Website: <a href="{{ $post->users->website }}">{{ $post->users->website }}</a></h5>
-    <a class="btn btn-primary employerContact" data-toggle="modal" data-target="#myModal1">Contact Employer <i class="fa fa-envelope" aria-hidden="true"></i></a>
+    <a class="btn resetBtn employerContact btn-sm" data-toggle="modal" data-target="#myModal1">Contact Employer <i class="fa fa-envelope" aria-hidden="true"></i></a>
+    <button type="button" class="btn resetBtn btn-sm" data-toggle="modal" data-target="#myModalCreate">
+    Edit Post
+    </button>
 </div>
 
-</div>
-<button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModalCreate">
-    Edit Post
-</button>
 
 
 {{-- ------------------edit post modal------------------- --}}
