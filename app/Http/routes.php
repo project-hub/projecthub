@@ -63,10 +63,19 @@ Route::get('auth/linkedin/callback', 'Auth\AuthController@handleProviderCallback
 Route::get('auth/github', 'Auth\AuthController@redirectToProviderGithub');
 Route::get('auth/github/callback', 'Auth\AuthController@handleProviderCallbackGithub');
 
-//************************************** Home Page **********************************************
+//************************************** HOME PAGE **********************************************
 Route::get('/', function () {
     return view('welcome');
 });
+//************************************** ABOUT PAGE **********************************************
+
+Route::get('/about', function (){
+	return view('layouts.about');
+});
+
+
+
+
 
 // User skills 
 Route::post('users/{id}', 'UsersController@userSkills');

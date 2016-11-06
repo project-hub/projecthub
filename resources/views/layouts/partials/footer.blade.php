@@ -20,7 +20,7 @@
              <!-- Email Button trigger modal -->
              <a data-toggle="modal" data-target="#myModal1" class="footerLink">
                Contact Us
-               <a/>
+             <a/>
                <!-- Modal -->
                <div class="modal fade" id="myModal1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
                 <div class="modal-dialog" role="document">
