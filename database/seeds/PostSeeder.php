@@ -13,8 +13,8 @@ class PostSeeder extends Seeder
     {
          DB::table('posts')->insert(array(
              array('created_by'=>8,
-                    'title'=>'Instructional Designer',
-                    'content'=>'This growing industry leader has an immediate 4-5+ month contract opening in San Antonio, TX-for an Instructional Designer. -Will be responsible for various tasks related to training and development functions. -Will lead, design and develop training and instructional materials for internal teammates on a variety of topics, ensuring the instructional integrity of each training deliverable through measuring training effectiveness. -Must possess strong project management skills, be able to handle multiple tasks and assist the management team to ensure the strategy and directional goals of the company are achieved.',
+                    'title'=>'Web Developer',
+                    'content'=>'Two Guys Moving would like to hire a developer to design and build a website, allowing our customers to book appointments, follow us on social media, and learn about our rates.',
                     'on_site'=>1,),
              array('created_by'=>9,
                     'title'=>'Web Designer',
@@ -22,7 +22,7 @@ class PostSeeder extends Seeder
                     'on_site'=>0,),
              array('created_by'=>7,
                     'title'=>'Application Developer',
-                    'content'=>'Experis supports a large client in Boerne, TX in need of an Application developer. This individual will be responsible for the development of Web frontend assets for Angular 1.0/Responsive web platform Maintenance/support for existing defects and support requests Support performance and functional testing Support platform migrations based on framework or dependent system upgrades',
+                    'content'=>'We are in need of a developer to create a mobile application. The app should include the ability to register as a new user, view and edit profiles, search our services and prices, and make an appointment.',
                     'on_site'=>1,),
              array('created_by'=>6,
                     'title'=>'Web Developer',
