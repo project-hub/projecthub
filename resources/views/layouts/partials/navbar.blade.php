@@ -48,7 +48,7 @@
 								<li>
 									
 											<h5>Login</h5>
-											<div>
+											{{-- <div> --}}
 											<form class="form" role="form" method="POST" action="{{ action('Auth\AuthController@postLogin')}}" accept-charset="UTF-8" id="login-nav">
 											{{ csrf_field() }}
 												@if($errors->has('email'))
@@ -81,7 +81,7 @@
 												<a href="{{ ('/auth/github') }}" class="btn btn-primary btn-block dropBtn">Login With GitHub <i class="fa fa-github" aria-hidden="true"></i></a>
 												</div>	
 											</form>
-										</div>
+											{{-- </div> --}}
 											<hr class="dropHr">
 											<div class="bottom">
 												<h5>New user?</h5>
@@ -95,13 +95,14 @@
 					</li>
 				</ul>
 				</ul>
-				<form class="navbar-form navbar-right" method="GET" action="{{ action('UsersController@index')}}">
+				{{-- <form class="navbar-form navbar-right" method="GET" action="{{ action('UsersController@index')}}">
 					<div class="form-group">
 						<input type="text" class="form-control" name="search" placeholder="Search">
 					</div>
 					<button type="submit" class="btn btn-default dropBtn">Submit</button>
-				</form>
+				</form> --}}
 
 			</div><!-- /.navbar-collapse -->
 		</div><!-- /.container-fluid -->
+
 	</nav>

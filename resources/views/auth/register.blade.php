@@ -1,9 +1,10 @@
 @extends('layouts.master')
 
 @section('content')
+<div class='container'>
 	<div class="row">
 		<div class="col-sm-6 col-sm-offset-3 signUpDiv">
-			<h1>Sign Up:</h1>
+			<h1 class="signUpTitle">Sign Up:</h1>
 			<form method="POST" action="{{ action('Auth\AuthController@postRegister') }}">
 				{{ csrf_field() }}
 				<div class="form-group">
@@ -56,4 +57,5 @@
 			</form>
 		</div>
 	</div>
+</div>
 @stop
