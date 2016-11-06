@@ -75,7 +75,7 @@ hr {
 }
 
 .logindrop {
-    padding: 5px;
+    padding: 20px;
     background-color: black;
     color: #F8F8F8;
 
@@ -333,6 +333,7 @@ body {
 }
 .usersBackground{
   background-color: #f8f8f8;
+  margin-top: 15px;
   margin-bottom: 20px;
   padding: 20px;
   border-style: solid;
@@ -381,6 +382,9 @@ a {
 .projectPostBack { 
   background-color: black;
   margin: 15px;
+}
+.dropdown-toggle {
+  padding: 20px;
 }
 
 
