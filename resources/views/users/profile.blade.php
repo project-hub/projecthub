@@ -65,7 +65,7 @@
     @endif
     {{-- ************************************ VIEW RESUME ************************************* --}}
     <br>
-    @if(Auth::check() == true)
+    @if(Auth::check() == true && $users->employer == 0)
     <form method="POST" target="_blank" action="{{ action('UsersController@download', $users->id) }}">
       {!! csrf_field() !!}
       <input type="hidden" name="resume">
@@ -75,7 +75,7 @@
     {{-- ************************************************************************************** --}}
 
     <!-- Email Button trigger modal -->
-    @if(Auth::check() == true)
+    @if(Auth::id() != $users->id)
     <button type="button" class="btn resetBtn btn-sm  " data-toggle="modal" data-target="#myModal1">
      <i class="fa fa-envelope" aria-hidden="true"></i> Send Message
    </button><br>

@@ -34,7 +34,11 @@
     <div class="row usersBackground">
 
         <div class="col-sm-4 userImgDiv">
+            @if($user->image == true)
+            <img class="img-responsive userImg" src="{{ $user->image }}">
+            @else
             <img class="img-responsive userImg" src="https://s3-us-west-2.amazonaws.com/codeup-projecthub/folder/image{{$user->id}}" onerror="this.src='/img/profile_placeholder.png'" style="height: 200px; width: 200px;">
+            @endif
             <div>
             <h5>Skills: </h5>
             @foreach($user->skills as $skill)
@@ -64,7 +68,11 @@
         @elseif(Auth::user()->employer == 0 && $user->employer == 1)
         <div class="row usersBackground">
             <div class="col-sm-4">
-                <img class="img-responsive userImg" src="https://s3-us-west-2.amazonaws.com/codeup-projecthub/folder/image{{$user->id}}" onerror="this.src='/img/profile_placeholder.png'" >
+                @if($user->image == true)
+                <img class="img-responsive userImg" src="{{ $user->image }}">
+                @else
+                <img class="img-responsive userImg" src="https://s3-us-west-2.amazonaws.com/codeup-projecthub/folder/image{{$user->id}}" onerror="this.src='/img/profile_placeholder.png'" style="height: 200px; width: 200px;">
+                @endif
                 <div>
                 <h5>Skills Needed: </h5>
                 @foreach($user->skills as $skill)
@@ -88,7 +96,11 @@
         @elseif(Auth::user()->employer == 1 && $user->employer == 0)
         <div class="row usersBackground">
             <div class="col-sm-4">
-                <img class="img-responsive userImg" src="https://s3-us-west-2.amazonaws.com/codeup-projecthub/folder/image{{$user->id}}" onerror="this.src='/img/profile_placeholder.png'" style="max-height: 200px; max-width: 200px;" >
+                @if($user->image == true)
+                <img class="img-responsive userImg" src="{{ $user->image }}">
+                @else
+                <img class="img-responsive userImg" src="https://s3-us-west-2.amazonaws.com/codeup-projecthub/folder/image{{$user->id}}" onerror="this.src='/img/profile_placeholder.png'" style="height: 200px; width: 200px;">
+                @endif
                 <div>
                 <h5>Skills: </h5>
                 @foreach($user->skills as $skill)

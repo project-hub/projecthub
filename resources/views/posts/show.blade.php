@@ -15,6 +15,7 @@
   @foreach($post->skills as $skill)
   <span class="badge">{{$skill->name}}</span>
   @endforeach
+  @if(Auth::id() == $post->created_by)
     <form method="POST" action="{{ action('PostsController@postSkills', $post->id) }}">
         {!! csrf_field() !!}
         <div class="form-group">
@@ -22,6 +23,7 @@
         </div>
         <button class="btn resetBtn btn-sm" type="submit">SUBMIT</button>
     </form>
+  @endif
   </div>
 <div class="col-sm-8">
     <h3 class="postShowTitle">{{ $post->title}}</h3>
@@ -36,9 +38,11 @@
     @endif
     <h5>Website: <a href="{{ $post->users->website }}">{{ $post->users->website }}</a></h5>
     <a class="btn resetBtn btn-sm" data-toggle="modal" data-target="#myModal1">Contact Employer <i class="fa fa-envelope" aria-hidden="true"></i></a>
+    @if(Auth::id() == $post->created_by)
     <button type="button" class="btn resetBtn btn-sm" data-toggle="modal" data-target="#myModalCreate">
     Edit Post
     </button>
+    @endif
 </div>
 
 
