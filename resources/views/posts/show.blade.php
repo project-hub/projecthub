@@ -35,7 +35,7 @@
     <h4>Off site</h4>
     @endif
     <h5>Website: <a href="{{ $post->users->website }}">{{ $post->users->website }}</a></h5>
-    <a class="btn resetBtn employerContact btn-sm" data-toggle="modal" data-target="#myModal1">Contact Employer <i class="fa fa-envelope" aria-hidden="true"></i></a>
+    <a class="btn resetBtn btn-sm" data-toggle="modal" data-target="#myModal1">Contact Employer <i class="fa fa-envelope" aria-hidden="true"></i></a>
     <button type="button" class="btn resetBtn btn-sm" data-toggle="modal" data-target="#myModalCreate">
     Edit Post
     </button>

@@ -35,10 +35,12 @@
 
         <div class="col-sm-4 userImgDiv">
             <img class="img-responsive userImg" src="https://s3-us-west-2.amazonaws.com/codeup-projecthub/folder/image{{$user->id}}" onerror="this.src='/img/profile_placeholder.png'" style="height: 200px; width: 200px;">
+            <div>
             <h5>Skills: </h5>
             @foreach($user->skills as $skill)
             <span class="badge">{{$skill->name}}</span>
             @endforeach
+            </div>
             <br>
             <a class="btn resetBtn" href="{{ action('UsersController@show', $user->id) }}">View Profile</a>
         </div>
@@ -63,10 +65,12 @@
         <div class="row usersBackground">
             <div class="col-sm-4">
                 <img class="img-responsive userImg" src="https://s3-us-west-2.amazonaws.com/codeup-projecthub/folder/image{{$user->id}}" onerror="this.src='/img/profile_placeholder.png'" >
+                <div>
                 <h5>Skills Needed: </h5>
                 @foreach($user->skills as $skill)
                 <span class="badge">{{$skill->name}}</span>
                 @endforeach
+                </div>
                 <br>
                 <a class="btn resetBtn" href="{{ action('UsersController@show', $user->id) }}">View Profile </a>
             </div>
@@ -85,10 +89,12 @@
         <div class="row usersBackground">
             <div class="col-sm-4">
                 <img class="img-responsive userImg" src="https://s3-us-west-2.amazonaws.com/codeup-projecthub/folder/image{{$user->id}}" onerror="this.src='/img/profile_placeholder.png'" style="max-height: 200px; max-width: 200px;" >
+                <div>
                 <h5>Skills: </h5>
                 @foreach($user->skills as $skill)
                 <span class="badge">{{$skill->name}}</span>
                 @endforeach
+                </div>
                 <br>
                 <a class="btn resetBtn" href="{{ action('UsersController@show', $user->id) }}">View Profile</a>
             </div>

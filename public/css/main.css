@@ -251,9 +251,7 @@ hr {
 .postShowTitle {
   margin-top: 0px;
 }
-.employerContact {
-  margin-bottom: 5px;
-} 
+
 
 /*---------------------Sticky Footer--------------------*/
 html {
@@ -365,6 +363,7 @@ a {
 .userSummary {
   background-color: #ddd;
   padding: 15px;
+  margin-top: 10px;
 }
 .summaryTitle {
   margin-top: 5px;
@@ -379,7 +378,10 @@ a {
 .signUpTitle {
   margin-top: 8px;
 }
-
+.projectPostBack { 
+  background-color: black;
+  margin: 15px;
+}
 
 
 

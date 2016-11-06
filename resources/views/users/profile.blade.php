@@ -356,11 +356,13 @@
   {{-- ****************** END OF SKILLS SELECTOR ************** --}}
 
   @endif
+  <div>
   <h4>Skills: </h4>
   @foreach($users->skills as $skill)
   <span class="badge">{{$skill->name}}</span>
   @endforeach
-  <span class="label label-default"></span>
+  <div>
+  
   <div class="userSummary">
     <h4 class="summaryTitle">Summary: </h4> 
     <p>{{ $users->content }}</p>
