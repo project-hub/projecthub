@@ -13,10 +13,14 @@
       <br>
       <div class="row">
         <div class="container text-center">
+        @if(Auth::check() == false)
+          <button type="button" class="btn resetBtn startedProjectsBtn btn-lg"><a href="{{ action('UsersController@index') }}" class="welcomeBtnLink">Users</a></button>
+        @elseif(Auth::check() == true && Auth::user()->employer == 1)
           <button type="button" class="btn resetBtn startedProjectsBtn btn-lg"><a href="{{ action('UsersController@index') }}" class="welcomeBtnLink">Developers</a></button>
-
+        @elseif(Auth::check() == true && Auth::user()->employer == 0)
+          <button type="button" class="btn resetBtn startedProjectsBtn btn-lg"><a href="{{ action('UsersController@index') }}" class="welcomeBtnLink">Employers</a></button>
+        @endif
           <button type="button" class="btn resetBtn startedProjectsBtn btn-lg"><a href="{{ action('Auth\AuthController@getRegister') }}" class="welcomeBtnLink">Get Started</a></button>
-
           <button type="button" class="btn resetBtn startedProjectsBtn btn-lg"><a href="{{ action('PostsController@index') }}" class="welcomeBtnLink">Projects</a></button>  
         </div>
       </div>

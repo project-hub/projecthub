@@ -89,9 +89,7 @@
               </div>
 
             </li>
-            <li><a href="#" class="footerLink">Terms of Use</a>
-            </li>
-            <li><a href="#" class="footerLink">Privacy Policy</a>
+            <li><a href="/about" class="footerLink">About Us</a>
             </li>
           </ul>
         </div>
