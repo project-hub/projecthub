@@ -21,23 +21,23 @@
             <div class="col-sm-4 col-sm-6 text-center">
                 <img class="img-circle img-responsive img-center" src="/img/dewayne.jpg" alt="dewayne">
                 <h3>Dewayne Allen</h3>
-                <h4><a href="https://github.com/dewayneallen76">https://github.com/dewayneallen76</a></h4>
-                <h4><a href="https://www.linkedin.com/in/dewayne-allen">https://www.linkedin.com/in/dewayne-allen</a></h4>
+                <h4>GitHub: <a href="https://github.com/dewayneallen76">github.com/dewayneallen76</a></h4>
+                <h4>LinkedIn: <a href="https://www.linkedin.com/in/dewayne-allen">linkedin.com/in/dewayne-allen</a></h4>
                 <p>I had a great time working on this project and couldn't have asked for a better team. We tackled our challenges and worked through our frustrations with communication and lots of jokes.</p>
             </div>
             <div class="col-sm-4 col-sm-6 text-center">
                 <img class="img-circle img-responsive img-center" src="/img/joey.jpg" alt="joey">
                 <h3>Joey Garcia</h3>
-                <h4><a href="https://github.com/jmg0343">https://github.com/jmg0343</a></h4>
-                <h4><a href="https://www.linkedin.com/in/joey-garcia">https://www.linkedin.com/in/joey-garcia</a></h4>
+                <h4>GitHub: <a href="https://github.com/jmg0343">github.com/jmg0343</a></h4>
+                <h4>LinkedIn: <a href="https://www.linkedin.com/in/joey-garcia">linkedin.com/in/joey-garcia</a></h4>
                 <p>What does this team member to? Keep it short! This is also a great spot for social links!</p>
             </div>
             <div class="col-sm-4 col-sm-6 text-center">
-                <img class="img-circle img-responsive img-center" src="http://placehold.it/150x150" alt="">
+                <img class="img-circle img-responsive img-center" src="/img/hector.jpg" alt="">
                 <h3>Hector Trevino</h3>
-                <h4><a href="https://github.com/htrevino29">https://github.com/htrevino29</a></h4>
-                <h4><a href="https://www.linkedin.com/in/htrevino29">https://www.linkedin.com/in/htrevino29</a></h4>
-                <p>What does this team member to? Keep it short! This is also a great spot for social links!</p>
+                <h4>Github: <a href="https://github.com/htrevino29">github.com/htrevino29</a></h4>
+                <h4>LinkedIn: <a href="https://www.linkedin.com/in/htrevino29">linkedin.com/in/htrevino29</a></h4>
+                <p>Two words...MODAL MASTER!  </p>
             </div>
         </div>
     </div>
