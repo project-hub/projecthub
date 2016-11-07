@@ -22,7 +22,7 @@ class PostSeeder extends Seeder
                     'on_site'=>0,),
              array('created_by'=>7,
                     'title'=>'Application Developer',
-                    'content'=>'We are in need of a developer to create a mobile application. The app should include the ability to register as a new user, view and edit profiles, search our services and prices, and make an appointment.',
+                    'content'=>'We are in need of a developer to join our team for a small project to create a mobile application. The app should include the ability to register as a new user, view and edit profiles, search our services and prices, and make an appointment. This is a 3-month contract that may lead to full-time employment. Must be a team player who enjoys working with people.',
                     'on_site'=>1,),
              array('created_by'=>6,
                     'title'=>'Web Developer',
