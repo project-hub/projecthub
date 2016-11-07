@@ -30,7 +30,7 @@
                 <h3>Joey Garcia</h3>
                 <h4>GitHub: <a href="https://github.com/jmg0343">github.com/jmg0343</a></h4>
                 <h4>LinkedIn: <a href="https://www.linkedin.com/in/joey-garcia">linkedin.com/in/joey-garcia</a></h4>
-                <p>What does this team member to? Keep it short! This is also a great spot for social links!</p>
+                <p>Working on Project Hub has been an amazing experience. My team and I overcame many obstacles and turned these challenges into learning experiences.</p>
             </div>
             <div class="col-sm-4 col-sm-6 text-center">
                 <img class="img-circle img-responsive img-center" src="/img/hector.jpg" alt="">
