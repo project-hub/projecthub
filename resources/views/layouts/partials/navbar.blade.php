@@ -17,7 +17,7 @@
 				<ul class="nav navbar-nav">
 					@if (Auth::check() == false)
 					<li><a href="{{ action('PostsController@index') }}">Posts</a></li>
-					<li><a href="{{ action('UsersController@index') }}">Users</a></li>
+					<li><a href="{{ action('UsersController@index') }}">Members</a></li>
 					@endif
 					@if (Auth::check())
                     <li><a href="{{ action('UsersController@show', Auth::id()) }}"><i class="fa fa-user" aria-hidden="true"></i> Welcome, {{ Auth::user()->first_name }}!</a></li>
