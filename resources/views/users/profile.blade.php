@@ -75,11 +75,11 @@
     {{-- ************************************************************************************** --}}
 
     <!-- Email Button trigger modal -->
-    @if(Auth::id() != $users->id)
+    @if(Auth::check() == true)
     <button type="button" class="btn resetBtn btn-sm  " data-toggle="modal" data-target="#myModal1">
      <i class="fa fa-envelope" aria-hidden="true"></i> Send Message
-   </button><br>
-   @endif
+    </button><br>
+    @endif
    <!-- Modal -->
    <div class="modal fade" id="myModal1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
     <div class="modal-dialog" role="document">

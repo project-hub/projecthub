@@ -14,7 +14,7 @@
       <div class="row">
         <div class="container text-center">
         @if(Auth::check() == false)
-          <button type="button" class="btn resetBtn startedProjectsBtn btn-lg"><a href="{{ action('UsersController@index') }}" class="welcomeBtnLink">Users</a></button>
+          <button type="button" class="btn resetBtn startedProjectsBtn btn-lg"><a href="{{ action('UsersController@index') }}" class="welcomeBtnLink">Members</a></button>
         @elseif(Auth::check() == true && Auth::user()->employer == 1)
           <button type="button" class="btn resetBtn startedProjectsBtn btn-lg"><a href="{{ action('UsersController@index') }}" class="welcomeBtnLink">Developers</a></button>
         @elseif(Auth::check() == true && Auth::user()->employer == 0)
