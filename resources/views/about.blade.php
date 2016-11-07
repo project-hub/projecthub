@@ -9,7 +9,7 @@
         <div class="row">
             <div class="col-lg-12">
                 <h1 class="page-header">About Us</h1>
-                <p>Project Hub is our capstone project for Codeup, a full-stack web developement career accelerator in San Antonio, TX. We decided early in the project to design a simple web application that would help local small business find talent for projects that may not require a full time employee. Our focus during the project was connecting employers with local web developers, but Project Hub could easily be used by any employer looking for any type of career field.</p>
+                <p>Project Hub is our capstone project for Codeup, a full-stack web development career accelerator in San Antonio, TX. We decided early in the project to design a simple web application that would help local small business find talent for projects that may not require a full time employee. Our focus during the project was connecting employers with local web developers, but Project Hub could easily be used by any employer looking for any type of career field.</p>
             </div>
         </div>
 
