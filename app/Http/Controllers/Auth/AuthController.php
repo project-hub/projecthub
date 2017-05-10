@@ -137,6 +137,7 @@ class AuthController extends Controller
         
         Auth::login($authUser, true);
 
+        session()->flash('SUCCESS_MESSAGE', 'You have successfully authenticated your Github account. Please complete your profile');
         return redirect()->action('UsersController@show', $authUser->id );
         
         $token = $user->token;
